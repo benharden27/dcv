@@ -1,0 +1,138 @@
+---
+title: 'Data Frames'
+author: Ben Harden
+date: '2021-05-05'
+level: 3
+slug: []
+categories: []
+tags: []
+draft: no
+quiz: https://rstudio.cloud/spaces/170089/project/2870343
+---
+
+<script src="{{< blogdown/postref >}}index_files/header-attrs/header-attrs.js"></script>
+
+
+<p>If you’ve used Excel before, you’ll be pretty familiar with the spreadsheet layout of data where we have rows and columns. The datasets you’ll be working with in R are also organized in the same way (although this is not the only way R organizes data). R calls them data frames.</p>
+<div class="figure">
+<img src="tidy_1.png" alt="" />
+<p class="caption">Values are stored at intersection of rows (obserations) and columns (variables)</p>
+</div>
+<div id="data-in-r" class="section level2">
+<h2>Data in R</h2>
+<p>Watch this brief intro to importing data into a data frame in R, and how it differs from using data in Excel.</p>
+<div style="padding:75% 0 0 0;position:relative;">
+<iframe src="https://player.vimeo.com/video/555320284?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;" title="Sequence 01.mov">
+</iframe>
+</div>
+<script src="https://player.vimeo.com/api/player.js"></script>
+</div>
+<div id="exploring-data-in-r" class="section level2">
+<h2>Exploring Data in R</h2>
+<p>The video above introduced you to how we get data into R using the <code>read_csv()</code> function from the <code>readr</code> package</p>
+<pre class="r"><code>library(readr)
+df &lt;- read_csv(&quot;C282_neuston.csv&quot;)</code></pre>
+<p>The data has been imported in to an object <code>df</code> which is a data frame (technically a <code>tibble</code> which is readr’s slightly modified version of a data frame, but let’s not get bogged down in details just yet). This data frame showed up in the Environment panel and if you click on the small spreadsheet icon you can see the data in a visual format.</p>
+<p>There are other ways to view and get to know our data.</p>
+<p>Instead of clicking on that icon, you can also type in the console:</p>
+<pre class="r"><code>View(df)</code></pre>
+<p><em>capital “V” is important</em></p>
+<p>We can also simply type the name of the data frame:</p>
+<pre class="r"><code>df</code></pre>
+<pre><code>## # A tibble: 44 x 15
+##    station     dttm                      lon   lat  temp   sal fluor moon_phase
+##    &lt;chr&gt;       &lt;dttm&gt;                  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;      &lt;dbl&gt;
+##  1 C282-001-NT 2018-10-15 12:23:00.000 -71.2  41.3  18.2  31.8 2821.      0.38 
+##  2 C282-002-NT 2018-10-16 23:50:00.000 -70.6  40.5  16.8  32.9 2737       0.570
+##  3 C282-003-NT 2018-10-17 12:16:00.000 -70.0  39.9  20.3  34.9  878.      0.570
+##  4 C282-005-NT 2018-10-19 11:16:00.000 -68.7  38.2  21.8  34.9 1554.      0.75 
+##  5 C282-006-NT 2018-10-19 23:50:00.000 -67.8  36.9  26.1  36.4  529.      0.83 
+##  6 C282-007-NT 2018-10-20 11:24:00.000 -67.1  36.3  25.8  36.4  465.      0.83 
+##  7 C282-008-NT 2018-10-22 23:21:00.000 -61.8  36.1  25.2  36.5  521.      0.95 
+##  8 C282-009-NT 2018-10-23 12:13:00.000 -61.1  35.5  24.3  36.5  413.      0.98 
+##  9 C282-010-NT 2018-10-23 23:34:00.000 -61.0  35.0  25.2  36.8  411.      0.98 
+## 10 C282-011-NT 2018-10-24 11:27:00.000 -60.5  34.7  25.2  36.8  404.      1    
+## # … with 34 more rows, and 7 more variables: moon_mode &lt;chr&gt;, tow_dist &lt;dbl&gt;,
+## #   biomass &lt;dbl&gt;, nekt_total_num &lt;dbl&gt;, nekt_total_vol &lt;dbl&gt;, daynight &lt;chr&gt;,
+## #   biodens &lt;dbl&gt;</code></pre>
+<p>Which shows us a brief view of the data:</p>
+<ul>
+<li>The first line tells us that this is a tibble (data frame) with dimensions of 44 rows and 15 columns.</li>
+<li>The second line tells us the names of each columns (as many as will fit on the screen).</li>
+<li>The third line tells you what type of data is in each column: character, datetime, double (decimal number), integer (whole number).</li>
+<li>Then comes the first 10 line of data under each column heading.</li>
+<li>At the end of the data is one or more lines that tells you that there are 34 more rows of data and how many more variables (column names) are not shown (and their names and types).</li>
+</ul>
+<p>Another great way to get a quick look at data in a data frame is to create a summary.</p>
+<pre class="r"><code>summary(df)</code></pre>
+<pre><code>##    station               dttm                             lon        
+##  Length:44          Min.   :2018-10-15 12:23:00.00   Min.   :-71.15  
+##  Class :character   1st Qu.:2018-10-25 08:27:00.00   1st Qu.:-61.45  
+##  Mode  :character   Median :2018-10-31 05:43:30.00   Median :-60.36  
+##                     Mean   :2018-10-31 00:39:08.18   Mean   :-59.98  
+##                     3rd Qu.:2018-11-05 14:53:00.00   3rd Qu.:-55.75  
+##                     Max.   :2018-11-18 02:19:00.00   Max.   :-55.52  
+##                                                                      
+##       lat             temp            sal            fluor        
+##  Min.   :11.81   Min.   :16.80   Min.   :31.80   Min.   :  34.52  
+##  1st Qu.:16.63   1st Qu.:25.30   1st Qu.:35.20   1st Qu.: 506.40  
+##  Median :23.07   Median :27.90   Median :36.41   Median : 532.60  
+##  Mean   :24.52   Mean   :26.55   Mean   :35.94   Mean   : 634.11  
+##  3rd Qu.:33.33   3rd Qu.:28.25   3rd Qu.:36.80   3rd Qu.: 568.50  
+##  Max.   :41.32   Max.   :28.60   Max.   :37.03   Max.   :2820.90  
+##                  NA&#39;s   :1       NA&#39;s   :3       NA&#39;s   :1        
+##    moon_phase      moon_mode            tow_dist       biomass       
+##  Min.   :0.0000   Length:44          Min.   :1102   Min.   :  1.000  
+##  1st Qu.:0.1200   Class :character   1st Qu.:1668   1st Qu.:  1.938  
+##  Median :0.5700   Mode  :character   Median :1865   Median :  4.500  
+##  Mean   :0.5207                      Mean   :1943   Mean   : 10.402  
+##  3rd Qu.:0.8500                      3rd Qu.:2281   3rd Qu.:  8.200  
+##  Max.   :1.0000                      Max.   :3233   Max.   :147.000  
+##                                                                      
+##  nekt_total_num   nekt_total_vol     daynight            biodens         
+##  Min.   : 0.000   Min.   : 0.000   Length:44          Min.   :0.0004640  
+##  1st Qu.: 0.000   1st Qu.: 0.000   Class :character   1st Qu.:0.0008683  
+##  Median : 3.000   Median : 1.200   Mode  :character   Median :0.0025429  
+##  Mean   : 8.614   Mean   : 2.343                      Mean   :0.0056711  
+##  3rd Qu.:13.250   3rd Qu.: 3.125                      3rd Qu.:0.0046677  
+##  Max.   :48.000   Max.   :16.500                      Max.   :0.0806806  
+## </code></pre>
+<p>This gives us a bunch of statistical data on each of the columns that aren’t full of characters – min, max, quartiles, etc.</p>
+<!-- ## Other things to know about looking at data -->
+<!-- As we begin to explore data and begin to visualize it, some of the following functions can be useful. -->
+<!-- To get the number of rows in a data frame you can use -->
+<!-- ```{r, include = TRUE} -->
+<!-- nrow(df) -->
+<!-- ``` -->
+<!-- and same for columns. -->
+<!-- ```{r, include = TRUE} -->
+<!-- ncol(df) -->
+<!-- ``` -->
+<!-- Or both dimenstions together -->
+<!-- ```{r} -->
+<!-- dim(df) -->
+<!-- ``` -->
+<!-- You can also get all the names of columns: -->
+<!-- ```{r, include = TRUE} -->
+<!-- names(df) -->
+<!-- ``` -->
+<!-- If you want to access just one column of the data as a vector, the easiest way is usually with `$`: -->
+<!-- ```{r} -->
+<!-- df$temp -->
+<!-- ``` -->
+<!-- But we can also access the same column of data using `[[...]]` with either the name or the column number (also known as the column index). The following will work the sae as above -->
+<!-- ```{r, eval = FALSE} -->
+<!-- df[["temp"]] -->
+<!-- df[[5]] -->
+<!-- ``` -->
+<!-- Or we can access a single column data frame using `[...]`: -->
+<!-- ```{r, eval = FALSE} -->
+<!-- df["temp"] -->
+<!-- df[5] -->
+<!-- ``` -->
+</div>
+<div id="exercise" class="section level2">
+<h2>Exercise</h2>
+<p>Go to the RStudio Cloud assignment below. Read the <code>instructions.txt</code> file and complete the exercise.</p>
+<p>Once you’ve finished that, click the “Exit Ticket” button below to let me know you’ve completed the level and need feedback.</p>
+</div>

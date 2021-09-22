@@ -1,0 +1,6 @@
+---
+title: "Classes"
+weight: 2
+exit_ticket: https://forms.gle/TqXu8WQVPU14FeFM8
+progress_tracker: https://docs.google.com/spreadsheets/d/1GAB9QaVKly3zF5kIgzQJEPNk_GXYyEcbsZslqJgY76w/edit?usp=sharing
+---

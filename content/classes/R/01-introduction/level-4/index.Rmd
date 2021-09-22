@@ -1,0 +1,21 @@
+---
+title: 'Wrangling'
+author: Ben Harden
+date: '2021-05-05'
+level: 4
+slug: []
+categories: []
+tags: []
+draft: no
+quiz: https://rstudio.cloud/spaces/170089/project/2870351
+---
+
+Data that you read in isn't always going to be set up exactly as you want it and you might need to create new columns for various tasks. You may also want to create summaries of certain parts of your data. Manipulating the data in a data frame is called data wrangling.
+
+## Reading
+
+Go through the three sections of [this primer](https://rstudio.cloud/learn/primers/2) on working with data frames in R.
+
+## Exercise
+
+Go to the assignment and follow the instructions to practice these skills.

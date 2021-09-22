@@ -1,0 +1,64 @@
+---
+title: 'What to plot?'
+author: Ben Harden
+date: '2021-05-05'
+level: 3
+slug: []
+categories: []
+tags: []
+draft: no
+quiz: https://rstudio.cloud/spaces/170089/project/2870345
+---
+
+So far, we've talked about the geoms that create scatter plots and line plots. In this level we're going to work with some of ggplot's other geoms.
+
+The [ggplot cheatsheet](https://github.com/rstudio/cheatsheets/raw/master/data-visualization.pdf) is a helpful document to have nearby. It lays out the geoms available to you and has some examples. It also helpfully groups the geoms into their use given the type of data. For example, a scatter plot made with `geom_point` is in the two-variables, x continuous, y continuous section. This means, we have two variables to plot against one another and both axes are numeric and can take any value.
+
+Please work your way through the [primers](https://rstudio.cloud/learn/primers/3) for:
+
+* [Bar Charts](https://rstudio.cloud/learn/primers/3.2)
+* [Histograms](https://rstudio.cloud/learn/primers/3.3)
+* [Box Plots and Counts](https://rstudio.cloud/learn/primers/3.4)
+
+# Exercise
+
+In this exercise we're going to look at a new data set and think about the best ways to represent some of the relationships. It is data from a single cruise from Woods Hole to Greneda in the Caribbean. The data is of zooplankton collected by a surface net called a [neuston net](https://www.sea.edu/sea_currents/single/deploying-the-neuston-net) combined with other environmental parameters.
+
+```{r map, echo = FALSE, message = FALSE}
+library(tidyverse)
+df <- read_csv("C282_neuston.csv")
+ggplot(df, aes(lon,lat)) +
+    geom_polygon(aes(long,lat, group = group), data = map_data("world"), fill= "grey50") +
+    geom_point() +
+    coord_quickmap(xlim = range(df$lon, na.rm = T)+c(-20,20), ylim = range(df$lat, na.rm = T)+c(-2,2)) +
+    labs(x = NULL, y = NULL) +
+    scale_x_continuous(labels = NULL) +
+    scale_y_continuous(labels = NULL) +
+    theme_void()
+```
+
+Each point on the map is a row in the data, a station where the ship stopped to take surface net measurements.
+
+This data is in the assignment project for this level and can also be downloaded [here](C282_neuston.csv). It has the following features:
+
+- Each row is a neuston net tow/station. The stations are labeled in the format *cruiseID-stationNumber-deploymentType* (i.e. C282-011-NT) where NT stands for Neuston Tow.
+
+- The other columns are:
+    + dttm: date and time (in R's special datetime format)
+    + lon: Longitude (decimal degrees east of 0)
+    + lat: Latitude (decimal degrees north of 0)
+    + temp: Surface temperature (^o^C)
+    + sal: Surface salinity (PSU)
+    + fluor: Surface fluorescence (Volts - a measure of chlorophyll-a concentration)
+    + moon_phase: Phase of the moon from completely full (100) to completely new (0)
+    + moon_mode: Whether the moon was "set" or "risen" at the time of the cast
+    + tow_dist: The distance that we towed the net for (meters)
+    + biomass: Biovolume of zooplankton (< 2cm) captured in net (mL)
+    + nekt_total_num: Number of Nekton (> 2cm) captured in the net (#)
+    + nekt_total_vol: Total Biovolume of Nekton (> 2cm) captured in the net (mL)
+    + daynight: Whether the station was at "night" or during the "day"
+    + biodens: The biomass normalized by the tow_dist (mL/m^2^)
+    
+Most of these variables are continuous numeric values (i.e. they can take any value) except for station, moon_mode, and daynight which are all discrete charactors (e.g. daynight can only be "day" or "night").
+
+Go to the RStudio Cloud assignment and follow the instructions there.

@@ -1,0 +1,5 @@
+---
+title: "Plotting Data"
+subtitle: Getting stuck in to making graphics in R
+weight: 2
+---

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+{{ partial "header.html" . }}
+
+<body>
+	<div class="container wrapper list">
+		{{ partial "head.html" . }}
+
+	
+		
+		{{ .Content }}
+		
+		<div class = "exit-button clearfix">
+		  
+		{{ if isset .FirstSection.Params "progress_tracker" }}
+		
+        <a href={{ .FirstSection.Params.progress_tracker }} target="_blank" rel="noopener noreferrer" class="w3-button w3-green float-right">Progress Tracker</a>
+    {{ end }}
+    
+    {{ if isset .FirstSection.Params "check_in" }}
+        <a href={{ .FirstSection.Params.check_in }} target="_blank" rel="noopener noreferrer" class="w3-button w3-blue">Daily Check-in (by 11:30am)</a>
+    {{ end }}
+      
+    </div>
+		
+
+    <div class="w3-bar w3-light-gray">
+      {{ range sort .Sections ".Params.weight"}}
+        <button class="w3-bar-item w3-button" onclick="openSection({{ lower (replace .Title " " "-")}})">{{ .Title }}</button>
+      {{ end }}
+    </div>
+    
+      {{ range sort .Sections ".Params.weight"}}
+        
+        <div class = "section-tab" id = {{ lower (replace .Title " " "-")}} style = "display: {{ if eq (lower (replace .Title " " "-")) "vizualization"}}inline{{else}}none{{end}}">
+        
+        {{ range sort .Sections ".Params.weight"}}
+        {{ if gt (len .Pages) 0 }}
+          <h3> {{ .Title }}</h3>
+          {{ if isset .Params "subtitle"}}
+          <p> {{ .Params.subtitle }}</p>
+         {{ end }}
+          <div class="grid">
+            {{ range sort .Pages ".Params.level" }}
+              <a href="{{ .Params.ExternalLink | default .RelPermalink }}">
+                <div class="level">
+                  <h4 class = "gt">Level {{ .Params.level }}:</h4>
+                  <h4 class = "lt">{{ .Title }}</h4>
+                </div>
+              </a>
+            {{ end }}
+          </div>
+          {{end}}
+          <hr/>
+        {{ end }}
+        </div>
+      {{ end }}
+
+		
+<script>
+function openSection(sectionName) {
+  var i;
+  var x = document.getElementsByClassName("section-tab");
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";  
+  }
+  document.getElementById(sectionName).style.display = "block";  
+}
+</script>
+	{{ partial "footer.html" . }}
+</body>
+
+</html>
