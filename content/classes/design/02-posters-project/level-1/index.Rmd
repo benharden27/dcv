@@ -1,7 +1,7 @@
 ---
-title: "Effective Poster Design"
+title: "Poster Project Decription"
 author: Ben Harden
-date: '2021-05-05'
+date: "`r format(Sys.time(), '%Y-%m-%d')`"
 level: 1
 slug: []
 categories: []

@@ -1,7 +1,7 @@
 ---
-title: 'Poster Best Practices'
+title: 'Figures in papers'
 author: Ben Harden
-date: '2021-05-05'
+date: "`r format(Sys.time(), '%Y-%m-%d')`"
 level: 2
 slug: []
 categories: []
@@ -9,21 +9,4 @@ tags: []
 draft: no
 ---
 
-We're now going to apply some of the design ideas from [level 1](../level-1/) to scientific posters more specifically.
-
-Below are some poster examples.
-
-* [Poster 1](posters/poster1.jpg)
-* [Poster 2](posters/poster2.pdf)
-* [Poster 3](posters/poster3.pdf)
-* [Poster 4](posters/poster4.jpg)
-* [Poster 5](posters/poster5.pdf)
-
-I have also assigned you a discussion group and a poster for you to review (check slack). You should review your poster together and think about the answers to the following:
-    
-* What is the audience for this poster?
-* How easy was it to get the general message? Why?
-* What design elements were effective?
-* What design elements were ineffective?
-
-We're then going to meet in class on Monday June 21 to share key takeaways you had on your poster that combines each group's thoughts. In this way, we'll compile a list of best practices. We will then discuss specific requirements for your poster.
+Example based on figure in paper

@@ -1,103 +1,99 @@
 ---
 title: About
 author: Ben Harden
-date: '2021-05-20'
+date: "`r format(Sys.time(), '%Y-%m-%d')`"
 slug: []
 categories: []
 tags: []
 draft: no
 ---
 
-The PEP Class is built to help prepare you for the research work you will be doing this summer. This includes allowing you to:
+This Data Communication and Visualization class is built to help prepare you for the data research and communication work you will be doing in your future careers by building skills in: 
 
-- Build your knowledge of broad oceanographic and environmental science topics
-- Develop you research skills
-- Understand the community you are becoming a part of
+- Data Visualization in the R programming language
+- Understanding good data and visual design strategies
+- Optimizing your verbal communication of data
 
-The class will begin on June 1 and run until June 25.
+The class will begin on October 4th, 2021 and run until the end of the program on December 23rd, 2021, but the majority of the classwork will be concluded by the end of the shore component (November 15th, 2021).
 
 ## Class Philosophy
 
 Before I get to details, I want to start by laying out my philosophy for this class. 
 
-You are all coming to this class with different experiences. Some of you have had previous research opportunities, some none. Others will have been exposed to coding skills, many will not. Some of you will be environmental science majors, while for others this will be a new topic to grapple with. Regardless of your previous experiences, you all have strengths to bring to the table. You all have a responsibility to keep your eyes open for your peers who are struggling and help them out. This class is a **collaborative space** so that everyone can grow their skills and understanding as much as possible. No one succeeds because someone else fails. We all grow together.
+You are all coming to this class with different experiences. Some of you have had previous research opportunities, some none. Others will have been exposed to coding skills, many will not. Some of you will be oceanography majors, while for others this will be a new topic to grapple with. Regardless of your previous experiences, you all have strengths to bring to the table. You all have a responsibility to keep your eyes open for your peers who are struggling and help them out. This class is a **collaborative space** so that everyone can grow their skills and understanding as much as possible. No one succeeds because someone else fails. We all grow together.
 
 The class will be mostly **self-paced**, meaning you are free to move through the content and exercises when it suits you. My reasons for this are to help you:
 
 * Plan your time to best suit your learning style and energy levels
-* Do work in timezone when others (including me) will not be free/working
+* Do work in timezone when others (including me) will not be free/working during initial virtual component of the program.
 * Have more time for things you struggle with by allowing you to go faster through things you might find more straight-forward
 * Have more agency about how you spend your time and take breaks when you need them
 * Not get too focused keeping track of many deadlines
 * Collaborate with your peers at times that suit you
-* Prepare for your research which will be intrinsically self-paced
 
-The only scheduled parts of the class will be various daily discussions, group meetings, check-ins, and guest speakers. More on the structure below.
+Alongside the self-paces work will be scheduled portions of the class that will include group work, discussions, presentation, etc. More on the structure below.
 
-I value feedback and self-reflection. You will be given many opportunities to let me know how you are getting on, what you are understanding, and what you have questions about. My hope is that through this process that you become conscious of your strengths and areas for growth. You will also be helping me understand how best to help you and your fellow students. For the duration of the PEP class, you are my primary professional activity so feel empowered to contact me or the Course Assistant if you have any questions or concerns.
+I value feedback and self-reflection. You will be given many opportunities to let me know how you are getting on, what you are understanding, and what you have questions about. My hope is that through this process that you become conscious of your strengths and areas for growth. You will also be helping me understand how best to help you and your fellow students. For the duration of the class, you are my primary professional activity so feel empowered to contact me if you have any questions or concerns.
 
-Finally, remember throughout: you belong here at PEP and in the Woods Hole science community. The PEP staff are here to support you and help you be successful.
+## What I expect from you
 
-## What we expect from you
+I hope you will see this class as more than simply a requirement to gain a grade for college credit. It should be a useful tool for you to advance your thinking and skills around communicating data effectively.
 
-We hope you will see this class as more than simply a requirement to gain a grade for college credit. It should be a useful tool for you to advance your thinking and skills around conducting research in Environmental Sciences. It should be directly relevant to the work you will be doing this summer as well as building a broader tool set for many careers in science.
+I expect you to use your time in the class effectively. The self-paced mode will give you lots of flexibility to work when and how you like, but I do expect you to engage with all aspects. We will meet most days of the week for a total of 7 hours of weekly contact time. You should expect to spend a comparable amount of time on your work out of class. Over the 7-day week, you should be spending an average of 2 hours a day on your DCV work. Use your peers as a support network for things you are finding hard and to keep you accountable. 
 
-We know that this has been a long year of digital learning for many of you. We are aware of the limitations and know that it is not ideal for so many reasons. We have tried to develop this class in a way that will limit the one-way delivery of information over video call. However, we still need you to find the motivation to once more enter a digital world of learning. We will be bringing our energy and we expect you to too. 
+I welcome your feedback (and will ask for it frequently) so please let me know how you are getting on and what isn't sticking and I will try and help you out. Please also let us know how long the classwork is taking you so I can make sure I am calibrating the quantiy and depth of content accordingly.
 
-We expect you to use your time in the PEP class effectively. The self-paced mode will give you lots of flexibility to work when and how you like, but we do expect you to engage with all aspects. Work should take between 3 and 4 hours a day and work at the weekend is likely to complete certain assignments. Use your peers as a support network for things you are finding hard and to keep you accountable. 
+## What you can expect from me
 
-We welcome your feedback (and will ask for it frequently) so please let us know how you are getting on and what isn't sticking and we will try and help you out. Please also let us know how long the classwork is taking you so we can make sure
+I will be available for immediate feedback and discussion during the near-daily class period (see below) and during out of class office hours. Please speak up if you need specific support during any of these times - the more heads-up I can have the more effective I can be at helping you. However, please be patient as I try to meet the needs of the whole class. If there are enough questions or interest in a particular topic then I will arrange small group instruction.
 
-## What you can expect from your instructors
-
-You instructors will be available for immediate feedback and discussion during the daily class period (12-3pm, see below). Please speak up if you need our support, but be patient as we try to meet the needs of the whole PEP cohort. If there are enough questions or interest in a particular topic then we will arrange small group instruction.
-
-Outside the class window we will also be available to answer questions and give feedback. Please contact us through Slack and we will get back to you as soon as we are able. Again, please be patient.
+Outside the class window we I also be available to answer questions and give feedback. Please contact me by email which I check daily from 8am to 8pm. I am unavailable from sundown on Friday to sundown on Saturday.
 
 ## Class Structure
 
-OK, so on to the nuts-and-bolts. 
+### Section, Modules and Levels (and Grades)
 
-We're going to be looking at four topic areas:
+The class content on this site is organized into three topics:
 
-* **Oceanography:** The study of the world's oceans from physical, chemical, biological, and geological viewpoints.
-* **Research Skills:** Finding and Reading literature, exploring data, collaboration, poster/oral presentations.
-* **Data Visualization:** Technically a subtopic of research skills, but one with enough weight to give it's own topic.
-* **Advanced Topics**: Invited guests from the Woods Hole science community to expand your understanding on important topics and introduce you to the institutions in Woods Hole.
+* Visualize: learning how to effectively use R to create compelling graphics
+* Design: Introduction to key elements of data design and data presentations
+* Communicate: Increasing your communication capactity through radio storytelling
 
-Each topic will be broken down into a series of modules, each dealing with a portion of the wider topic. In each module there are a series of levels to complete. You can see the full list of topics, modules and levels on the [classes](../classes/) page.
+Each topic is composed of a set of modules, each with four levels of work. Topics do not need to be completed in order, but modules and levels are typically sequential with an assignment/assessment at the end of each level that needs to be completed before you can move on. The level pages themselves will provide clear instructions for what you have to do.
 
-### Levels and Grades
+I am expecting everyone to engage with every module to Level 3. Level 4 is optional. You do not need to complete all Level 4 work - you are free to skip it on any module (but you will probably need to complete some if you want to maintain an A average). You are free to get feedback and revise any assignment up until the end of the class - the gradebook for most module content (other than your final at-sea assignments) will stay open until you board the shop on November 15th.
 
-There will typically be four levels in any module. These need to be completed in order with an assignment/assessment at the end of each level that needs to be completed before you can move on. The level pages themselves will provide clear instructions for what you have to do, but as an overview:
+When you have completed the work from a level, you need to let us know by clicking the "Exit Ticket" button at the bottom of the level page and giving a small amount of reflection/feedback. This will notify us that there is work that needs to be reviewed. Until you get feedback, you are free to move on to another topic/level.
 
-```{r, echo = F}
-knitr::kable(
-  tibble::tribble(~"Level", ~"Typical Work", ~"Assessment", ~"To move on...", ~"Module Grade",
-               "1", "Reading some basic information","Multichoice quiz (scored 0-5)", "Score 4 or more", "75%",
-               "2", "Appling ideas to new situation", "Written/spoken assignment", "Review and respond to feedback", "84%",
-               "3", "Appling and Analysing a problem", "Various assignments (scored 0-8)", "Must score 5 or more","84% + level 3 score",
-               "4", "Evaluating or creating", "Various assignments (scored 0-8) ", "N/A","84% + level 3 score + level 4 score")
-)
-```
+Each topic has a culminating project which is grade-weighted twice that of the other modules in the topic.
 
-I am expecting everyone to engage with every module to Level 3. Level 4 is advanced work and is optional. You do not need to complete all Level 4 work - you are free to skip it on any module (but you will probably need to complete some if you want to maintain an A average). You are free to get feedback and revise any assignment up until the end of the class - the gradebook will stay open until July 2.
-
-*NOTE: The Advanced Topic will not have level 4. Grades will be Level 1 (pass/not-pass 80%), Level 2 (pass/not-pass 90%), Level 3 (optional, scored 0-10 -> 100%)*
-
-When you have completed the work from a level, you need to let us know by clicking the "Level Complete" button at the bottom of the level page and giving a small amount of reflection/feedback. This will notify us that there is work that needs to be reviewed. Until you get feedback, you are free to move on to another topic/level.
-
-Your total class grade will be calculated with the following weights:
+Grading-wise, the typical grade structure for most modules is as follows:
 
 ```{r, echo = F}
 knitr::kable(
-  tibble::tribble(~"Topic", ~"Weight",
-                  "Oceanography", "20%",
-                  "Research Skills", "40%",
-                  "Data Visualization", "20%",
-                  "Advanced Topics", "20%")
+  tibble::tribble(~"Level", ~"To Move on...", ~"Module Grade",
+               "1", "Sign-off by instructor", "70%",
+               "2", "Sign-off by instructor", "80%",
+               "3", "Score of 6 or more", "80% + level 3 score (out of 10)",
+               "4", "N/A", "80% + level 3 score + level 4 score")
 )
 ```
+
+Levels 1-2 are pass/not-pass whereas levels 3 and 4 are nominally scored (although not always).
+
+Your final grade will be calculated based on the weighted scores in each module. Each standard module carries the same weight with project modules carrying twice that weight. As a result, your total class grade will be calculated with the following weights:
+
+```{r, echo = F}
+knitr::kable(
+  tibble::tribble(~"Topic", "~Module Content", ~"Module Final Project",
+                  "Visualize", "22.5%", "15%",
+                  "Design", "7.5%", "15%",
+                  "Communicate", "15%", "15%",
+                  "Total", "45%", "45%")
+)
+```
+
+The final 10% of your grade will come from a final at-sea assessments of your DCV skills as applied to your final oceanography project.
 
 ### Staying On-pace
 

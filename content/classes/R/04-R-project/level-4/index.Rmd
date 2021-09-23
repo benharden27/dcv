@@ -1,29 +1,12 @@
 ---
-title: 'Personal and Peer Review'
+title: 'Revisions and Reflection'
 author: Ben Harden
-date: '2021-05-05'
+date: "`r format(Sys.time(), '%Y-%m-%d')`"
 level: 4
 slug: []
 categories: []
 tags: []
 draft: no
-quiz: https://classroom.google.com/c/MzM4MTMyMTU4Mjgy/a/MzY2ODg1MzgwMDc3/details
 ---
 
-Now that you've made and presented your poster, it's time to reflect on your work and that of your peers.
-
-Take some time to look at your poster now it's complete and reflect on the answers to the following questions:
-
-* What parts of the poster were you particularly happy with and why?
-* What parts of your poster either didn't come out like you hoped or could use some improvement?
-
-You should also pick another class poster to review.
-
-* What works and what doesn't work for you on their poster?
-* How does this relate to what we learnt about best practices in poster design?
-
-Combine the ideas to the above reflections:
-
-* How would you approach making a poster differently in the future?
-
-Submit you answers to these reflection in a one-page (minimum) document to the assignment below.
+Revise and reflect
