@@ -9,6 +9,38 @@ tags: []
 draft: no
 ---
 
-Poster analysis.
+Effective design for communication isn't just limited to the figures you produce for a paper or infographic, it's the sum of all the elements on your presentation - the figure, the text, the images, the titling. In this level we're going to think about these other elements and how they are combined for one specific communication tool - the [scientific poster](https://ohiostate.pressbooks.pub/scientificposterguide/chapter/scientific-posters/).
 
-Infographic exposure
+Some of you may have already made a scientific poster - they are usually big displays (48''x36'') of the results of a scientific experiment, fieldwork, methodology, etc. that scientists show at a conference. We're going to be making one for our oceanographic research proposal.
+
+## Reading
+
+To be able to discuss poster design with some theory in mind, I'd like you to read the following resources which talk about graphic design principals:
+
+<https://www.presentationzen.com/chapter6_spread.pdf>
+
+<https://saylordotorg.github.io/text_business-information-systems-design-an-app-for-that/s07-professionalism-in-deliverable.html>
+
+<https://blog.usejournal.com/10-basic-principles-of-graphic-design-b74be0dbdb58>
+
+Please take some notes as you read on points that might speak to effective poster design.
+
+## Exercise
+
+We're now going to apply some of these design ideas to scientific posters more specifically.
+
+Below are some poster examples.
+
+* [Poster 1](posters/poster1.jpg)
+* [Poster 2](posters/poster2.pdf)
+* [Poster 3](posters/poster3.pdf)
+* [Poster 4](posters/poster4.jpg)
+* [Poster 5](posters/poster5.pdf)
+
+I will assign you a group and a poster to discuss. You should review your poster together and think about the answers to the following:
+    
+* What is the audience for this poster?
+* How easy was it to get the general message? Why?
+* What design elements were effective?
+* What design elements were ineffective?
+

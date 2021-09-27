@@ -70,18 +70,21 @@ Some continuing limitations/questions of this figure:
 
 ## Exercise
 
-It's time for you to give this a go and follow the example I laid out about. You should:
+It's time for you to give this a go and follow the above example.
+
+You should:
 
 * Find a figure in a paper that you have been reading that you think could use some improvements.
 
-* Print this figure out on a sheet of paper and list around it:
-  * The design feature you like (so we don't get rid of the good as well as the bad)
-  * Any design limitations of the figure
+* Print this figure out on a sheet of paper and write on the same sheet: 
+  * 1-2 sentances describing what the figure is trying to show.
+  * A list of the design feature you like (so we don't get rid of the good as well as the bad).
+  * A list of any design limitations of the figure.
   
-* On a new sheet of paper you should then redesign the figure. Make a sketch of your improved design (rough is fine as long as the features you have improves are clearly shown) and then make a list of:
-  * The ways you improved the figure
+* On a new sheet of paper you should then redesign the figure. Make a sketch of your improved design (rough is fine as long as the features you have improving are clearly shown) and then make a list of:
+  * The ways you improved the figure.
   * The lingering questions/limitations you still have.
 
-* Post these two pieces of paper next to each other in the classroom. 
+* Post these two pieces of paper next to each other in the classroom so we can have a chance to look at what each other have done. 
 
 * Don't forget to fill out an exit ticket when you're done.

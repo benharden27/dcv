@@ -9,4 +9,4 @@ tags: []
 draft: no
 ---
 
-Sketch a design concept for an infographic?
+Design a flier...?
