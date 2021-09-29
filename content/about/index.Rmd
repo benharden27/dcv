@@ -8,7 +8,7 @@ tags: []
 draft: no
 ---
 
-This Data Communication and Visualization class is built to help prepare you for the data research and communication work you will be doing in your future careers by building skills in: 
+This Data Communication and Visualization class will help prepare you for the data research and communication work you will be doing in your future careers by building skills in: 
 
 - Data Visualization in the R programming language
 - Understanding good data and visual design strategies
@@ -30,6 +30,7 @@ The class will be mostly **self-paced**, meaning you are free to move through th
 * Have more agency about how you spend your time and take breaks when you need them
 * Not get too focused keeping track of many deadlines
 * Collaborate with your peers at times that suit you
+* Have the most effective in-class experience wherein we can focus on the needs of small-groups and the class as a whole based on your work to date.
 
 Alongside the self-paces work will be scheduled portions of the class that will include group work, discussions, presentation, etc. More on the structure below.
 
@@ -37,49 +38,55 @@ I value feedback and self-reflection. You will be given many opportunities to le
 
 ## What I expect from you
 
-I hope you will see this class as more than simply a requirement to gain a grade for college credit. It should be a useful tool for you to advance your thinking and skills around communicating data effectively.
+I hope you will see this class as more than simply a requirement to gain a grade for college credit. It should be a useful tool for you to advance your thinking and skills around communicating data effectively. These skills are applicable to so many careers, not just for those in academic sciences.
 
-I expect you to use your time in the class effectively. The self-paced mode will give you lots of flexibility to work when and how you like, but I do expect you to engage with all aspects. We will meet most days of the week for a total of 7 hours of weekly contact time. You should expect to spend a comparable amount of time on your work out of class. Over the 7-day week, you should be spending an average of 2 hours a day on your DCV work. Use your peers as a support network for things you are finding hard and to keep you accountable. 
+I expect you to use your time in the class effectively. The self-paced mode will give you lots of flexibility to work when and how you like, but I do expect you to engage with all aspects. We will meet most days of the week for a total of 7 hours of weekly contact time. You should expect to spend a comparable amount of time on your work out of class. Use your peers as a support network for things you are finding hard and to keep you accountable. 
 
-I welcome your feedback (and will ask for it frequently) so please let me know how you are getting on and what isn't sticking and I will try and help you out. Please also let us know how long the classwork is taking you so I can make sure I am calibrating the quantiy and depth of content accordingly.
+I welcome your feedback (and will ask for it frequently) so please let me know how you are getting on and what isn't sticking and I will try and help you out. Please also let us know how long the classwork is taking you so I can make sure I am calibrating the quantity and depth of content accordingly.
 
 ## What you can expect from me
 
 I will be available for immediate feedback and discussion during the near-daily class period (see below) and during out of class office hours. Please speak up if you need specific support during any of these times - the more heads-up I can have the more effective I can be at helping you. However, please be patient as I try to meet the needs of the whole class. If there are enough questions or interest in a particular topic then I will arrange small group instruction.
 
-Outside the class window we I also be available to answer questions and give feedback. Please contact me by email which I check daily from 8am to 8pm. I am unavailable from sundown on Friday to sundown on Saturday.
+Outside the class window I will also be available to answer questions and give feedback. Please contact me by email which I check daily from 8am to 8pm except for Saturdays.
 
 ## Class Structure
 
-### Section, Modules and Levels (and Grades)
+### Topics, Modules and Levels (and Grades)
 
 The class content on this site is organized into three topics:
 
 * Visualize: learning how to effectively use R to create compelling graphics
 * Design: Introduction to key elements of data design and data presentations
-* Communicate: Increasing your communication capactity through radio storytelling
+* Communicate: Increasing your communication capacity through radio storytelling
 
-Each topic is composed of a set of modules, each with four levels of work. Topics do not need to be completed in order, but modules and levels are typically sequential with an assignment/assessment at the end of each level that needs to be completed before you can move on. The level pages themselves will provide clear instructions for what you have to do.
+Each topic is comprised of a set of modules, each with four levels of work. Topics do not need to be completed in order, but modules and levels are typically sequential with an assignment/assessment at the end of each level that needs to be completed before you can move on.
 
-I am expecting everyone to engage with every module to Level 3. Level 4 is optional. You do not need to complete all Level 4 work - you are free to skip it on any module (but you will probably need to complete some if you want to maintain an A average). You are free to get feedback and revise any assignment up until the end of the class - the gradebook for most module content (other than your final at-sea assignments) will stay open until you board the shop on November 15th.
+#### Modules
 
-When you have completed the work from a level, you need to let us know by clicking the "Exit Ticket" button at the bottom of the level page and giving a small amount of reflection/feedback. This will notify us that there is work that needs to be reviewed. Until you get feedback, you are free to move on to another topic/level.
+The level pages in a module will provide clear instructions for what you have to do and you should move through the levels of each module sequentially.
 
-Each topic has a culminating project which is grade-weighted twice that of the other modules in the topic.
+I am expecting everyone to engage with every module to Level 3. You do not need to complete all (or any) Level 4 work - you are free to skip it on any module (but you will probably need to complete some if you want to maintain an A average - see below). You are free to get feedback and revise any level assessment up until the end of the class - my grade book (other than your final at-sea assignments) will stay open until you board the ship on November 15th.
+
+When you have completed the work from a level, you need to let me know by clicking the "Exit Ticket" button at the bottom of the level page and giving a small amount of reflection/feedback. This will notify me that there is work that needs to be reviewed. Until you get feedback, you are free to move on to another topic/level.
 
 Grading-wise, the typical grade structure for most modules is as follows:
 
 ```{r, echo = F}
 knitr::kable(
-  tibble::tribble(~"Level", ~"To Move on...", ~"Module Grade",
+  tibble::tribble(~"Level",~"To Move on...", ~"Module Grade",
                "1", "Sign-off by instructor", "70%",
                "2", "Sign-off by instructor", "80%",
-               "3", "Score of 6 or more", "80% + level 3 score (out of 10)",
-               "4", "N/A", "80% + level 3 score + level 4 score")
+               "3", "Score 6 or more", "80% + level 3 score (out of 10)",
+               "4", "N/A", "80% + level 3 score + level 4 score (out of 10)")
 )
 ```
 
-Levels 1-2 are pass/not-pass whereas levels 3 and 4 are nominally scored (although not always).
+Levels 1-2 are pass/not-pass whereas levels 3 and 4 are normally scored.
+
+*NOTE: The one exception to this structure is in the Visualize modules (coding). The scores for each level will be weighted differently depending on your previous exposure to this topic. I will discuss this with you individually.*
+
+#### Grading
 
 Your final grade will be calculated based on the weighted scores in each module. Each standard module carries the same weight with project modules carrying twice that weight. As a result, your total class grade will be calculated with the following weights:
 
@@ -93,7 +100,8 @@ knitr::kable(
 )
 ```
 
-The final 10% of your grade will come from a final at-sea assessments of your DCV skills as applied to your final oceanography project.
+The final 10% of your grade will come from a final at-sea assessments of your DCV skills through a contribution to the cruise story map, an example of which can be found [here](https://storymaps.arcgis.com/stories/8ec1591c831e4d568110c0d5f65bcbf7).
+
 
 ### Staying On-pace
 
@@ -101,19 +109,24 @@ You are free to move at a pace that suits you for the most part. However, there 
 
 To help you there will be a **public tracker** that will show which levels you and your peers have completed. It will also have a "pace-setter" - my sense of where you should be in any module on any day to be ready for the fixed-point activities. Please use this to help you gauge what you might need to do next and to see which of your peers might be able to help you with work if you are stuck.
 
-### Class Interaction
+### In-preson interaction
 
-Class will be 12pm to 3pm Eastern Daily. This is a broad period in which we'll have both synchronous and asynchronous class work. You instructors will be available to you during this time and we expect you to be available for full-class, small group and individual interaction as needed.
+Class will be at the following times:
 
-Class will begin every day at 12pm with a short survey and check-in session. This space will be used for announcements, making a plan for the rest of class, and gathering topics that might need small-group or individual attention.
+* Monday: 10:45 - 12:15
+* Tuesday: 13:30 - 15:45
+* Thursday: 10:45 - 12:15
+* Friday: 10:45 - 12:15
 
-After the initial full-group check-in will be free time to work. We will be available at this time for questions and assistance and will also be scheduling in small group check-ins, one-on-ones and other activities at this time to support students with their work.
+During class time there will typically be a work block time as well as time set aside for questions, group activities and discussions. Those that form assessments will be clearly posted and labeled.
 
-During free-work periods, you should feel empowered to take short breaks, grab some food, step outside to get some air, etc. However, this is our time to work with you and we expect you to be available to engage with us if we need to get hold of you.
+Outside of the class periods I will be available to field questions and offer assistance over email or during office hours:
 
-2pm to 3pm will be designated as the time for full-group assessments, discussions and presentations. Please be fully available during this time if there is something scheduled. The calendar of these events will be kept current in the PEP 2021 Google Calendar.
+* Tuesday 09:00 - 10:30
+* Thursday 09:00 - 10:30
+* Everyday 12:15 - 13:30
 
-Outside of the 12pm-3pm window, your instructors will also be available to field questions and offer assistance from 9am to 5pm Daily. Please post your questions in the #class Slack Channel and be patient for a reply. Remember, your peers will often be a great resource for you - please work together if you like, but remember to only submit your own work (see policy on academic accuracy in the syllabus).
+Remember, your peers will often also be a great resource for you - please work together if you like, but remember to only submit your own work (see policy on academic accuracy in the syllabus).
 
 ## Platforms
 
@@ -121,47 +134,19 @@ To deliver the class content and skills, we will be using the following platform
 
 ### Class Site
 
-The site you are reading this on is the class website. It will be where we share the work you will need to complete for each level, module and topic. If a submission is required I will link directly to it in Google Classroom or RStudio Cloud (see below).
+The site you are reading this on is the class website. It will be where I share the work you will need to complete for each level, module and topic. If a submission is required I will link directly to it in Google Classroom or RStudio Cloud (see below).
 
 ### Google Classroom
 
-Google Classroom will be where we organize some assignments and submissions for various levels. You will need to sign-up for the class with the link and access code I will send to you through Slack.
-
-### Slack
-
-To facilitate direct communication with and between members of the 2020 PEP Cohort, we will be using Slack. This is a direct and group messaging application that will allow us to share news and upcoming events with the whole group as well as organize smaller discussions or contact individual students. You should already have signed-up for a Slack account.
-
-Please contact us through Slack if you have questions or need assistance.
-
-### Zoom
-
-We will be using Zoom for the synchronous part of classes. I will schedule the zoom meetings and post them on Slack and on the PEP calendar. There is also a link to the meetings on Google Classroom.
-
-### Wonder
-
-We are experimenting this year with using [Wonder](https://www.wonder.me/) to organize more fluid discussion and class time. This is a video and DM web app which will allow us to gather small groups as needed to talk over specific topics. There will be a wonder classroom set up for the duration of the class and we expect you to be there during the class free time so we can get a hold of you. You can also use this space to work with others outside of class time. The link to this classroom will be in Slack and on Google Classroom.
+Google Classroom will be where we organize some assignments and submissions for various levels. You will need to sign-up for the class with the link and access code I sent to you by email,
 
 ### RStudio Cloud
 
 We are going to be using a programming language called R for our data visualization work. To make this easy for me to help you, and for you to share your code with me, we are going to be doing this work on a cloud version of the software. You will need to go to <https://rstudio.cloud/> to sign up for a free account. I will then send you a link to my classroom for you to join. We'll talk more about how to use this platform in class.
 
-### Google Drive
-
-You will have also received an email about a Google Drive folder that has been set up for you at SEA. Please use this to store any work related items that you need in one place or want to share with others. This is also a good place to back-up your work. We will also be putting various documents in here for you if we need to.
-
 ## Resources/Texts
 
-Our general oceanography text will be:
-
-[Introduction to Ocean Sciences](https://www.reefimages.com/oceansci.php), Second digital edition, ver 4.14 by Douglas A. Segar
-
-This is a good introductory text on the many aspects of ocean science and is all [available online](https://www.reefimages.com/oceansci.php) for free. We'll be directing you to readings by chapter number and page. In addition, there is a section called [Critical Concepts](https://www.reefimages.com/oceans/SegarOcean4CritCon.pdf) which covers ideas that span multiple chapters. We will be directing you to review some of those by number also. The chapters all load as PDFs so you might consider saving assigned chapters to your computer and organizing them for future browsing.
-
-For R visualization work, the core text is:
-
-[R for Data Science](https://r4ds.had.co.nz/) by Garrett Grolemund and Hadley Wickham. This is a great intro text to working with data in R. I recommend reading the whole thing over the course of the summer, but I'll be assigning specific chapters in class.
-
-Other readings and resources for the class will be distributed as required. 
+See the syllabus for a full list of recommended texts, most of which are available in the SEA library if I haven't linked you to digital versions.
 
 
 
