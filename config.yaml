@@ -27,5 +27,8 @@ menu:
     - name: Discussions
       url: /discussions
       weight: 4
+    - name: Syllabus
+      url: /docs/S301_DCV_syllabus.pdf
+      weight: 5
 taxonomies:
   tag: tags
