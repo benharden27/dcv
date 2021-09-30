@@ -92,7 +92,7 @@ Your final grade will be calculated based on the weighted scores in each module.
 
 ```{r, echo = F}
 knitr::kable(
-  tibble::tribble(~"Topic", "~Module Content", ~"Module Final Project",
+  tibble::tribble(~"Topic", ~"Module Content", ~"Module Final Project",
                   "Visualize", "22.5%", "15%",
                   "Design", "7.5%", "15%",
                   "Communicate", "15%", "15%",
