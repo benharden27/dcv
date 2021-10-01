@@ -29,11 +29,11 @@
         <button class="w3-bar-item w3-button" onclick="openSection({{ lower (replace .Title " " "-")}})">{{ .Title }}</button>
       {{ end }}
     </div>
-    
       {{ range sort .Sections ".Params.weight"}}
         
         <div class = "section-tab" id = {{ lower (replace .Title " " "-")}} style = "display: {{ if eq (lower (replace .Title " " "-")) "vizualize"}}inline{{else}}none{{end}}">
         
+        <h2> {{ .Title }}</h2>
         {{ range sort .Sections ".Params.weight"}}
         {{ if gt (len .Pages) 0 }}
           <h3> {{ .Title }}</h3>
