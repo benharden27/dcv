@@ -31,7 +31,7 @@
     </div>
       {{ range sort .Sections ".Params.weight"}}
         
-        <div class = "section-tab" id = {{ lower (replace .Title " " "-")}} style = "display: {{ if eq (lower (replace .Title " " "-")) "vizualize"}}inline{{else}}none{{end}}">
+        <div class = "section-tab" id = {{ lower (replace .Title " " "-")}} style = "display: {{ if eq (lower (replace .Title " " "-")) "visualize"}}inline{{else}}none{{end}}">
         
         <h2> {{ .Title }}</h2>
         {{ range sort .Sections ".Params.weight"}}
