@@ -1,5 +1,5 @@
 ---
-title: "Vizualize"
+title: "Visualize"
 weight: 1
 footnote: More content coming soon...
 ---

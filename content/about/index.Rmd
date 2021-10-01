@@ -57,8 +57,9 @@ Outside the class window I will also be available to answer questions and give f
 The class content on this site is organized into three topics:
 
 * Visualize: learning how to effectively use R to create compelling graphics
-* Design: Introduction to key elements of data design and data presentations
 * Communicate: Increasing your communication capacity through radio storytelling
+* Design: Introduction to key elements of data design and data presentations
+
 
 Each topic is comprised of a set of modules, each with four levels of work. Topics do not need to be completed in order, but modules and levels are typically sequential with an assignment/assessment at the end of each level that needs to be completed before you can move on.
 
@@ -94,8 +95,8 @@ Your final grade will be calculated based on the weighted scores in each module.
 knitr::kable(
   tibble::tribble(~"Topic", ~"Module Content", ~"Module Final Project",
                   "Visualize", "22.5%", "15%",
-                  "Design", "7.5%", "15%",
                   "Communicate", "15%", "15%",
+                  "Design", "7.5%", "15%",
                   "Total", "45%", "45%")
 )
 ```

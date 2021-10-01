@@ -13,7 +13,7 @@ quiz: https://rstudio.cloud/spaces/170089/project/2870343
 <script src="{{< blogdown/postref >}}index_files/header-attrs/header-attrs.js"></script>
 
 
-<p>If you’ve used Excel before, you’ll be pretty familiar with the spreadsheet layout of data where we have rows and columns. The datasets you’ll be working with in R are also organized in the same way (although this is not the only way R organizes data). R calls them data frames.</p>
+<p>If you’ve used Excel before, you’ll be pretty familiar with the spreadsheet layout of data where we have rows and columns. The data sets you’ll be working with in R are also organized in the same way (although this is not the only way R organizes data). R calls them data frames.</p>
 <div class="figure">
 <img src="tidy_1.png" alt="" />
 <p class="caption">Values are stored at intersection of rows (obserations) and columns (variables)</p>
@@ -63,6 +63,16 @@ df &lt;- read_csv(&quot;C282_neuston.csv&quot;)</code></pre>
 <li>Then comes the first 10 line of data under each column heading.</li>
 <li>At the end of the data is one or more lines that tells you that there are 34 more rows of data and how many more variables (column names) are not shown (and their names and types).</li>
 </ul>
+<p>We can also find the number of rows in a data frame:</p>
+<pre class="r"><code>nrow(df)</code></pre>
+<pre><code>## [1] 44</code></pre>
+<p>and same for columns:</p>
+<pre class="r"><code>ncol(df)</code></pre>
+<pre><code>## [1] 15</code></pre>
+<p>Or both dimenstions together:</p>
+<pre class="r"><code>dim(df)</code></pre>
+<pre><code>## [1] 44 15</code></pre>
+<p>which gives us a vector of length 2, the first value being the number of rows and the second the number of columns.</p>
 <p>Another great way to get a quick look at data in a data frame is to create a summary.</p>
 <pre class="r"><code>summary(df)</code></pre>
 <pre><code>##    station               dttm                             lon        
@@ -98,20 +108,6 @@ df &lt;- read_csv(&quot;C282_neuston.csv&quot;)</code></pre>
 ##  Max.   :48.000   Max.   :16.500                      Max.   :0.0806806  
 ## </code></pre>
 <p>This gives us a bunch of statistical data on each of the columns that aren’t full of characters – min, max, quartiles, etc.</p>
-<!-- ## Other things to know about looking at data -->
-<!-- As we begin to explore data and begin to visualize it, some of the following functions can be useful. -->
-<!-- To get the number of rows in a data frame you can use -->
-<!-- ```{r, include = TRUE} -->
-<!-- nrow(df) -->
-<!-- ``` -->
-<!-- and same for columns. -->
-<!-- ```{r, include = TRUE} -->
-<!-- ncol(df) -->
-<!-- ``` -->
-<!-- Or both dimenstions together -->
-<!-- ```{r} -->
-<!-- dim(df) -->
-<!-- ``` -->
 <!-- You can also get all the names of columns: -->
 <!-- ```{r, include = TRUE} -->
 <!-- names(df) -->

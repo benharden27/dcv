@@ -10,7 +10,7 @@ draft: no
 quiz: https://rstudio.cloud/spaces/170089/project/2870343
 ---
 
-If you've used Excel before, you'll be pretty familiar with the spreadsheet layout of data where we have rows and columns. The datasets you'll be working with in R are also organized in the same way (although this is not the only way R organizes data). R calls them data frames.
+If you've used Excel before, you'll be pretty familiar with the spreadsheet layout of data where we have rows and columns. The data sets you'll be working with in R are also organized in the same way (although this is not the only way R organizes data). R calls them data frames.
 
 ![Values are stored at intersection of rows (obserations) and columns (variables)](tidy_1.png)
 
@@ -55,6 +55,26 @@ Which shows us a brief view of the data:
 * Then comes the first 10 line of data under each column heading.
 * At the end of the data is one or more lines that tells you that there are `r nrow(df)-10` more rows of data and how many more variables (column names) are not shown (and their names and types).
 
+We can also find the number of rows in a data frame:
+
+```{r, include = TRUE}
+nrow(df)
+```
+
+and same for columns:
+
+```{r, include = TRUE}
+ncol(df)
+```
+
+Or both dimenstions together:
+
+```{r}
+dim(df)
+```
+
+which gives us a vector of length 2, the first value being the number of rows and the second the number of columns.
+
 Another great way to get a quick look at data in a data frame is to create a summary.
 
 ```{r, include = TRUE}
@@ -63,27 +83,7 @@ summary(df)
 
 This gives us a bunch of statistical data on each of the columns that aren't full of characters -- min, max, quartiles, etc.
 
-<!-- ## Other things to know about looking at data -->
 
-<!-- As we begin to explore data and begin to visualize it, some of the following functions can be useful. -->
-
-<!-- To get the number of rows in a data frame you can use -->
-
-<!-- ```{r, include = TRUE} -->
-<!-- nrow(df) -->
-<!-- ``` -->
-
-<!-- and same for columns. -->
-
-<!-- ```{r, include = TRUE} -->
-<!-- ncol(df) -->
-<!-- ``` -->
-
-<!-- Or both dimenstions together -->
-
-<!-- ```{r} -->
-<!-- dim(df) -->
-<!-- ``` -->
 
 <!-- You can also get all the names of columns: -->
 
