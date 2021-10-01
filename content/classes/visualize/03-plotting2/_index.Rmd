@@ -1,0 +1,6 @@
+---
+title: "Customizing Plots"
+subtitle: "Creating plots that are publication ready"
+weight: 3
+draft: yes
+---

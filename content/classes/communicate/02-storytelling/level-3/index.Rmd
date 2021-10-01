@@ -1,0 +1,12 @@
+---
+title: 'Better Climate Stories'
+author: Ben Harden
+date: "`r format(Sys.time(), '%Y-%m-%d')`"
+level: 3
+slug: []
+categories: []
+tags: []
+draft: no
+---
+
+Climate Storytelling Discussion

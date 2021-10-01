@@ -1,0 +1,23 @@
+---
+title: "Intro to ggplot"
+author: Ben Harden
+date: '2021-05-05'
+level: 1
+slug: []
+categories: []
+tags: []
+draft: no
+---
+
+Now that we've covered some of the more abstract basics, we're going to get stuck in having some fun and making some figures. 
+
+The tool we are going to be using is the ggplot package. It's a powerful and flexible way to make graphics and it used widely by scientists analyzing data.
+
+You can check out tons of examples of the different types of graphics that ggplot can create [here](https://r-statistics.co/Top50-Ggplot2-Visualizations-MasterList-R-Code.html) with the code used to create them.
+
+## Exercise
+
+To begin your journey into creating graphs in R, you should also go through [this primer](https://rstudio.cloud/learn/primers/1.1) on visualization using ggplot. It includes interactive code chunks for you to try out the ideas as you go.
+
+You can move on to [level 2](../level-2/) as and when you feel comfortable with the above. Please fill out an exit ticket below.
+

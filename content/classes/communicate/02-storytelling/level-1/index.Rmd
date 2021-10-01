@@ -1,0 +1,12 @@
+---
+title: "Storytelling"
+author: Ben Harden
+date: "`r format(Sys.time(), '%Y-%m-%d')`"
+level: 1
+slug: []
+categories: []
+tags: []
+draft: no
+---
+
+Storytelling 101

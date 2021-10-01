@@ -32,14 +32,14 @@
     
       {{ range sort .Sections ".Params.weight"}}
         
-        <div class = "section-tab" id = {{ lower (replace .Title " " "-")}} style = "display: {{ if eq (lower (replace .Title " " "-")) "vizualization"}}inline{{else}}none{{end}}">
+        <div class = "section-tab" id = {{ lower (replace .Title " " "-")}} style = "display: {{ if eq (lower (replace .Title " " "-")) "vizualize"}}inline{{else}}none{{end}}">
         
         {{ range sort .Sections ".Params.weight"}}
         {{ if gt (len .Pages) 0 }}
           <h3> {{ .Title }}</h3>
           {{ if isset .Params "subtitle"}}
-          <p> {{ .Params.subtitle }}</p>
-         {{ end }}
+            <p> {{ .Params.subtitle }}</p>
+          {{ end }}
           <div class="grid">
             {{ range sort .Pages ".Params.level" }}
               <a href="{{ .Params.ExternalLink | default .RelPermalink }}">
@@ -50,10 +50,16 @@
               </a>
             {{ end }}
           </div>
-          {{end}}
+          {{ end }}
           <hr/>
+         
+         
+        {{ end }}
+        {{ if isset .Params "footnote"}}
+          <p>{{.Params.footnote}}</p>
         {{ end }}
         </div>
+     
       {{ end }}
 
 		

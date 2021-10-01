@@ -1,0 +1,12 @@
+---
+title: 'Evaluate/Create Climate Story'
+author: Ben Harden
+date: "`r format(Sys.time(), '%Y-%m-%d')`"
+level: 4
+slug: []
+categories: []
+tags: []
+draft: no
+---
+
+???

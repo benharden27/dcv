@@ -1,4 +1,0 @@
----
-title: "Vizualization"
-weight: 1
----

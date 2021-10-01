@@ -1,0 +1,21 @@
+---
+title: 'Advanced plotting tools'
+author: Ben Harden
+date: '2021-05-05'
+level: 4
+slug: []
+categories: []
+tags: []
+draft: no
+quiz: https://rstudio.cloud/spaces/170089/project/2870352
+---
+
+We're going to take the ideas we've already learned about plotting and add a few extra elements in this level.
+
+## Reading
+
+You should go through [this primer](https://rstudio.cloud/learn/primers/3.5) on ways to extend how you make scatter plots.
+
+## Exercise
+
+You should then go to the below assignment and practice some of these skills using the same data set as in [level 3](../level-3/).

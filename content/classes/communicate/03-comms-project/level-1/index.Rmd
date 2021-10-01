@@ -1,0 +1,12 @@
+---
+title: "Overview and Plan"
+author: Ben Harden
+date: "`r format(Sys.time(), '%Y-%m-%d')`"
+level: 1
+slug: []
+categories: []
+tags: []
+draft: no
+---
+
+Initial description of project and plan

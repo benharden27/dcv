@@ -14,6 +14,13 @@ params:
   disableDisqusTypes: page
   featherIconsCDN: yes
   mode: auto
+  social:
+    - icon: book-open
+      name: Google Classroom
+      url: https://classroom.google.com
+    - icon: plus-circle
+      name: RStudio Cloud
+      url: https://rstudio.cloud/spaces/170089/
   subtitle: Data Communication and Visualization
   customCSS: css/mycustom.css
 menu:

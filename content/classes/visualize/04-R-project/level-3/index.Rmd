@@ -1,0 +1,12 @@
+---
+title: 'Figure Production'
+author: Ben Harden
+date: "`r format(Sys.time(), '%Y-%m-%d')`"
+level: 3
+slug: []
+categories: []
+tags: []
+draft: no
+---
+
+Production of a figure and text description of choices made

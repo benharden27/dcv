@@ -1,0 +1,12 @@
+---
+title: 'Practice Description'
+author: Ben Harden
+date: "`r format(Sys.time(), '%Y-%m-%d')`"
+level: 4
+slug: []
+categories: []
+tags: []
+draft: no
+---
+
+Process piece

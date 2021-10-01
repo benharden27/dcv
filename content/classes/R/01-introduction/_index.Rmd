@@ -1,5 +1,0 @@
----
-title: "Introduction to R"
-subtitle: "Getting to grips with some of the basic rationale and functionality in R"
-weight: 1
----

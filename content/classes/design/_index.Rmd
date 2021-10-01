@@ -1,4 +1,5 @@
 ---
 title: "Design"
 weight: 2
+footnote: More content coming soon...
 ---
