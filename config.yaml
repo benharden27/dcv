@@ -15,10 +15,13 @@ params:
   featherIconsCDN: yes
   mode: auto
   social:
+    - icon: calendar
+      name: Shore Calendar
+      url: https://docs.google.com/spreadsheets/d/1GA_RiwgtjIrk25PEriOEbmUGusqs1zdNmdw7apRk2Mo/edit?usp=sharing
     - icon: book-open
       name: Google Classroom
       url: https://classroom.google.com
-    - icon: plus-circle
+    - icon: cloud
       name: RStudio Cloud
       url: https://rstudio.cloud/spaces/170089/
   subtitle: Data Communication and Visualization

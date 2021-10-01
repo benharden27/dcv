@@ -90,6 +90,11 @@ hr {
   margin: 2rem 0;
 }
 
+.feather-32{
+  width: 32px;
+  height: 32px;
+}
+
 /* Media Queries */
 @media (max-width: 1080px) {
   .container {
