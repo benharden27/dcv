@@ -16,9 +16,10 @@
 				{{- range $index, $key := .Site.Params.Social -}}
 					<li><a href="{{ $key.url }}" target="_blank" rel="noopener noreferrer" title="{{ $key.name }}"><i class = "feather-32" data-feather="{{ $key.icon }}"></i></a></li>
 				{{- end -}}
-		    {{- if or (eq .Site.Params.mode "auto") (eq .Site.Params.mode "dark") -}}
+<!--		    {{- if or (eq .Site.Params.mode "auto") (eq .Site.Params.mode "dark") -}}
 		    	<li><a href="#" class="scheme-toggle" id="scheme-toggle"></a></li>
 		    {{- end -}}
+-->
 			</ul>
 		</nav>
 	</div>
