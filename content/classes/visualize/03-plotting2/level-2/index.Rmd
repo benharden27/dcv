@@ -7,8 +7,13 @@ slug: []
 categories: []
 tags: []
 draft: no
-quiz: https://rstudio.cloud/spaces/139933/project/2638301
+quiz: https://rstudio.cloud/spaces/170089/project/2870358
 ---
+
+```{r, message=F, warning=F, echo=FALSE}
+library(tidyverse)
+```
+
 
 In this level, we've going to cover two parts of the ggplot package that are more geared to data communication and design - annotations and themes. Annotations (or labels) are the text that lives on your plot that helps someone (or a future you) interpret what is displayed. A theme is ggplot's term for the data design elements of the figure. This covers all the things you could think about changing for your non-data elements of the plot, e.g. grid lines, label orientation, background color, axis lines, axis ticks, font size/type, etc. 
 

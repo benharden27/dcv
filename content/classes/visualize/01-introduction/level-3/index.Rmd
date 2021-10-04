@@ -113,6 +113,18 @@ This gives us a bunch of statistical data on each of the columns that aren't ful
 
 ## Exercise
 
+The data in this exercise if hourly records of surface ocean data collected on a cruise from Woods Hole, MA, to Grenada, Caribbean. The cruise track is shown below.
+
+```{r, echo = F, message = F, warming = F}
+library(tidyverse)
+read_csv("hourly_data.csv") %>%
+ggplot(aes(lon, lat)) +
+  geom_polygon(aes(long, lat, group = group), fill = "grey75", data = map_data("world")) +
+  geom_path() +
+  coord_quickmap(ylim = c(10,50), xlim = c(-100,-50)) +
+  theme_void()
+```
+
 Go to the RStudio Cloud assignment below. Read the `instructions.txt` file and complete the exercise.
 
 Once you've finished that, click the "Exit Ticket" button below to let me know you've completed the level and need feedback.
