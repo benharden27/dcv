@@ -7,6 +7,7 @@ slug: []
 categories: []
 tags: []
 draft: no
+quiz: https://rstudio.cloud/spaces/170089/project/2982800
 ---
 
 <script src="{{< blogdown/postref >}}index_files/header-attrs/header-attrs.js"></script>
@@ -17,7 +18,7 @@ draft: no
 <h2>Creating multiple panels</h2>
 <p>ggplot has a lot of really good tools that help make plots easily. However, one quirk is that given the set up it’s a little hard to create plots with multiple panels in a flexible way.</p>
 <p>In the example we’re going to look at, we have many variables recorded over time and look at how we can plot them as sub-panels on top of each other so that it’s easier to compare how the peaks and troughs align. There are two ways to achieve this particular goal: one internal to ggplot and the other using a package called <a href="https://wilkelab.org/cowplot/articles/introduction.html">cowplot</a>. We’re going to look at both below.</p>
-<p>We’re going to use <a href="C282_hourly_data.csv">hourly recorded surface data</a> from the same cruise we have looked at previously from Woods Hole, MA to Greneda. The columns we are going to focus on are:</p>
+<p>We’re going to use <a href="C282_hourly_data.csv">hourly recorded surface data</a> from the same cruise we have looked at previously from Woods Hole, MA to Grenada. The columns we are going to focus on are:</p>
 <ul>
 <li>dttm: Date and time of measurement</li>
 <li>temp: Surface ocean temperature</li>
@@ -124,8 +125,7 @@ plot_grid(p1, p2, p3, ncol = 1)</code></pre>
 
 ## Warning: Removed 198 rows containing missing values (geom_point).</code></pre>
 <p><img src="{{< blogdown/postref >}}index_files/figure-html/unnamed-chunk-6-1.png" width="672" /></p>
-<p>Could certainly be seen as much easier.</p>
-<p>ALIGNMENT!</p>
+<p>Could certainly be seen as much easier. The only issue I’ve come across with <code>cowplot</code> is that it treats each plot as independent so if there is some difference in, for example, the plot placement of the y axis then they figures wont quite be aligned. It may be that this is not an issue for your plots.</p>
 </div>
 <div id="custom-themes" class="section level3">
 <h3>Custom Themes</h3>
@@ -150,7 +150,7 @@ p +
   theme_bw()</code></pre>
 <pre><code>## Warning: Removed 396 rows containing missing values (geom_point).</code></pre>
 <p><img src="{{< blogdown/postref >}}index_files/figure-html/unnamed-chunk-8-1.png" width="672" /></p>
-<p>We’ll now add some modificiations. <em>NOTE: Not all of the below ideas will likely constitute good design choices, but I wanted to give you examples of the full range of possibilities.</em></p>
+<p>We’ll now add some modifications. <em>NOTE: Not all of the below ideas will likely constitute good design choices, but I wanted to give you examples of a range of possibilities.</em></p>
 <pre class="r"><code># My modified theme_bw() plot
 p +
   theme_bw() +

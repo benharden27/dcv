@@ -7,6 +7,7 @@ slug: []
 categories: []
 tags: []
 draft: no
+quiz: https://rstudio.cloud/spaces/170089/project/2982800
 ---
 
 This level will introduce to a couple of advanced tools that will be helpful in making plots. Specifically, how to make multiple panels and how to customize your theme.
@@ -17,7 +18,7 @@ ggplot has a lot of really good tools that help make plots easily. However, one 
 
 In the example we're going to look at, we have many variables recorded over time and look at how we can plot them as sub-panels on top of each other so that it's easier to compare how the peaks and troughs align. There are two ways to achieve this particular goal: one internal to ggplot and the other using a package called [cowplot](https://wilkelab.org/cowplot/articles/introduction.html). We're going to look at both below.
 
-We're going to use [hourly recorded surface data](C282_hourly_data.csv) from the same cruise we have looked at previously from Woods Hole, MA to Greneda. The columns we are going to focus on are:
+We're going to use [hourly recorded surface data](C282_hourly_data.csv) from the same cruise we have looked at previously from Woods Hole, MA to Grenada. The columns we are going to focus on are:
 
 * dttm: Date and time of measurement
 * temp: Surface ocean temperature
@@ -92,9 +93,7 @@ p3 <- base + geom_point(aes(y = wind_sp))
 plot_grid(p1, p2, p3, ncol = 1)
 ```
 
-Could certainly be seen as much easier.
-
-ALIGNMENT!
+Could certainly be seen as much easier. The only issue I've come across with `cowplot` is that it treats each plot as independent so if there is some difference in, for example, the plot placement of the y axis then they figures wont quite be aligned. It may be that this is not an issue for your plots.
 
 ### Custom Themes
 
@@ -127,7 +126,7 @@ p +
   theme_bw()
 ```
 
-We'll now add some modificiations. *NOTE: Not all of the below ideas will likely constitute good design choices, but I wanted to give you examples of the full range of possibilities.* 
+We'll now add some modifications. *NOTE: Not all of the below ideas will likely constitute good design choices, but I wanted to give you examples of a range of possibilities.* 
 
 ```{r}
 # My modified theme_bw() plot
@@ -141,8 +140,6 @@ p +
         legend.text = element_text(size = 14), # make legend labels bigger 
         )
 ```
-
-
 
 ## Exercise
 
