@@ -85,7 +85,7 @@ knitr::kable(
 
 Levels 1-2 are pass/not-pass whereas levels 3 and 4 are normally scored.
 
-*NOTE: The one exception to this structure is in the Visualize modules (coding). The scores for each level will be weighted differently depending on your previous exposure to this topic. I will discuss this with you individually.*
+*NOTE: The one exception to this structure is in the Visualize modules (coding). The scores for each level will be weighted differently depending on your previous exposure to this topic. If you have no or limited experience coding, the score allocation will be L1: 80%, L2: 90%, L3: 100%, but if you have previous experience, I'd like to see you push yourself and complete more L4 work to get the same score - I will discuss this with you individually.*
 
 #### Grading
 
