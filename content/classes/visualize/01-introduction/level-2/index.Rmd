@@ -49,14 +49,3 @@ Follow the link below which will take you to a project in RStudio Cloud. In that
 <!-- 1. Comment your lines of code so you know what each line does -->
 
 Once you've finished, click the "Exit Ticket" button to inform me that you've completed the level and need feedback.
-
-## Practice Discussion
-
-Throughout this course we are going to have [small-group discussion](/discussions). To get the feel for these we are going to have a practice discussion based on some of the introduction presented here.
-
-In the group discussions, you should be prepared to talk about the following:
-
-- What previous experience have you had working with data? What have been challenges you've faced?
-- To what degree is reproducibility important in science? What did you read about R that seems like it will be a useful tool in this regard?
-
-This discussion will not be scored - it is an opportunity for you to get familiar with the format. However, this is an important discussion none-the-less so come prepared.
