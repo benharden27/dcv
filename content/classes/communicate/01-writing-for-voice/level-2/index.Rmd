@@ -9,9 +9,19 @@ tags: []
 draft: no
 ---
 
-Use CEED as source reading
-Exercise is students creating a group skit?!
-One of the hardest
-Specific elements for communicating data
+Now that we're seen a little of the mechanics of writing for voice, we're going to talk a little about what choices we can make when communicating about the environment, and more specifically, about climate change.
 
-Google form test to try this out
+## Reading
+
+Start by reading the Foreword (pg 1) and the sections on "Crafting your message" (pg 21-44) and "Overcoming Barriers" (just subsection 7, pg 45-55) in [Connecting on Climate: A Guide for Effective Climate Change Communication](ecoAmerica-CRED-2014-Connecting-on-Climate.pdf) by 
+The Center for Research on Environmental Decisions (CRED) at The Earth Institute, Columbia University, and ecoAmerica, a climate solutions nonprofit.
+
+As you read, take note of a handful of idea that speak to you as being either new ideas or things you want to remember.
+
+## Exercise
+
+Working in a team, discuss the reading and come up with a joint list of the three concepts/strategies that spoke to you as a group the most.
+
+Come up with a team skit that tries to demonstrate these three strategies in both an ineffective and effective manner. As an example, you could create a scene in which the communication about a particular topic is handled badly for all three elements and then repeat the scene with more effective strategies employed. 
+
+In crafting your scenes, please be respectful of people who are skeptical about or uneducated on Climate Change and refrain from stereotyping them as being unintelligent or backwards.

@@ -9,6 +9,54 @@ tags: []
 draft: no
 ---
 
+We're going to put together what we've discussed so far with regards to useful mechanics in writing for vocal communication to evaluate an environmental story. This level will take the form of a small-group discussion.
+
+## Listening
+
+The following are the radio pieces that we are going to discuss in class. Check Google Classroom for which one you are assigned to.
+
+### Piece 1
+
+Story: A Single Fire Killed Thousands Of Sequoias. Scientists Are Racing To Save The Rest
+Program: NPR Morning Edition
+Reporter: Lauren Sommer
+
+<iframe src="https://www.npr.org/player/embed/1037914390/1038180338" width="100%" height="290" frameborder="0" scrolling="no" title="NPR embedded audio player"></iframe>
+
+### Piece 2
+
+Story: Drought, frost takes a massive toll on coffee crops in Brazil
+Program: The World
+Reporter: Michael Fox
+
+<iframe frameborder="0"  src="https://www.pri.org/node/188325/embedded" height="50" width="100%"></iframe>
+
+<!-- ## Piece 3 -->
+
+<!-- Story: Heat waves are dangerous during pregnancy, but doctors don't often mention it -->
+<!-- Program: NPR Weekend Edition -->
+<!-- Reporter Laruen Sommer -->
+
+<!-- <iframe src="https://www.npr.org/player/embed/1041992916/1042802636" width="100%" height="290" frameborder="0" scrolling="no" title="NPR embedded audio player"></iframe> -->
+
+<!-- ### Piece 4 -->
+
+<!-- Story: As energy prices soar in Spain, residents seek renewable alternatives -->
+<!-- Program: The World -->
+<!-- Reporter: Lucía Benavides -->
+
+<!-- <iframe frameborder="0"  src="https://www.pri.org/node/188401/embedded" height="50" width="100%"></iframe> -->
+
+
+## Discussion
+
+You should listen to you assigned story a few times and take notes on the following quesitons:
+
+- Focusing on the narrator: What examples of good writing for voice did you hear?
+- What climate/environment/other complex concepts needed to be explain/discussed and how were these handled?
+- What other aspects of the piece did you find effective?
+- What changes could be made to improve the story?
+
 
 Analyse piece for discussion 
 
