@@ -1,0 +1,31 @@
+---
+title: Vizualize SAQs
+author: Ben Harden
+date: '2021-10-05'
+slug: []
+categories: []
+tags: []
+draft: no
+---
+
+I'll be organizing the a list of Sometimes Asked Questions in this post - updating every few days.
+
+### What are git, error trapping, and debugging?
+
+These expressions all came up in [Section 1.3](https://robwschlegel.github.io/Intro_R_Workshop/prelim.html#why-use-r) of the Intro to R page I asked you to read.
+
+* **git**: Is a version tracking software. Most people who work with code (and especially in a team) find using version tracking software useful. It allows you to reclaim code lines you had previously deleted, split off a new version of your code for trialing before integrating it back in, and allows you to sync work between computers. It's basic use works a lot like what you find on Google Docs where you can see the edit history and return to a previous state as needed.
+* **Error Trapping**: This is the process by which you can build in elements of your code that will test to see whether the outcome has "worked" or produces something useful for you code to continue. For example, you might get into a situation where the result of some calculation doesn't produce a number (it creates an "NA" or "Not Available" entry) that the rest of your code is relying on. Rather than let the code play out and make a mess, you can "trap" this error and either modify how your code continues or stop your code and send an error message to the console.
+* **Debugging**: The process by which your code wont work the way you want it to and you will have to go back through the code to find the "bug" or incorrect use of a function and correct it.
+
+### What is the difference between a double and an integer? Why would we use integers?
+
+A double is a decimal number (i.e. 4.56) and an integer is a rounded whole (1, 2 ,3, etc.). R is pretty flexible about which is which compared to other languages. The main difference for other languages where speed and space might be an issue is that storing integers takes less space and are can be recalled quicker. This wont be a problem for the kind of work we're doing, but it's at least good to be aware of.
+
+### Are there any usability differences/drawbacks in the cloud vs. normal RStudio?
+
+You have the same functionality on the cloud as you do with desktop RStudio. The only difference might be in performance - the cloud has to send you commands to a computer somewhere else, run the code, and then send the output back to you. It may run just a little slower as a result. The up-side for this class though is that I have access to all your work and can jump in to check how you're doing, add comments/suggestions, and help debug your code as needed. You can also share your projects with your peers so they can see your work too.
+
+### Can you pick some columns not to load with the csv, or do you have to remove them after the dataset is loaded?
+
+You *can* choose specific columns to load in. See the help file for `read_csv()` by entering `?read_csv` into the console and pressing enter. These help files exist for all functions in R and explain how each function works and what arguments (choices) are available to you. In this case, the `col_types` argument will allow you to select only certain columns, but unless you data set is HUGE then in my experience it's almost always easier just to read in all of it and then slim down after.
