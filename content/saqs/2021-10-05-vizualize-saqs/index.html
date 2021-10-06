@@ -33,3 +33,19 @@ draft: no
 <h3>Can you pick some columns not to load with the csv, or do you have to remove them after the dataset is loaded?</h3>
 <p>You <em>can</em> choose specific columns to load in. See the help file for <code>read_csv()</code> by entering <code>?read_csv</code> into the console and pressing enter. These help files exist for all functions in R and explain how each function works and what arguments (choices) are available to you. In this case, the <code>col_types</code> argument will allow you to select only certain columns, but unless you data set is HUGE then in my experience it’s almost always easier just to read in all of it and then slim down after.</p>
 </div>
+<div id="is-r-a-combination-of-programs-such-as-python-and-excel-or-does-it-lean-more-towards-one-of-these-in-terms-of-function" class="section level3">
+<h3>Is R a combination of programs such as python and excel or does it lean more towards one of these in terms of function?</h3>
+<p>R is it’s own thing - a language unto itself. It has similarities to both python (another widely used, accessible programming language) and Excel, but operates independently of both. In terms of how it functions, the coding nature of R leans it towards python and away from the point-and-click, visual processes in Excel. So, how do R and Python compare? Python is more flexible than R - you can use more easily for all manner of tasks on a computer and set it to task organizing files, running monitoring devices, etc, but R is still the go-to for data analysis and visualization, which is built into python as an after-thought and doesn’t have the same level of completeness or community support. R was build specifically for working with data.</p>
+</div>
+<div id="what-is-the-difference-between-data-types-integer-and-character" class="section level3">
+<h3>What is the difference between data types integer and character?</h3>
+<p>Integers are whole numbers (e.g. 1, 5, 75, etc.) and characters are words (e.g. “hello”, “testing”, “this thing with spaces”, etc.)</p>
+</div>
+<div id="is-the-syntax-in-r-similar-to-any-other-language-which-is-it-closest-to" class="section level3">
+<h3>Is the syntax in R similar to any other language, which is it closest to?</h3>
+<p>Each language is unique in some sense. R probably skews closest to Python in how it looks (but also MATLAB and Java) - vectors are indexed using [ ], functions are run with ( ) containing the arguments. However, there are also some big differences that I am happy to discuss with anyone interested. Another similarity between R and Python are that they are both interactive languages - you can write scripts but also enter commands directly in the console. This differs from other languages (such as C++ and FORTRAN) where the only way to implement code is through scripting.</p>
+</div>
+<div id="does-the-data-for-the-data-frames-have-to-be-entered-in-r-or-can-it-be-imported-from-external-sources-or-programs" class="section level3">
+<h3>Does the data for the data frames have to be entered in R or can it be imported from external sources or programs?</h3>
+<p>You can indeed enter data manually into R, but the most efficient process is to read in the data from some external source. We have seen one example in <a href="../../classes/visualize/01-introduction/level-3/">Module 1, Level 3</a> of how to import data from a Comma Separated Value file (pretty common data format), but there are also functions in R to read pretty much any other data format you care to think of - NetCDF, JSON, TSV, Shapefiles, XML, YAML, HTML, JPEG, GeoTIFF, etc.</p>
+</div>
