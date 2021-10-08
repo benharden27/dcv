@@ -1,5 +1,5 @@
 ---
-title: "Data Design Concepts"
+title: "Intro to Data Design"
 author: Ben Harden
 date: "`r format(Sys.time(), '%Y-%m-%d')`"
 level: 1
@@ -15,8 +15,6 @@ In this module, we're going to explore some ideas behind effective data design. 
 
 We're going to begin in this level by reading some background theory on effective data design. You should read through the following and fill out an exit ticket to reflect on what you learned and what questions you have.
 
-* Read through [Chapter One](https://socviz.co/lookatdata.html#lookatdata) of Kieran Healy's Book *Data Visualization: A practical introduction*. This section talks about some basics of good visualization and some common pitfalls. The rest of the book is a practical guide to using R to make compelling graphics so a great resources fot the rest of the class.
+* Read through [Chapter One](https://socviz.co/lookatdata.html#lookatdata) of Kieran Healy's Book *Data Visualization: A practical introduction*. This section talks about some basics of good visualization and some common pitfalls. The rest of the book is a practical guide to using R to make compelling graphics so a great resources for the rest of the class.
 
-* Tufte? 
-
-We will begin class on XXX with a discussion of questions on 
+* Read [this chapter](04data-ink_graphical-redesign.pdf) of Edward R. Tufte's classic work "The Visual Display of Quantitative Information". In this chapter, Tufte talks about one of his most famous ideas - maximizing the data-ink ratio (within reason).

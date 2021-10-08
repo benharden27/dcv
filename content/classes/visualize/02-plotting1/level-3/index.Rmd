@@ -12,7 +12,13 @@ quiz: https://rstudio.cloud/spaces/170089/project/2870345
 
 So far, we've talked about the geoms that create scatter plots and line plots. In this level we're going to work with some of ggplot's other geoms.
 
+## Resources
+
 The [ggplot cheatsheet](https://github.com/rstudio/cheatsheets/raw/master/data-visualization.pdf) is a helpful document to have nearby. It lays out the geoms available to you and has some examples. It also helpfully groups the geoms into their use given the type of data. For example, a scatter plot made with `geom_point` is in the two-variables, x continuous, y continuous section. This means, we have two variables to plot against one another and both axes are numeric and can take any value.
+
+Another related resource is [this diagram](choosing-a-good-chart-09.pdf) of plotting options, which can be a useful way to work out what kind of plots you should be attempting to look at different kinds of relationships/variability.
+
+## Primers
 
 Please work your way through the [primers](https://rstudio.cloud/learn/primers/3) for:
 
