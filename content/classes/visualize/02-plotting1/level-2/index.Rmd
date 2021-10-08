@@ -14,7 +14,7 @@ We're now going to apply your data reading and ggplot intro skills to graphing a
 
 The data is collected using a [CTD](https://www.whoi.edu/what-we-do/explore/instruments/instruments-sensors-samplers/conductivity-temperature-depth-ctd-sensors/) a device that is lowered from the surface to the sea floor and constantly measure the water's temperature and salinity as it goes. It can also measure other properties such as oxygen, chlorophyll-a concentration and the availability of light depending on the sensors available. The onboard computer records these values against the depth at which they were measured. We can then use this data to graph how temperature and salinity (and other values) change as we do deeper in the ocean.
 
-We are going to be using two CTD data files. The first is from a single CTD profile, the second is a data set with 5 different profiles in it, There is a project in the RStudio PEP 2021 Classroom called "Plotting Level 2" with the data already available for you in a csv format. If you want to have these files offline, you can also download the single profile here: [SR04.csv](SR04.csv) and the multiple profile file here: [profiles.csv](profiles.csv).
+We are going to be using two CTD data files. The first is from a single CTD profile, the second is a data set with 5 different profiles in it. The assignment in RStudio Cloud (below) has the data already available for you in a csv format. If you want to have these files offline, you can also download the single profile here: [SR04.csv](SR04.csv) and the multiple profile file here: [profiles.csv](profiles.csv).
 
 ## Required packages
 
@@ -30,7 +30,7 @@ library(ggplot2)
 
 ## Profile Data
 
-We are going use what we learnt in [Level 3 of the Introduction](../../01-introduction/level-3/) to read the data in using the `read_csv()` function. First, we are going to read the single profile file. This data was recorded off the coast of Antarctica at the location shown by the red cross below.
+We are going use what we learned in [Level 3 of the Introduction](../../01-introduction/level-3/) to read the data in using the `read_csv()` function. First, we are going to read the single profile file. This data was recorded off the coast of Antarctica at the location shown by the red cross below.
 
 ```{r, echo = FALSE, message=F, warning = F}
 library(tidyverse)
@@ -53,7 +53,12 @@ profile <- read_csv("SR04.csv")
 
 As you can see, `read_csv()` has told us what columns have been read in and what type of data has been assigned to each.
 
-The object `profile` is now a data frame containing the data in `profiles.csv`. It should be available to you in the environment panel where you can click on it to see it in spreadsheet format.
+The object `profile` is now a data frame containing the data in `profiles.csv`. It should be available to you in the environment panel where you can click on it to see it in spreadsheet format. (I'm just showing you the first 10 rows here)
+
+```{r, echo = FALSE}
+knitr::kable(head(profile,10),format = "html", table.attr = "style='width:800px;font-size: 0.65em;'")
+```
+
 
 Some things to note about the data from a quick-look:
 
@@ -71,7 +76,9 @@ Some things to note about the data from a quick-look:
     + temp: Temperature (°C)
     + sal: Salinity
     + theta: Potential Temperature (°C) - the temperature the water would be if it was raised to the surface. This accounts for the slight cooling effect of increased pressure.
-    + sigma: Potential Density (kgm^-^3) - thedensity of the water as calculated from the salinity, pressure and potential temperature.
+    + sigma: Potential Density (kgm^-^3) - the density of the water as calculated from the salinity, pressure and potential temperature.
+
+* Note that Cruise, Station, lon, lat are all the same for every row of the data. This is because all this data came from the same Station on the same Cruise at a particular Longitude and Latitude. Having all these values recorded in the data makes more sense when combining multiple profiles into one data frame.
 
 ## Plotting
 
@@ -86,7 +93,7 @@ Where we will need to specify three things:
 
 1. `<DATA>` The data frame used to make the plot
 1. `<MAPPINGS>` The mapping of variables to aesthetics - what variable you want to put on thew x axis, y axis, color axis, etc.
-1. '<GEOM_FUNCTION>' A geom to represent these aesthetics - how will this look? (points? lines?)
+1. `<GEOM_FUNCTION>` A geom to represent these aesthetics - how will this look? (points? lines?)
 
 So, as a first example, we can plot the temperature data vs depth in the following way:
 
@@ -108,7 +115,7 @@ ggplot(profile) +
   geom_line(aes(z, temp))
 ```
 
-*We've lost something in the ability for us to directly interpret what is being assigned to what, but we're saving our fingers in the long run. It's up to you which makes more sense to you at this point. There's issue at all in staying verbose.*
+*We've lost something in the ability for us to directly interpret what is being assigned to what, but we're saving our fingers in the long run. It's up to you which makes more sense to you at this point. There's no issue at all in staying verbose.*
 
 The above figure is what you would plot from a traditional science perspective - the independent variable (z) is on the x axis and the dependent variable (temperature) is on the y axis. However, from an oceanography perspective, it makes more sense to have depth be on the y axis and temperature on the x axis. Like this (flipping the position of z and temp):
 
@@ -117,7 +124,7 @@ ggplot(profile) +
   geom_line(aes(temp, z))
 ```
 
-Uh oh. What a mess. What's happening here? ggplot actually has two geoms that can draw lines. We've been using `geom_line()` so far, but underneath the hood, this function actually sorts the y variable along the x axis. This can be useful in many cases were data is not sorted already, but in our case it means that the nice sweeping curve gets deconstructed. For our purposes, we're going to want to use `geom_path()` which joins the data up in the order they appear in the data set.
+Uh oh. What a mess. What's happening here? ggplot actually has two geoms that can draw lines. We've been using `geom_line()` so far, but underneath the hood, this function actually sorts the y variable along the x axis. This can be useful in many cases where data is not sorted already, but in our case it means that the nice sweeping curve gets deconstructed. For our purposes, we're going to want to use `geom_path()` which joins the data up in the order they appear in the data set.
 
 ```{r}
 ggplot(profile) +
@@ -126,7 +133,7 @@ ggplot(profile) +
 
 The last thing we're going to do to fit with oceanographic norms is to flip the y axis. This will make depth be greater the further you go down the plot.
 
-Doing this in ggplot requires us to use one of the `scale_*` functions. WE haven't seen these yet, but these functions basically say: *Take the mapping we've already set up in out ggplot and adjust how the data is mapped*. This includes telling ggplot what range of values to map to our x axis, whether we want a log axis, what colors to map our data to, and, in our case, what direction to plot the data in. We'll talk more about the `scale_*` functions in upcoming levels.
+Doing this in ggplot requires us to use one of the `scale_*` functions. We haven't seen these yet, but these functions basically say: *Take the mapping we've already set up in out ggplot and adjust how the data is mapped*. This includes telling ggplot what range of values to map to our x axis, whether we want a log axis, what colors to map our data to, and, in our case, what direction to plot the data in. We'll talk more about the `scale_*` functions in upcoming levels. For now, just add in the following line of code to switch the y axis direction.
 
 ```{r}
 ggplot(profile) +

@@ -15,7 +15,7 @@ quiz: https://rstudio.cloud/spaces/170089/project/2870344
 
 <p>We’re now going to apply your data reading and ggplot intro skills to graphing a real ocean data set, specifically ocean temperature and salinity data collected in different ocean basins around the world.</p>
 <p>The data is collected using a <a href="https://www.whoi.edu/what-we-do/explore/instruments/instruments-sensors-samplers/conductivity-temperature-depth-ctd-sensors/">CTD</a> a device that is lowered from the surface to the sea floor and constantly measure the water’s temperature and salinity as it goes. It can also measure other properties such as oxygen, chlorophyll-a concentration and the availability of light depending on the sensors available. The onboard computer records these values against the depth at which they were measured. We can then use this data to graph how temperature and salinity (and other values) change as we do deeper in the ocean.</p>
-<p>We are going to be using two CTD data files. The first is from a single CTD profile, the second is a data set with 5 different profiles in it, There is a project in the RStudio PEP 2021 Classroom called “Plotting Level 2” with the data already available for you in a csv format. If you want to have these files offline, you can also download the single profile here: <a href="SR04.csv">SR04.csv</a> and the multiple profile file here: <a href="profiles.csv">profiles.csv</a>.</p>
+<p>We are going to be using two CTD data files. The first is from a single CTD profile, the second is a data set with 5 different profiles in it. The assignment in RStudio Cloud (below) has the data already available for you in a csv format. If you want to have these files offline, you can also download the single profile here: <a href="SR04.csv">SR04.csv</a> and the multiple profile file here: <a href="profiles.csv">profiles.csv</a>.</p>
 <div id="required-packages" class="section level2">
 <h2>Required packages</h2>
 <p>So far, we’ve come across two packages: readr (the package we used to read in our csv file in <a href="../../01-introduction/level-3/">Introduction Level 3</a>) and ggplot (to make plots). We are going to need both for this exercise because we are now going to be both reading and plotting data. Both are already installed in the level project file, but you have to activate them in your script.</p>
@@ -26,7 +26,7 @@ library(ggplot2)</code></pre>
 </div>
 <div id="profile-data" class="section level2">
 <h2>Profile Data</h2>
-<p>We are going use what we learnt in <a href="../../01-introduction/level-3/">Level 3 of the Introduction</a> to read the data in using the <code>read_csv()</code> function. First, we are going to read the single profile file. This data was recorded off the coast of Antarctica at the location shown by the red cross below.</p>
+<p>We are going use what we learned in <a href="../../01-introduction/level-3/">Level 3 of the Introduction</a> to read the data in using the <code>read_csv()</code> function. First, we are going to read the single profile file. This data was recorded off the coast of Antarctica at the location shown by the red cross below.</p>
 <p><img src="{{< blogdown/postref >}}index_files/figure-html/unnamed-chunk-1-1.png" width="672" /></p>
 <p>To read in the data we use our <code>read_csv()</code> function:</p>
 <pre class="r"><code>profile &lt;- read_csv(&quot;SR04.csv&quot;)</code></pre>
@@ -46,7 +46,398 @@ library(ggplot2)</code></pre>
 ##   o2 = col_logical()
 ## )</code></pre>
 <p>As you can see, <code>read_csv()</code> has told us what columns have been read in and what type of data has been assigned to each.</p>
-<p>The object <code>profile</code> is now a data frame containing the data in <code>profiles.csv</code>. It should be available to you in the environment panel where you can click on it to see it in spreadsheet format.</p>
+<p>The object <code>profile</code> is now a data frame containing the data in <code>profiles.csv</code>. It should be available to you in the environment panel where you can click on it to see it in spreadsheet format. (I’m just showing you the first 10 rows here)</p>
+<table style="width:800px;font-size: 0.65em;">
+<thead>
+<tr>
+<th style="text-align:left;">
+Cruise
+</th>
+<th style="text-align:right;">
+Station
+</th>
+<th style="text-align:right;">
+lon
+</th>
+<th style="text-align:right;">
+lat
+</th>
+<th style="text-align:right;">
+z
+</th>
+<th style="text-align:right;">
+pres
+</th>
+<th style="text-align:right;">
+temp
+</th>
+<th style="text-align:right;">
+sal
+</th>
+<th style="text-align:right;">
+theta
+</th>
+<th style="text-align:right;">
+sigma
+</th>
+<th style="text-align:left;">
+o2
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+SR04_06AQANTIX_2
+</td>
+<td style="text-align:right;">
+95
+</td>
+<td style="text-align:right;">
+342.7367
+</td>
+<td style="text-align:right;">
+-69.0767
+</td>
+<td style="text-align:right;">
+13.859
+</td>
+<td style="text-align:right;">
+14.00047
+</td>
+<td style="text-align:right;">
+-1.8436
+</td>
+<td style="text-align:right;">
+34.3499
+</td>
+<td style="text-align:right;">
+-1.843862
+</td>
+<td style="text-align:right;">
+27.65365
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+SR04_06AQANTIX_2
+</td>
+<td style="text-align:right;">
+95
+</td>
+<td style="text-align:right;">
+342.7367
+</td>
+<td style="text-align:right;">
+-69.0767
+</td>
+<td style="text-align:right;">
+17.818
+</td>
+<td style="text-align:right;">
+18.00005
+</td>
+<td style="text-align:right;">
+-1.8446
+</td>
+<td style="text-align:right;">
+34.3499
+</td>
+<td style="text-align:right;">
+-1.844937
+</td>
+<td style="text-align:right;">
+27.65367
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+SR04_06AQANTIX_2
+</td>
+<td style="text-align:right;">
+95
+</td>
+<td style="text-align:right;">
+342.7367
+</td>
+<td style="text-align:right;">
+-69.0767
+</td>
+<td style="text-align:right;">
+21.777
+</td>
+<td style="text-align:right;">
+21.99972
+</td>
+<td style="text-align:right;">
+-1.8446
+</td>
+<td style="text-align:right;">
+34.3502
+</td>
+<td style="text-align:right;">
+-1.845013
+</td>
+<td style="text-align:right;">
+27.65392
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+SR04_06AQANTIX_2
+</td>
+<td style="text-align:right;">
+95
+</td>
+<td style="text-align:right;">
+342.7367
+</td>
+<td style="text-align:right;">
+-69.0767
+</td>
+<td style="text-align:right;">
+25.737
+</td>
+<td style="text-align:right;">
+26.00048
+</td>
+<td style="text-align:right;">
+-1.8446
+</td>
+<td style="text-align:right;">
+34.3504
+</td>
+<td style="text-align:right;">
+-1.845089
+</td>
+<td style="text-align:right;">
+27.65408
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+SR04_06AQANTIX_2
+</td>
+<td style="text-align:right;">
+95
+</td>
+<td style="text-align:right;">
+342.7367
+</td>
+<td style="text-align:right;">
+-69.0767
+</td>
+<td style="text-align:right;">
+29.696
+</td>
+<td style="text-align:right;">
+30.00030
+</td>
+<td style="text-align:right;">
+-1.8446
+</td>
+<td style="text-align:right;">
+34.3521
+</td>
+<td style="text-align:right;">
+-1.845166
+</td>
+<td style="text-align:right;">
+27.65547
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+SR04_06AQANTIX_2
+</td>
+<td style="text-align:right;">
+95
+</td>
+<td style="text-align:right;">
+342.7367
+</td>
+<td style="text-align:right;">
+-69.0767
+</td>
+<td style="text-align:right;">
+33.655
+</td>
+<td style="text-align:right;">
+34.00020
+</td>
+<td style="text-align:right;">
+-1.8436
+</td>
+<td style="text-align:right;">
+34.3511
+</td>
+<td style="text-align:right;">
+-1.844243
+</td>
+<td style="text-align:right;">
+27.65463
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+SR04_06AQANTIX_2
+</td>
+<td style="text-align:right;">
+95
+</td>
+<td style="text-align:right;">
+342.7367
+</td>
+<td style="text-align:right;">
+-69.0767
+</td>
+<td style="text-align:right;">
+37.614
+</td>
+<td style="text-align:right;">
+38.00012
+</td>
+<td style="text-align:right;">
+-1.8436
+</td>
+<td style="text-align:right;">
+34.3515
+</td>
+<td style="text-align:right;">
+-1.844320
+</td>
+<td style="text-align:right;">
+27.65496
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+SR04_06AQANTIX_2
+</td>
+<td style="text-align:right;">
+95
+</td>
+<td style="text-align:right;">
+342.7367
+</td>
+<td style="text-align:right;">
+-69.0767
+</td>
+<td style="text-align:right;">
+41.573
+</td>
+<td style="text-align:right;">
+42.00018
+</td>
+<td style="text-align:right;">
+-1.8416
+</td>
+<td style="text-align:right;">
+34.3550
+</td>
+<td style="text-align:right;">
+-1.842398
+</td>
+<td style="text-align:right;">
+27.65776
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+SR04_06AQANTIX_2
+</td>
+<td style="text-align:right;">
+95
+</td>
+<td style="text-align:right;">
+342.7367
+</td>
+<td style="text-align:right;">
+-69.0767
+</td>
+<td style="text-align:right;">
+45.532
+</td>
+<td style="text-align:right;">
+46.00031
+</td>
+<td style="text-align:right;">
+-1.8356
+</td>
+<td style="text-align:right;">
+34.3609
+</td>
+<td style="text-align:right;">
+-1.836479
+</td>
+<td style="text-align:right;">
+27.66240
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+SR04_06AQANTIX_2
+</td>
+<td style="text-align:right;">
+95
+</td>
+<td style="text-align:right;">
+342.7367
+</td>
+<td style="text-align:right;">
+-69.0767
+</td>
+<td style="text-align:right;">
+49.490
+</td>
+<td style="text-align:right;">
+49.99952
+</td>
+<td style="text-align:right;">
+-1.8316
+</td>
+<td style="text-align:right;">
+34.3635
+</td>
+<td style="text-align:right;">
+-1.832559
+</td>
+<td style="text-align:right;">
+27.66441
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+</tbody>
+</table>
 <p>Some things to note about the data from a quick-look:</p>
 <ul>
 <li><p>The data is already tidy - each row is an observation and each column is a variable.</p></li>
@@ -62,8 +453,9 @@ library(ggplot2)</code></pre>
 <li>temp: Temperature (°C)</li>
 <li>sal: Salinity</li>
 <li>theta: Potential Temperature (°C) - the temperature the water would be if it was raised to the surface. This accounts for the slight cooling effect of increased pressure.</li>
-<li>sigma: Potential Density (kgm<sup>-</sup>3) - thedensity of the water as calculated from the salinity, pressure and potential temperature.</li>
+<li>sigma: Potential Density (kgm<sup>-</sup>3) - the density of the water as calculated from the salinity, pressure and potential temperature.</li>
 </ul></li>
+<li><p>Note that Cruise, Station, lon, lat are all the same for every row of the data. This is because all this data came from the same Station on the same Cruise at a particular Longitude and Latitude. Having all these values recorded in the data makes more sense when combining multiple profiles into one data frame.</p></li>
 </ul>
 </div>
 <div id="plotting" class="section level2">
@@ -75,12 +467,12 @@ library(ggplot2)</code></pre>
 <ol style="list-style-type: decimal">
 <li><code>&lt;DATA&gt;</code> The data frame used to make the plot</li>
 <li><code>&lt;MAPPINGS&gt;</code> The mapping of variables to aesthetics - what variable you want to put on thew x axis, y axis, color axis, etc.</li>
-<li>‘<GEOM_FUNCTION>’ A geom to represent these aesthetics - how will this look? (points? lines?)</li>
+<li><code>&lt;GEOM_FUNCTION&gt;</code> A geom to represent these aesthetics - how will this look? (points? lines?)</li>
 </ol>
 <p>So, as a first example, we can plot the temperature data vs depth in the following way:</p>
 <pre class="r"><code>ggplot(data = profile) +
   geom_line(aes(x = z, y = temp))</code></pre>
-<p><img src="{{< blogdown/postref >}}index_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
+<p><img src="{{< blogdown/postref >}}index_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
 <p>Where we have specified that:</p>
 <ol style="list-style-type: decimal">
 <li>Our data is contained in the data frame, <code>profiles</code></li>
@@ -90,28 +482,28 @@ library(ggplot2)</code></pre>
 <p><em>ASIDE: This is the most verbose way I can write this. Verbose in coding means more explicit or using-lots-of-typing. I have used <code>data = profiles</code>, <code>x = dttm</code> and <code>y = temp</code>. As with many functions in R, both <code>ggplot()</code> and <code>aes()</code> are expecting certain inputs and instead of officially declaring them, you can just write them in the right order. The above code could be written more succinctly as:</em></p>
 <pre class="r"><code>ggplot(profile) +
   geom_line(aes(z, temp))</code></pre>
-<p><em>We’ve lost something in the ability for us to directly interpret what is being assigned to what, but we’re saving our fingers in the long run. It’s up to you which makes more sense to you at this point. There’s issue at all in staying verbose.</em></p>
+<p><em>We’ve lost something in the ability for us to directly interpret what is being assigned to what, but we’re saving our fingers in the long run. It’s up to you which makes more sense to you at this point. There’s no issue at all in staying verbose.</em></p>
 <p>The above figure is what you would plot from a traditional science perspective - the independent variable (z) is on the x axis and the dependent variable (temperature) is on the y axis. However, from an oceanography perspective, it makes more sense to have depth be on the y axis and temperature on the x axis. Like this (flipping the position of z and temp):</p>
 <pre class="r"><code>ggplot(profile) +
   geom_line(aes(temp, z))</code></pre>
-<p><img src="{{< blogdown/postref >}}index_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
-<p>Uh oh. What a mess. What’s happening here? ggplot actually has two geoms that can draw lines. We’ve been using <code>geom_line()</code> so far, but underneath the hood, this function actually sorts the y variable along the x axis. This can be useful in many cases were data is not sorted already, but in our case it means that the nice sweeping curve gets deconstructed. For our purposes, we’re going to want to use <code>geom_path()</code> which joins the data up in the order they appear in the data set.</p>
+<p><img src="{{< blogdown/postref >}}index_files/figure-html/unnamed-chunk-6-1.png" width="672" /></p>
+<p>Uh oh. What a mess. What’s happening here? ggplot actually has two geoms that can draw lines. We’ve been using <code>geom_line()</code> so far, but underneath the hood, this function actually sorts the y variable along the x axis. This can be useful in many cases where data is not sorted already, but in our case it means that the nice sweeping curve gets deconstructed. For our purposes, we’re going to want to use <code>geom_path()</code> which joins the data up in the order they appear in the data set.</p>
 <pre class="r"><code>ggplot(profile) +
   geom_path(aes(temp, z))</code></pre>
-<p><img src="{{< blogdown/postref >}}index_files/figure-html/unnamed-chunk-6-1.png" width="672" /></p>
+<p><img src="{{< blogdown/postref >}}index_files/figure-html/unnamed-chunk-7-1.png" width="672" /></p>
 <p>The last thing we’re going to do to fit with oceanographic norms is to flip the y axis. This will make depth be greater the further you go down the plot.</p>
-<p>Doing this in ggplot requires us to use one of the <code>scale_*</code> functions. WE haven’t seen these yet, but these functions basically say: <em>Take the mapping we’ve already set up in out ggplot and adjust how the data is mapped</em>. This includes telling ggplot what range of values to map to our x axis, whether we want a log axis, what colors to map our data to, and, in our case, what direction to plot the data in. We’ll talk more about the <code>scale_*</code> functions in upcoming levels.</p>
+<p>Doing this in ggplot requires us to use one of the <code>scale_*</code> functions. We haven’t seen these yet, but these functions basically say: <em>Take the mapping we’ve already set up in out ggplot and adjust how the data is mapped</em>. This includes telling ggplot what range of values to map to our x axis, whether we want a log axis, what colors to map our data to, and, in our case, what direction to plot the data in. We’ll talk more about the <code>scale_*</code> functions in upcoming levels. For now, just add in the following line of code to switch the y axis direction.</p>
 <pre class="r"><code>ggplot(profile) +
   geom_path(aes(temp, z)) +
   scale_y_reverse()</code></pre>
-<p><img src="{{< blogdown/postref >}}index_files/figure-html/unnamed-chunk-7-1.png" width="672" /></p>
+<p><img src="{{< blogdown/postref >}}index_files/figure-html/unnamed-chunk-8-1.png" width="672" /></p>
 <p>So now we have an intuitive way to look at the data. The temperature is around -1.8°C at the surface (top) and increases to a maximum of 2°C at around 300 m before slowly cooling again as you head deeper.</p>
 </div>
 <div id="exercise" class="section level2">
 <h2>Exercise</h2>
 <p>OK, from here-on-in, I’m going to set you some challenges to grapple with. Go to the assignment below and follow the instructions in the <code>instructions.txt</code> file.</p>
 <p>These exercises will involve working some more with the <code>SR04.csv</code> data and also reading in data from the <code>profiles.csv</code> file which has data from five locations around the world. The columns are all the same as in the <code>SR04.csv</code> file, but now there are 5 profiles represented taken from the following locations:</p>
-<p><img src="{{< blogdown/postref >}}index_files/figure-html/unnamed-chunk-8-1.png" width="672" /></p>
+<p><img src="{{< blogdown/postref >}}index_files/figure-html/unnamed-chunk-9-1.png" width="672" /></p>
 <p>Some tips:</p>
 <ul>
 <li><a href="https://r4ds.had.co.nz/data-visualisation.html">R4DS Chapter 3</a> is a good source of information, as are the <a href="https://rstudio.cloud/learn/primers/3">RStudio Visualization Primers</a></li>
