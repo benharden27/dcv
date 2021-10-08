@@ -11,7 +11,8 @@ draft: no
 <script src="{{< blogdown/postref >}}index_files/header-attrs/header-attrs.js"></script>
 
 
-<p>I’ll be organizing the a list of Sometimes Asked Questions in this post - updating every few days.</p>
+<div id="sometimes-asked-questions" class="section level2">
+<h2>Sometimes Asked Questions</h2>
 <div id="what-are-git-error-trapping-and-debugging" class="section level3">
 <h3>What are git, error trapping, and debugging?</h3>
 <p>These expressions all came up in <a href="https://robwschlegel.github.io/Intro_R_Workshop/prelim.html#why-use-r">Section 1.3</a> of the Intro to R page I asked you to read.</p>
@@ -27,7 +28,7 @@ draft: no
 </div>
 <div id="are-there-any-usability-differencesdrawbacks-in-the-cloud-vs.-normal-rstudio" class="section level3">
 <h3>Are there any usability differences/drawbacks in the cloud vs. normal RStudio?</h3>
-<p>You have the same functionality on the cloud as you do with desktop RStudio. The only difference might be in performance - the cloud has to send you commands to a computer somewhere else, run the code, and then send the output back to you. It may run just a little slower as a result. The up-side for this class though is that I have access to all your work and can jump in to check how you’re doing, add comments/suggestions, and help debug your code as needed. You can also share your projects with your peers so they can see your work too.</p>
+<p>You have the same functionality on the cloud as you do with desktop RStudio. The only difference might be in performance - the cloud has to send your commands to a computer somewhere else, run the code, and then send the output back to you. It may run just a little slower as a result. The up-side for this class though is that I have access to all your work and can jump in to check how you’re doing, add comments/suggestions, and help debug your code as needed. You can also share your projects with your peers so they can see your work too.</p>
 </div>
 <div id="can-you-pick-some-columns-not-to-load-with-the-csv-or-do-you-have-to-remove-them-after-the-dataset-is-loaded" class="section level3">
 <h3>Can you pick some columns not to load with the csv, or do you have to remove them after the dataset is loaded?</h3>
@@ -35,7 +36,7 @@ draft: no
 </div>
 <div id="is-r-a-combination-of-programs-such-as-python-and-excel-or-does-it-lean-more-towards-one-of-these-in-terms-of-function" class="section level3">
 <h3>Is R a combination of programs such as python and excel or does it lean more towards one of these in terms of function?</h3>
-<p>R is it’s own thing - a language unto itself. It has similarities to both python (another widely used, accessible programming language) and Excel, but operates independently of both. In terms of how it functions, the coding nature of R leans it towards python and away from the point-and-click, visual processes in Excel. So, how do R and Python compare? Python is more flexible than R - you can use more easily for all manner of tasks on a computer and set it to task organizing files, running monitoring devices, etc, but R is still the go-to for data analysis and visualization, which is built into python as an after-thought and doesn’t have the same level of completeness or community support. R was build specifically for working with data.</p>
+<p>R is it’s own thing - a language unto itself. It has similarities to both python (another widely used, accessible programming language) and Excel, but operates independently of both. In terms of how it functions, the coding nature of R leans it towards python and away from the point-and-click, visual processes in Excel. So, how do R and Python compare? Python is more flexible than R - you can use it more easily for all manner of tasks on a computer and set it to task organizing files, running monitoring devices, etc. (I use it for running my home weather station), but R is still the go-to for data analysis and visualization, which is built into python as an after-thought and doesn’t have the same level of completeness or community support. R was built specifically for working with data.</p>
 </div>
 <div id="what-is-the-difference-between-data-types-integer-and-character" class="section level3">
 <h3>What is the difference between data types integer and character?</h3>
@@ -48,4 +49,63 @@ draft: no
 <div id="does-the-data-for-the-data-frames-have-to-be-entered-in-r-or-can-it-be-imported-from-external-sources-or-programs" class="section level3">
 <h3>Does the data for the data frames have to be entered in R or can it be imported from external sources or programs?</h3>
 <p>You can indeed enter data manually into R, but the most efficient process is to read in the data from some external source. We have seen one example in <a href="../../classes/visualize/01-introduction/level-3/">Module 1, Level 3</a> of how to import data from a Comma Separated Value file (pretty common data format), but there are also functions in R to read pretty much any other data format you care to think of - NetCDF, JSON, TSV, Shapefiles, XML, YAML, HTML, JPEG, GeoTIFF, etc.</p>
+</div>
+<div id="what-is-the-difference-between-commands-like-count-sum-tally-and-n" class="section level3">
+<h3>What is the difference between commands like count, sum, tally, and n?</h3>
+<p>You’ll often come across different functions in R that might end up doing roughly the same thing, especially once you start adding in different packages. You should always feel empowered to find out more about how a function works by writing <code>?&lt;function-name&gt;</code> into the console. A help file will show up to the right which will tell you all about the function and give you some examples of how to use it (usually the most helpful part to start with). Each function has a list of “arguments” which are the things you need to (or can optionally) put into the function to get the output. Similar functions like the above will probably have different arguments and may rely on a different process under the hood (or bonnet as I might say).</p>
+</div>
+<div id="how-do-i-create-a-csv-file-do-i-do-it-within-r-or-do-we-import-the-data-as-a-csv-file-from-excel-or-another-similar-software" class="section level3">
+<h3>How do I create a csv file? Do I do it within R or do we import the data as a csv file from excel or another similar software?</h3>
+<p>OK, so having dismissed Excel as a robust data science tool, I have to say that for entering data, Excel is still one of the best tools out there. To create a csv file, I often enter the data as a table in Excel and then save the file as a CSV file and then read it into R to analyze. That said, it’s not everyday that you’ll need to do this as that method only really applies to hand-entered, new data. Most data we’ll use in this class has come from ocean instrumentation and satellite data and you’ll download it as a CSV file directly form the web. This will remove Excel from the picture entirely.</p>
+</div>
+<div id="what-is-the-difference-between-read.csv-and-read_csv" class="section level3">
+<h3>What is the difference between read.csv() and read_csv()?</h3>
+<p>So many of you will probably have come across this slight snag. RStudio is super helpful a lot of the time - it “suggests” autocompletes for functions and objects once you begin typing. You can also hit the tab key when you start writing a command and it will give you options for how you might want to complete what you are writing. That said, this feature can often lead to you selecting the wrong (but oh so similarly sounding) function.</p>
+<p>In this case, <code>read.csv()</code> is the baseR or “original” csv reading function. It works much the same as the <code>read_csv()</code> function that comes from the <code>readr</code> package, but it is typically slower and produces some odd things in the output that most people typically don’t want it to do. You should get into the habit of using <code>read_csv()</code> to avoid potential issues down the line. For more info, there’s a good description of the differences <a href="https://r4ds.had.co.nz/data-import.html#compared-to-base-r">here</a>.</p>
+</div>
+<div id="what-is-the-difference-between-a-vector-and-a-list" class="section level3">
+<h3>What is the difference between a vector and a list?</h3>
+<p>A vector is a series of numbers or words contained in a single object. You will most likely see the following as ways to make vectors in R:</p>
+<ul>
+<li>Using the c() function to “combine” entries</li>
+</ul>
+<pre class="r"><code>c(1,2,5,75,43,234.3)</code></pre>
+<pre><code>## [1]   1.0   2.0   5.0  75.0  43.0 234.3</code></pre>
+<p>or</p>
+<pre class="r"><code>c(&quot;one potato&quot;, &quot;two potato&quot;, &quot;three potato&quot;, &quot;four&quot;)</code></pre>
+<pre><code>## [1] &quot;one potato&quot;   &quot;two potato&quot;   &quot;three potato&quot; &quot;four&quot;</code></pre>
+<ul>
+<li>Using the <code>:</code> feature to make a vector of sequential numbers</li>
+</ul>
+<pre class="r"><code>3:20</code></pre>
+<pre><code>##  [1]  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20</code></pre>
+<ul>
+<li>Using the seq() function to make a sequence of non-sequential numbers</li>
+</ul>
+<pre class="r"><code>seq(1, 10, by = 0.2)</code></pre>
+<pre><code>##  [1]  1.0  1.2  1.4  1.6  1.8  2.0  2.2  2.4  2.6  2.8  3.0  3.2  3.4  3.6  3.8
+## [16]  4.0  4.2  4.4  4.6  4.8  5.0  5.2  5.4  5.6  5.8  6.0  6.2  6.4  6.6  6.8
+## [31]  7.0  7.2  7.4  7.6  7.8  8.0  8.2  8.4  8.6  8.8  9.0  9.2  9.4  9.6  9.8
+## [46] 10.0</code></pre>
+<p>Lists on the other hand look similar to vectors in some regards, but you can put something of any size in each component of a list:</p>
+<pre class="r"><code>list(1,2:3,&quot;hello&quot;,tibble::tibble(x = 1:4, y=3:6))</code></pre>
+<pre><code>## [[1]]
+## [1] 1
+## 
+## [[2]]
+## [1] 2 3
+## 
+## [[3]]
+## [1] &quot;hello&quot;
+## 
+## [[4]]
+## # A tibble: 4 x 2
+##       x     y
+##   &lt;int&gt; &lt;int&gt;
+## 1     1     3
+## 2     2     4
+## 3     3     5
+## 4     4     6</code></pre>
+<p>Don’t worry too much about lists - they are a really useful tool if you want to put things of different types together, but we wont be coming across them in this class.</p>
+</div>
 </div>

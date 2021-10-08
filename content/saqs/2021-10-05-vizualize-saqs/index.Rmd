@@ -8,7 +8,7 @@ tags: []
 draft: no
 ---
 
-I'll be organizing the a list of Sometimes Asked Questions in this post - updating every few days.
+## Sometimes Asked Questions
 
 ### What are git, error trapping, and debugging?
 
@@ -24,7 +24,7 @@ A double is a decimal number (i.e. 4.56) and an integer is a rounded whole (1, 2
 
 ### Are there any usability differences/drawbacks in the cloud vs. normal RStudio?
 
-You have the same functionality on the cloud as you do with desktop RStudio. The only difference might be in performance - the cloud has to send you commands to a computer somewhere else, run the code, and then send the output back to you. It may run just a little slower as a result. The up-side for this class though is that I have access to all your work and can jump in to check how you're doing, add comments/suggestions, and help debug your code as needed. You can also share your projects with your peers so they can see your work too.
+You have the same functionality on the cloud as you do with desktop RStudio. The only difference might be in performance - the cloud has to send your commands to a computer somewhere else, run the code, and then send the output back to you. It may run just a little slower as a result. The up-side for this class though is that I have access to all your work and can jump in to check how you're doing, add comments/suggestions, and help debug your code as needed. You can also share your projects with your peers so they can see your work too.
 
 ### Can you pick some columns not to load with the csv, or do you have to remove them after the dataset is loaded?
 
@@ -32,7 +32,7 @@ You *can* choose specific columns to load in. See the help file for `read_csv()`
 
 ### Is R a combination of programs such as python and excel or does it lean more towards one of these in terms of function?
 
-R is it's own thing - a language unto itself. It has similarities to both python (another widely used, accessible programming language) and Excel, but operates independently of both. In terms of how it functions, the coding nature of R leans it towards python and away from the point-and-click, visual processes in Excel. So, how do R and Python compare? Python is more flexible than R - you can use more easily for all manner of tasks on a computer and set it to task organizing files, running monitoring devices, etc, but R is still the go-to for data analysis and visualization, which is built into python as an after-thought and doesn't have the same level of completeness or community support. R was build specifically for working with data.
+R is it's own thing - a language unto itself. It has similarities to both python (another widely used, accessible programming language) and Excel, but operates independently of both. In terms of how it functions, the coding nature of R leans it towards python and away from the point-and-click, visual processes in Excel. So, how do R and Python compare? Python is more flexible than R - you can use it more easily for all manner of tasks on a computer and set it to task organizing files, running monitoring devices, etc. (I use it for running my home weather station), but R is still the go-to for data analysis and visualization, which is built into python as an after-thought and doesn't have the same level of completeness or community support. R was built specifically for working with data.
 
 ### What is the difference between data types integer and character?
 
@@ -45,3 +45,54 @@ Each language is unique in some sense. R probably skews closest to Python in how
 ### Does the data for the data frames have to be entered in R or can it be imported from external sources or programs?
 
 You can indeed enter data manually into R, but the most efficient process is to read in the data from some external source. We have seen one example in [Module 1, Level 3](../../classes/visualize/01-introduction/level-3/) of how to import data from a Comma Separated Value file (pretty common data format), but there are also functions in R to read pretty much any other data format you care to think of - NetCDF, JSON, TSV, Shapefiles, XML, YAML, HTML, JPEG, GeoTIFF, etc.
+
+### What is the difference between commands like count, sum, tally, and n? 
+
+You'll often come across different functions in R that might end up doing roughly the same thing, especially once you start adding in different packages. You should always feel empowered to find out more about how a function works by writing `?<function-name>` into the console. A help file will show up to the right which will tell you all about the function and give you some examples of how to use it (usually the most helpful part to start with). Each function has a list of "arguments" which are the things you need to (or can optionally) put into the function to get the output. Similar functions like the above will probably have different arguments and may rely on a different process under the hood (or bonnet as I might say).
+
+### How do I create a csv file?  Do I do it within R or do we import the data as a csv file from excel or another similar software?
+
+OK, so having dismissed Excel as a robust data science tool, I have to say that for entering data, Excel is still one of the best tools out there. To create a csv file, I often enter the data as a table in Excel and then save the file as a CSV file and then read it into R to analyze. That said, it's not everyday that you'll need to do this as that method only really applies to hand-entered, new data. Most data we'll use in this class has come from ocean instrumentation and satellite data and you'll download it as a CSV file directly form the web. This will remove Excel from the picture entirely.
+
+### What is the difference between read.csv() and read_csv()?
+
+So many of you will probably have come across this slight snag. RStudio is super helpful a lot of the time - it "suggests" autocompletes for functions and objects once you begin typing. You can also hit the tab key when you start writing a command and it will give you options for how you might want to complete what you are writing. That said, this feature can often lead to you selecting the wrong (but oh so similarly sounding) function. 
+
+In this case, `read.csv()` is the baseR or "original" csv reading function. It works much the same as the `read_csv()` function that comes from the `readr` package, but it is typically slower and produces some odd things in the output that most people typically don't want it to do. You should get into the habit of using `read_csv()` to avoid potential issues down the line. For more info, there's a good description of the differences [here](https://r4ds.had.co.nz/data-import.html#compared-to-base-r).
+
+### What is the difference between a vector and a list?
+
+A vector is a series of numbers or words contained in a single object. You will most likely see the following as ways to make vectors in R:
+
+* Using the c() function to "combine" entries
+
+```{r}
+c(1,2,5,75,43,234.3)
+```
+
+or
+
+```{r}
+c("one potato", "two potato", "three potato", "four")
+```
+
+* Using the `:` feature to make a vector of sequential numbers
+
+```{r}
+3:20
+```
+
+* Using the seq() function to make a sequence of non-sequential numbers
+
+```{r}
+seq(1, 10, by = 0.2)
+```
+
+Lists on the other hand look similar to vectors in some regards, but you can put something of any size in each component of a list:
+
+```{r}
+list(1,2:3,"hello",tibble::tibble(x = 1:4, y=3:6))
+```
+
+Don't worry too much about lists - they are a really useful tool if you want to put things of different types together, but we wont be coming across them in this class. 
+
