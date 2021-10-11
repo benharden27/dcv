@@ -40,6 +40,7 @@ p <- ggplot(profiles, aes(temp, z)) +
 # Making the plot appear
 p
 ```
+
 We can now use labs to change our x, y and color axes labels in the same way we'd set the title, subtitle, etc.
 
 ```{r}

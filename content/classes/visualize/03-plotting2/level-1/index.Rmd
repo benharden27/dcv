@@ -14,7 +14,7 @@ quiz: https://rstudio.cloud/spaces/170089/project/2870350
 knitr::opts_chunk$set(echo = TRUE, include = TRUE, cache = FALSE, message = FALSE, warning = FALSE)
 ```
 
-So we've spent some time thinking about the basics of what to plot and how to plot it. You've already had to make some decisions geoms and mapping, but now we're going to see some of the other things that R can do to customize your plots and make them publication ready.
+So we've spent some time thinking about the basics of what to plot and how to plot it. You've already had to make some decisions about what geoms and mapping to use, but now we're going to see some of the other things that R can do to customize your plots and make them publication ready.
 
 ## Zooming
 
