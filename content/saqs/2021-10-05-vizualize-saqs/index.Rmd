@@ -1,5 +1,5 @@
 ---
-title: Vizualize SAQs
+title: R Visualization Module 1
 author: Ben Harden
 date: '2021-10-05'
 slug: []
@@ -7,8 +7,6 @@ categories: []
 tags: []
 draft: no
 ---
-
-## Sometimes Asked Questions
 
 ### What are git, error trapping, and debugging?
 

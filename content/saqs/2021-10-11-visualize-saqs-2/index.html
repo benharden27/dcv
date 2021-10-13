@@ -1,0 +1,67 @@
+---
+title: Visualize SAQs 2
+author: Ben Harden
+date: '2021-10-11'
+slug: []
+categories: []
+tags: []
+draft: yes
+---
+
+<script src="{{< blogdown/postref >}}index_files/header-attrs/header-attrs.js"></script>
+
+
+<div id="what-does-the-mapping-group-cruise-tell-r-to-do" class="section level3">
+<h3>What does the mapping “group = Cruise” tell R to do?</h3>
+<p>This comes from the exercise from <a href="../../classes/visualize/02-plotting1/level-2">Plotting level 2</a>. Grouping just takes the data and plots it as if there were a number of data tables, one for each of the unique values in (in this case) the Cruise column. If you were to just plot all the data from the CTD profiles then the end of one would join up with the beginning of the next. For example:</p>
+<pre class="r"><code>df &lt;- read_csv(&quot;profiles.csv&quot;)</code></pre>
+<pre><code>## 
+## ── Column specification ────────────────────────────────────────────────────────
+## cols(
+##   Cruise = col_character(),
+##   Station = col_double(),
+##   lon = col_double(),
+##   lat = col_double(),
+##   z = col_double(),
+##   pres = col_double(),
+##   temp = col_double(),
+##   sal = col_double(),
+##   theta = col_double(),
+##   sigma = col_double(),
+##   o2 = col_logical()
+## )</code></pre>
+<pre><code>## Warning: 2553 parsing failures.
+##  row col           expected actual           file
+## 2207  o2 1/0/T/F/TRUE/FALSE  224.8 &#39;profiles.csv&#39;
+## 2208  o2 1/0/T/F/TRUE/FALSE  224.8 &#39;profiles.csv&#39;
+## 2209  o2 1/0/T/F/TRUE/FALSE  224.8 &#39;profiles.csv&#39;
+## 2210  o2 1/0/T/F/TRUE/FALSE  228.5 &#39;profiles.csv&#39;
+## 2211  o2 1/0/T/F/TRUE/FALSE  232.6 &#39;profiles.csv&#39;
+## .... ... .................. ...... ..............
+## See problems(...) for more details.</code></pre>
+<pre class="r"><code>ggplot(df) +
+  geom_path(aes(temp, z)) +
+  scale_y_reverse()</code></pre>
+<p><img src="{{< blogdown/postref >}}index_files/figure-html/unnamed-chunk-2-1.png" width="672" />
+We can solve this with grouping:</p>
+<pre class="r"><code>ggplot(df) +
+  geom_path(aes(temp, z, group = Cruise)) +
+  scale_y_reverse()</code></pre>
+<p><img src="{{< blogdown/postref >}}index_files/figure-html/unnamed-chunk-3-1.png" width="672" />
+Which splits the lines up into one for each value of Cruise. This might not look all that useful given you can also do this splitting up using <code>color</code> but you’ll find times when you might need it.</p>
+</div>
+<div id="can-you-change-the-color-of-an-individual-point" class="section level2">
+<h2>Can you change the color of an individual point?</h2>
+<p>Yes you can. Probably the easiest way would be to filter the data set for the value you want to plot and then use the fact that you can override the default plotting data in the geom function.</p>
+<pre class="r"><code>ggplot(df) +
+  geom_point(aes(temp, z)) +
+  geom_point(aes(temp, z), 
+             data = filter(df, Cruise == &quot;SR04_06AQANTIX_2&quot; &amp; round(pres) == 50),
+             color = &quot;red&quot;) +
+  scale_y_reverse()</code></pre>
+<p><img src="{{< blogdown/postref >}}index_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
+</div>
+<div id="can-you-plot-data-in-three-dimensions" class="section level2">
+<h2>Can you plot data in three dimensions?</h2>
+<p>Simple answer, yes you can. Google “ggplot 3D” and there’s a few options I believe. More importantly though you probably want to think a little about the goals of a 3D plot. They are typically quite hard to read and interpret - I’d typically go for a true 2D rendering to make the point of your visualization really effective.</p>
+</div>
