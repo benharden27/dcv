@@ -96,3 +96,44 @@ list(1,2:3,"hello",tibble::tibble(x = 1:4, y=3:6))
 
 Don't worry too much about lists - they are a really useful tool if you want to put things of different types together, but we wont be coming across them in this class. 
 
+
+### How can you tell what the units are for data that was inputted into a table in R? 
+
+This will depend on the data set. Typically, best preactice is that units are not encoded into the data itself, but supplied in a separate metadata file. Thats basically what I'll be providing you with - the data, but also a description elsewhere of what the data is in each column and the units. This *can* get a little messy though if the metadata and data files are separated. that's why in some cases you'll see the units in the column names, or as the first row in the data, or supplied in some header that sits above the data. I prefer keeping the metadata separate (as many people do) becuase it makes reading the data in so much more simple if you don't have to remove headers and edit our units from column names.
+
+### What is the difference between filter/select and using $ ?
+
+Filter is when you just want to select certain rows from your data which meet a certain criteria. Maybe they all have the same value in one column. Maybe you want all the rows where the wind speed is greater than 10 m/s. Whatever the criterion, you can use filter to acheive this goal of isolating rows.
+
+```{r, echo = F, message=FALSE, error=F, warning=FALSE}
+library(tidyverse)
+```
+
+
+```{r}
+filter(mtcars, cyl == 6)
+```
+
+
+Select just takes certain columns from your data. This is similar to using the `$` operator, but allows you to select more than one row.
+
+```{r}
+select(mtcars, cyl, disp)
+```
+
+### At the end of the data, the last lines tells you how many more rows and variables are not shown, then how can we see the rest of the data? Can we only see it when we use the table icon on the environmental tab?
+
+You *can* have R print out more rows, but it's often best to use:
+
+```{r, eval = F}
+View(mtcars)
+```
+
+or click the table icon to get a full view of the data.
+
+You can also use:
+
+```{r}
+print(mtcars)
+```
+to see all the data in the console.
