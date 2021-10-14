@@ -1,5 +1,5 @@
 ---
-title: 'Evaluate/Create Climate Story'
+title: 'Synthesize Your Understanding'
 author: Ben Harden
 date: "`r format(Sys.time(), '%Y-%m-%d')`"
 level: 4
@@ -9,4 +9,24 @@ tags: []
 draft: no
 ---
 
-???
+Now that we've discussed what makes for an effective climate story you can choose **one** of the options below for Level 4 to summarize and synthesize what we've been exploring.
+
+## 1. Script Outline
+
+This can (and probably should) be totally fictionalized, but create a story outline for an epic film or TV show about climate change. Come up with a story that you think would be a winning formula for both box office ratings and inspiring others to take some action. 
+
+You should summarize this story in a single page and include:
+
+* The basic plot outline divided into the stages of the story - a few sentences for each.
+* The shape of the story (could be incorporated into the above).
+* A clear sense of who the protagonist is, what they want, and what type of story they find themselves in.
+* Notes to describe how you think this story will impact the viewer (and why) at various stages through the plot including when they leave the theater.
+* Any other thoughts regarding potential shooting location or casting.
+
+## 2. Create a Short Guide to Climate Storytelling
+
+You second choice is to get creative and synthesize some of what we have learned and turn it into an attractive study guide. You can get creative with what you produce, but the goal should be to make a single sheet display of key information/insight from this module that we could hang in the classroom or share with the class (or other classes) to remind us of the key elements of climate storytelling. You can weave in aspects from the "Writing for Voice" module as they are relevant. 
+
+You don't need to cram everything in - the key here is to synthesize what you think are the key takeaways for communicating clearly and compellingly about the environment/climate. For example, you could do this in a comic strip, an infographic, an annotated radio script, a flow diagram... Come see me if you have an idea you want to discuss.
+
+Regardless of what you choose, you should think carefully about what elements you wish to include and take care in your presentation. You can submit your work to the Google Classroom link below or to me in person.
