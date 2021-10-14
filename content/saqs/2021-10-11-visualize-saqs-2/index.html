@@ -67,14 +67,14 @@ Which splits the lines up into one for each value of Cruise. This might not look
 </div>
 <div id="if-the-data-are-too-close-together-and-the-shape-grouping-is-too-muddy-what-is-a-good-way-to-group-data-without-color-for-someone-colorblind-or-to-be-printed-in-black-white" class="section level3">
 <h3>If the data are too close together and the shape grouping is too muddy, what is a good way to group data without color (for someone colorblind or to be printed in black &amp; white)?</h3>
-<p>Good question - honestly it depends on the scenario. The most common colorblindness is red-green which 10% of all males have. So the simplest method is to first avoid key differences in any colorscale being a contrast between red and green. There are ways to choose color schemes that work well and we’ll cover this in Module 3 (customizing plots). As a spoiler to that, there’s a great site called <a href="https://colorbrewer2.org/">colorbrewer</a> which offers some palette choices and also screens for colorblind safe options. If you want to avoid color altogether then you’re choices really are shape (although I think ggplot’s default shape “palette” isn’t ideal,m but can be modified), line/point size/weight (thick, thin, big, small), and linestyle (solid, dashed, dotted, dot-dash, etc.) The right choice will depend on situation. One thing you can consider is double encoding wherein you use color and shape for the different points - that way you can use color for the majority of your audience who will respond best to that while also encoding as shapes too for folks who will find color alone difficult to engage with (or may lack a color printer…)</p>
+<p>Good question - honestly it depends on the scenario. The most common colorblindness is red-green which 10% of all males have. So the simplest method is to first avoid key differences in any colorscale being a contrast between red and green. There are ways to choose color schemes that work well and we’ll cover this in Module 3 (customizing plots). As a spoiler to that, there’s a great site called <a href="https://colorbrewer2.org/">colorbrewer</a> which offers some palette choices and also screens for colorblind safe options. If you want to avoid color altogether then you’re choices really are shape (although I think ggplot’s default shape “palette” isn’t ideal, but can be modified), line/point size/weight (thick, thin, big, small), and linestyle (solid, dashed, dotted, dot-dash, etc.) The “right” choice will depend on situation. One thing you can consider is double encoding wherein you use color <em>and</em> shape for the different points - that way you can use color for the majority of your audience who will respond best to that while also encoding as shapes too for folks who will find color alone difficult to engage with (or may lack a color printer…)</p>
 </div>
 <div id="what-is-ggplot-and-ggplot2-whats-the-difference" class="section level3">
 <h3>What is ggplot and ggplot2 what’s the difference</h3>
 <p><code>ggplot2</code> is the package, <code>ggplot</code> is the function for creating a graph in that package. Why the 2? I have no idea and can’t find an answer on searching online. Let me know if you find the answer!</p>
 </div>
-<div id="when-i-should-put-the-mappings-inside-the-aes-or-outside." class="section level3">
-<h3>When I should put the mappings inside the aes() or outside.</h3>
+<div id="when-should-i-put-the-mappings-inside-the-aes-or-outside" class="section level3">
+<h3>When should I put the mappings inside the aes() or outside?</h3>
 <p>You should always put any mapping inside the <code>aes()</code> - that’s the function that tells ggplot that you want this variable to be mapped to some aesthetic on your plot. Anything you set outside the <code>aes()</code> will be treated as a universal setting for your geom.</p>
 <p>For example, with the profiles example again. Plotting each line as a different color I need to put <code>color = Cruise</code> inside the <code>aes()</code>:</p>
 <pre class="r"><code>ggplot(df) +
@@ -93,4 +93,8 @@ Which splits the lines up into one for each value of Cruise. This might not look
   scale_y_reverse()</code></pre>
 <p><img src="{{< blogdown/postref >}}index_files/figure-html/unnamed-chunk-7-1.png" width="672" />
 Remember - setting something inside <code>aes()</code> tells ggplot that you want to map this variable to an aesthetic (x/y position, color, size, etc.). Setting it outside tries to set a universal property for your geom.</p>
+</div>
+<div id="should-i-be-memorizingtrying-to-retain-how-to-manipulate-details-of-aesthetics-and-parameters-for-each-type-of-chart-or-should-i-expect-to-reference-cheat-sheets-and-help-menus-whenever-i-am-presented-with-a-question-of-statistical-analysis." class="section level3">
+<h3>Should I be memorizing/trying to retain how to manipulate details of aesthetics and parameters for each type of chart? Or should I expect to reference “cheat” sheets and help menus whenever I am presented with a question of statistical analysis.</h3>
+<p>I’m not expecting you to memorize anything - you will always have access to the full range of resources you’d have in a real world setting. Cheatsheets, help menus, internet searches - it’s all fair game in this class.</p>
 </div>
