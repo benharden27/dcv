@@ -1,0 +1,108 @@
+---
+title: How to make a map
+author: Ben Harden
+date: '2021-10-15'
+slug: []
+categories: []
+tags: []
+draft: no
+---
+
+## Prerequisites
+
+This will be a walk through of how to plot data on a map. We'll be using the S225 hourly location data to plot a cruise track.
+
+Before we can get going, we need to load our tidyverse library and read in our data like in previous tutorials.
+
+```{r libraries-data}
+library(tidyverse)
+df <- read_csv("S225_hourly.csv")
+```
+
+## Mapping
+
+An initial map of the location data can be achieved by a simple ggplot figure such as the following, where our x and y aesthetics are lon and lat and we plot each location as a point.
+
+```{r initial-map}
+ggplot(df, aes(lon,lat)) +
+  geom_point()
+```
+
+
+The next thing we can do is add some land to contextualize the cruise track. We can do this using inbuilt map data in `ggplot`. The data file we're going to use is called `world` because that is the world map data that spans the antimeridian. This data contains not only the lon and lat data of coastlines, but also groups them together into islands and nations so you can plot these territories. Each island and nation gets a unique `group` name. The way we can use this in ggplot is by using `geom_polygon()` with a group aesthetic. This basically creates a polygon for every individual group.
+
+```{r}
+ggplot(df, aes(lon, lat)) +
+  geom_point() +
+  geom_polygon(aes(long, lat, group = group), data = map_data("world"))
+```
+
+So far so good. We can see our cruise track on a map of the world. We probably don't need to see the whole world though, but we can solve that whilst also solving another issue - that of aspect ratio. Right now if you resize your figure window, the map will narrow or heighten and create a world with a very odd perspective not see in any textbooks. That's because when we make a map, we want to make sure that the spatial coordinates of the map match our reality of moving around in that space. i.e. moving some amount in the y-direction will move us the same on-the-ground distance as moving the same amount along the x-axis. `ggplot` has a coordinate transform that does a good first pass at this and it also allows us (like other `coord_*` functions) to specify the range of x and y values shown.
+
+```{r}
+ggplot(df, aes(lon, lat)) +
+  geom_point() +
+  geom_polygon(aes(long, lat, group = group), data = map_data("world")) +
+  coord_quickmap(xlim = c(-180, -90), ylim = c(10,50))
+   
+```
+
+We've now set the bounds of the plot but also ensured that no shifting of the plotting window size will influence the aspect ratio of the plot.
+
+The next thing to clean up are the axis labels and the tick labels. The axis labels can be set to NULL as we've done before. To get nice looking x and y tick labels we probably want to add °S or °W. This is pretty simply done for the y axis as the locations are all in the same hemisphere. We simply select where we want our ticks and then add on a °S to the absolute value of the y locations. We can do this using `seq()` to create a sequence of tick values then use `paste0()` to add the absolute values in this sequence (given they are all negative) to the °S symbol.
+
+
+```{r}
+# sequence from -180 to -90 in incriments of 10
+xbreaks <- seq(-180,-90,10)
+# combine each of the the absolute values with the °W symbol
+xlabels <- paste0(abs(xbreaks), "°W")
+
+# sequence from 10 to 50 in incriments of 10
+ybreaks <- seq(10,50,10)
+# combine each of the the absolute values with the °N symbol
+ylabels <- paste0(abs(ybreaks), "°N")
+
+
+
+ggplot(df, aes(lon, lat)) +
+  geom_point() +
+  geom_polygon(aes(long, lat, group = group), data = map_data("world")) +
+  coord_quickmap(xlim = c(-180, -90), ylim = c(10,50)) +
+  labs(x = NULL, y = NULL) +
+  scale_y_continuous(breaks = ybreaks, labels = ylabels) +
+  scale_x_continuous(breaks = xbreaks, labels = xlabels)
+   
+```
+
+The last thing to do is potentially change the geom to `geom_path()` rather than `geom_point()` and change some of the aesthetics and theme of the plot to bring the data to the fore.
+
+```{r}
+ggplot(df, aes(lon, lat)) +
+  geom_path() +
+  geom_polygon(aes(long, lat, group = group), data = map_data("world"), fill = "grey50") +
+  coord_quickmap(xlim = c(-180, -90), ylim = c(10,50)) +
+  labs(x = NULL, y = NULL) +
+  scale_y_continuous(breaks = ybreaks, labels = ylabels) +
+  scale_x_continuous(breaks = xbreaks, labels = xlabels) +
+  theme_void() +
+  theme(panel.grid.major = element_line(color = "grey90"),
+        axis.text = element_text(color = "grey50", size = 10))
+   
+```
+
+Then, as with our previous plotting tools, you can even add extra aesthetics such as coloring the points by temperature.
+
+```{r}
+ggplot(df, aes(lon, lat)) +
+  geom_path(aes(color = temp)) +
+  geom_polygon(aes(long, lat, group = group), data = map_data("world"), fill = "grey50") +
+  coord_quickmap(xlim = c(-180, -90), ylim = c(10,50)) +
+  labs(x = NULL, y = NULL) +
+  scale_y_continuous(breaks = ybreaks, labels = ylabels) +
+  scale_x_continuous(breaks = xbreaks, labels = xlabels) +
+  theme_void() +
+  theme(panel.grid.major = element_line(color = "grey90"),
+        axis.text = element_text(color = "grey50", size = 10),
+        legend.position = c(0.9,0.9))
+```
