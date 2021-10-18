@@ -1,0 +1,43 @@
+---
+title: Schedule
+author: Ben Harden
+date: '2021-10-17'
+slug: []
+categories: []
+tags: []
+draft: no
+---
+
+Subject to some changes, but here's the basic layout
+
+```{r, echo = F, message = F, warning=F}
+library(tidyverse)
+
+dates <- c(paste0("2021-10-",str_pad(c(12,14,15,18,19,21,22,25,26,28,29),"0")), paste0("2021-11-",str_pad(c(1,2,3),2,"left","0"))) 
+
+times <- paste(dates, c("13:30","10:45","10:45","10:45","13:30","10:45","10:45","10:45","13:30","10:45","10:45","10:45","13:30","10:45"))
+
+times <- lubridate::ymd_hm(times)
+
+schedule <- tibble(Day = format(times,"%a %h %d %H:%M"))
+
+schedule <- mutate(schedule, 
+                   Activity = c("Introduction",
+                                "Writing for Voice L1",
+                                "R Challenge + ggplot",
+                                "Practice Discussion",
+                                "Writing for Voice L2 skits",
+                                "Visualize Project Prep",
+                                "Writing for Voice L3 Discussion",
+                                "Guest: Dr. Heather Goldstone",
+                                "Storytelling L2 Group Presentations",
+                                "Visualize Project Review and Story Planning",
+                                "Storytelling L3 Discussion",
+                                "Story Draft Review",
+                                "Design L3 Discussion",
+                                "Viz Presentation"
+))
+
+knitr::kable(schedule)
+```
+

@@ -5,12 +5,12 @@ date: '2021-05-20'
 slug: []
 categories: []
 tags: []
-draft: yes
+draft: no
 ---
 
 ## Overview
 
-The small group discussions you will be doing for many modules' level 3 work are intended to give you a space to probe a series of questions as a small group of 3 or 4. 
+For some L3 work, we will be doing some small group discussions. These are intended to give you a space to demonstrate what you know and probe a series of questions as a small group. 
 
 These conversations will be modeled after the Socratic Seminar method where students lead and direct the discussion without input from an instructor. You will be given material to read and questions to look at ahead of time - the conversation should be focused on these questions, but can diverge a little as long as the topic in questions remains the focus of discussion.
 
@@ -34,20 +34,16 @@ You will be grouped with your peers and given a set period of time in which to d
 * Try and be cognizant of the time you've spent speaking and don't dominate discussion for long stretches.
 * Bring others into the conversation by asking helpful, open-ended questions (not putting them on the spot).
 
-### Reflection
-
-After the discussion you will be asked to reflect on your preparedness and participation in the seminar and set a goal for the next discussion. This will be in the standard "Level Complete" form.
-
 ## Scoring
 
-Level discussions will be scored 0-8 for final grade contribution. This score will be split equally between your demonstration of understanding and your participation in the discussion.
+Level discussions will be scored 0-10 for final grade contribution. This score will be split equally between your demonstration of understanding and your participation in the discussion.
 
 ```{r, echo = FALSE}
 knitr::kable(
   tibble::tribble(~"Score", ~"Understanding",~"Participation",
-                  "0", "Absent or silent","Absent or silent",
-                  "1", "Offered limited foundational ideas","Contributed in limited manner",
-                  "2", "Demonstrated application of Level 1 and 2 ideas","Offered thoughts and asked questions",
-                  "3", "Analysis in relation to Level 3 reading","Brought others into conversation through helpful questions",
-                  "4"," Detailed analysis and evaluation","Helped guide conversation through synthesis, summaries and clarification questions"))
+                  "1", "No Contribution","No Contribution",
+                  "2", "Offered limited foundational ideas","Contributed in limited manner",
+                  "3", "Demonstrated application of Level 1 and 2 ideas","Offered thoughts and asked questions",
+                  "4", "Analysis in relation to Level 3 reading","Brought others into conversation through helpful questions",
+                  "5"," Detailed analysis and evaluation","Helped guide conversation through synthesis, summaries and clarification questions"))
 ```

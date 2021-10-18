@@ -34,9 +34,15 @@ menu:
     - name: Classes
       url: /classes
       weight: 2
+    - name: Schedule
+      url: /schedule
+      weight: 3
+    - name: Discussions
+      url: /discussions
+      weight: 4
     - name: SAQs
       url: /saqs
-      weight: 3
+      weight: 4
     - name: Syllabus
       url: /docs/S301_DCV_syllabus.pdf
       weight: 5
