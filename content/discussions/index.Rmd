@@ -43,7 +43,7 @@ knitr::kable(
   tibble::tribble(~"Score", ~"Understanding",~"Participation",
                   "1", "No Contribution","No Contribution",
                   "2", "Offered limited foundational ideas","Contributed in limited manner",
-                  "3", "Demonstrated application of Level 1 and 2 ideas","Offered thoughts and asked questions",
-                  "4", "Analysis in relation to Level 3 reading","Brought others into conversation through helpful questions",
+                  "3", "Demonstrated application of previously covered content","Offered thoughts and asked questions",
+                  "4", "Analysis in relation to more advanced ideas","Brought others into conversation through helpful questions",
                   "5"," Detailed analysis and evaluation","Helped guide conversation through synthesis, summaries and clarification questions"))
 ```
