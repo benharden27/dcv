@@ -1,0 +1,46 @@
+---
+title: R Visualization Module 3
+author: Ben Harden
+date: '2021-10-14'
+slug: []
+categories: []
+tags: []
+---
+
+<script src="{{< blogdown/postref >}}index_files/header-attrs/header-attrs.js"></script>
+
+
+<div id="im-confused-on-what-a-scale-is.-is-it-just-anything-that-has-to-do-with-the-aesthetic-argument" class="section level3">
+<h3>I’m confused on what a scale is. Is it just anything that has to do with the aesthetic argument?</h3>
+<p>All the scale functions do if just tell ggplot to change how it has mapped the variable to the aesthetic in a plot. Technically every time you make a plot, ggplot has a default scaling it applies to the mapping.
+For example, in the following code:</p>
+<pre class="r"><code>ggplot(df) +
+  geom_point(aes(sal, temp, color = Cruise))</code></pre>
+<p>ggplot will (behind he scenes) map the values in the salinity variable along the x axis as a linear scale from roughly the minimum to the maximum salinities. Same for temperature along the y axis. It will also added a color scale which is the default R discrete color scale for the discrete variable <code>Cruise</code>. If you want to change these mappings in any way (i.e. change the bounds of the axes, or map different colors) you need to use the appropriate scale function.</p>
+<p>The scale functions all have a similar form:</p>
+<p><code>scale_&lt;name of aesthetic&gt;_&lt;some other identifier&gt;()</code></p>
+<p>So in the case of changing how the x distance is scaled we would use:</p>
+<p><code>scale_x_continuous()</code></p>
+<p>And for scaling the color we might use:</p>
+<p><code>scale_color_discrete()</code></p>
+</div>
+<div id="can-you-design-and-save-a-custom-theme" class="section level3">
+<h3>Can you design and save a custom theme?</h3>
+<p>Oh yes. Some details of this in <a href="../../classes/visualize/03-plotting2/level-4/">Module 3 L4</a>. This tells you how to edit your plot features in more fine detail. If you want to build your own theme as a function, you can find details <a href="https://rpubs.com/mclaire19/ggplot2-custom-themes">here</a>.</p>
+</div>
+<div id="can-custom-palettes-be-infinitely-long-or-is-there-a-maximum-number-of-values" class="section level3">
+<h3>Can custom palettes be infinitely long or is there a maximum number of values?</h3>
+<p>Custom color palettes can be as long as you want, but the more values you have the less distinction there will be between the colors and the harder it will be for a viewer to interpret. Balancing this is one of the decisions you have to make as a data designer.</p>
+</div>
+<div id="is-there-a-way-to-look-at-two-plots-next-to-each-other-so-you-can-compare-different-visual-changes-to-see-which-looks-best" class="section level3">
+<h3>Is there a way to look at two plots next to each other so you can compare different visual changes to see which looks best?</h3>
+<p>There are some details of putting plots next to each other in <a href="../../classes/visualize/03-plotting2/level-4/">M3L4 work</a>. But if you dont want that level of detail then there are little blue back and forth arrows at the top of the plotting window which allows you to scroll through your plots and compare them.</p>
+</div>
+<div id="i-tried-to-use-scale_color_brewer-on-the-color-aesthetic-which-didnt-work-because-it-was-continuous.-how-do-you-change-the-color-of-continuous-data" class="section level2">
+<h2>I tried to use scale_color_brewer on the color aesthetic which didn’t work because it was continuous. How do you change the color of continuous data?</h2>
+<p>R has two functions for color brewer. <code>scale_color_brewer()</code> works for discrete data and <code>scale_color_distiller()</code> works for continuous data.</p>
+<div id="why-are-all-the-themes-ugly" class="section level3">
+<h3>Why are all the themes ugly?</h3>
+<p>Good question</p>
+</div>
+</div>

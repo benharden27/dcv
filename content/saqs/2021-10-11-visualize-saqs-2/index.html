@@ -98,3 +98,50 @@ Remember - setting something inside <code>aes()</code> tells ggplot that you wan
 <h3>Should I be memorizing/trying to retain how to manipulate details of aesthetics and parameters for each type of chart? Or should I expect to reference “cheat” sheets and help menus whenever I am presented with a question of statistical analysis.</h3>
 <p>I’m not expecting you to memorize anything - you will always have access to the full range of resources you’d have in a real world setting. Cheatsheets, help menus, internet searches - it’s all fair game in this class.</p>
 </div>
+<div id="when-do-i-have-to-retype-the-mapping-aes-function-and-when-do-i-not" class="section level3">
+<h3>When do I have to retype the mapping = aes function and when do I not?</h3>
+<p>Whenever you need to “map” a variable to an aesthetic (longitude to distance along the x axis, temperature to color, etc.) you need to do this mapping inside the <code>aes()</code> function to let ggplot know that’s your intention.</p>
+<p>If your question is also about when you need to include the <code>mapping =</code> bit then the answer is that you can do if it helps, but all the geom functions are expecting the first thing to be the aesthetic mapping so you can omit it if you want to save yourself the typing. The same is true for the <code>aes()</code> function itself. It is expecting the first two arguments to be <code>x =</code> and <code>y =</code>. <code>ggplot()</code> is also expecting the first argument to be the data.</p>
+<p>In short, the completely verbose:</p>
+<pre class="r"><code>ggplot(data = df) +
+  geom_point(mapping = aes(x = lon, y = lat))</code></pre>
+<p>Can also be written as:</p>
+<pre class="r"><code>ggplot(df) +
+  geom_point(aes(lon, lat))</code></pre>
+<p>The former may be most easily understood, but the latter is easier on the hands.</p>
+</div>
+<div id="if-there-are-both-plots-assigned-to-an-object-and-plots-that-are-not-will-the-function-last_plot-call-the-most-recent-plot-or-the-most-recent-unassigned-plot-if-they-are-not-the-same" class="section level3">
+<h3>If there are both plots assigned to an object and plots that are not, will the function last_plot call the most recent plot or the most recent unassigned plot? (if they are not the same)</h3>
+<p>I don’t know, let’s give it a go!</p>
+<pre class="r"><code>ggplot(df) +
+  geom_path(aes(temp, z, color = Cruise)) +
+  scale_y_reverse()</code></pre>
+<p><img src="{{< blogdown/postref >}}index_files/figure-html/unnamed-chunk-10-1.png" width="672" /></p>
+<pre class="r"><code>g &lt;- ggplot(df) +
+  geom_path(aes(sal, z, color = Cruise)) +
+  scale_y_reverse()
+
+last_plot() + theme_bw()</code></pre>
+<p><img src="{{< blogdown/postref >}}index_files/figure-html/unnamed-chunk-10-2.png" width="672" /></p>
+<p>Looks like the salinity plot was deemed the last plot. In general though, there aren’t a ton of occasions where you’ll use <code>last_plot()</code> - it’s just a fun tool to know about.</p>
+</div>
+<div id="i-am-still-not-sure-how-to-decide-whats-the-best-binwidth-for-a-given-data" class="section level3">
+<h3>I am still not sure how to decide what’s the best binwidth for a given data</h3>
+<p>Good question - it’s really a trade off between a higher degree of summarizing (larger bin width) and being more specific, but more pointy (smaller bin width)</p>
+<pre class="r"><code>ggplot(df) +
+  geom_histogram(aes(temp), binwidth = 5)</code></pre>
+<p><img src="{{< blogdown/postref >}}index_files/figure-html/unnamed-chunk-11-1.png" width="672" /></p>
+<pre class="r"><code>ggplot(df) +
+  geom_histogram(aes(temp), binwidth = .01)</code></pre>
+<p><img src="{{< blogdown/postref >}}index_files/figure-html/unnamed-chunk-12-1.png" width="672" /></p>
+<p>Both plots show you that there are more values near 0 than elsewhere, but the first gives you a clearly picture of just how many more whereas the second gives you a more detailed picture of how values clump on a fine scale (but you lose some of the statistical comparison)</p>
+</div>
+<div id="i-am-not-too-sure-what-geom_rug-means-when-we-read-the-scatter-plot" class="section level3">
+<h3>I am not too sure what geom_rug means when we read the scatter plot</h3>
+<p><code>geom_rug</code> is a way to essentially add a summary of your data to your axes.</p>
+<pre class="r"><code>ggplot(df) +
+  geom_point(aes(sal,temp)) +
+  geom_rug(aes(sal,temp))</code></pre>
+<p><img src="{{< blogdown/postref >}}index_files/figure-html/unnamed-chunk-13-1.png" width="672" />
+Each point in the domain is marked as a tick mark along both the x and y axis. In this way you can look at the plot and see their spread in x and y.</p>
+</div>

@@ -1,0 +1,54 @@
+---
+title: R Visualization Module 3
+author: Ben Harden
+date: '2021-10-14'
+slug: []
+categories: []
+tags: []
+---
+
+### I'm confused on what a scale is. Is it just anything that has to do with the aesthetic argument?
+
+All the scale functions do if just tell ggplot to change how it has mapped the variable to the aesthetic in a plot. Technically every time you make a plot, ggplot has a default scaling it applies to the mapping. 
+For example, in the following code:
+
+```{r, eval = F}
+ggplot(df) +
+  geom_point(aes(sal, temp, color = Cruise))
+```
+
+ggplot will (behind he scenes) map the values in the salinity variable along the x axis as a linear scale from roughly the minimum to the maximum salinities. Same for temperature along the y axis. It will also added a color scale which is the default R discrete color scale for the discrete variable `Cruise`. If you want to change these mappings in any way (i.e. change the bounds of the axes, or map different colors) you need to use the appropriate scale function. 
+
+The scale functions all have a similar form:
+
+`scale_<name of aesthetic>_<some other identifier>()`
+
+So in the case of changing how the x distance is scaled we would use:
+
+`scale_x_continuous()`
+
+And for scaling the color we might use:
+
+`scale_color_discrete()`
+
+### Can you design and save a custom theme?
+
+Oh yes. Some details of this in [Module 3 L4](../../classes/visualize/03-plotting2/level-4/). This tells you how to edit your plot features in more fine detail. If you want to build your own theme as a function, you can find details [here](https://rpubs.com/mclaire19/ggplot2-custom-themes).
+
+### Can custom palettes be infinitely long or is there a maximum number of values?
+
+Custom color palettes can be as long as you want, but the more values you have the less distinction there will be between the colors and the harder it will be for a viewer to interpret. Balancing this is one of the decisions you have to make as a data designer.
+
+### Is there a way to look at two plots next to each other so you can compare different visual changes to see which looks best?
+
+There are some details of putting plots next to each other in [M3L4 work](../../classes/visualize/03-plotting2/level-4/). But if you dont want that level of detail then there are little blue back and forth arrows at the top of the plotting window which allows you to scroll through your plots and compare them.
+
+## I tried to use scale_color_brewer on the color aesthetic which didn't work because it was continuous. How do you change the color of continuous data?
+
+R has two functions for color brewer. `scale_color_brewer()` works for discrete data and `scale_color_distiller()` works for continuous data.
+
+### Why are all the themes ugly?
+
+Good question
+
+

@@ -91,3 +91,70 @@ Remember - setting something inside `aes()` tells ggplot that you want to map th
 
 I'm not expecting you to memorize anything - you will always have access to the full range of resources you'd have in a real world setting. Cheatsheets, help menus, internet searches - it's all fair game in this class.
 
+### When do I have to retype the mapping = aes function and when do I not?
+
+Whenever you need to "map" a variable to an aesthetic (longitude to distance along the x axis, temperature to color, etc.) you need to do this mapping inside the `aes()` function to let ggplot know that's your intention.
+
+If your question is also about when you need to include the `mapping =` bit then the answer is that you can do if it helps, but all the geom functions are expecting the first thing to be the aesthetic mapping so you can omit it if you want to save yourself the typing. The same is true for the `aes()` function itself. It is expecting the first two arguments to be `x =` and `y =`. `ggplot()` is also expecting the first argument to be the data.
+
+In short, the completely verbose:
+
+```{r, eval = F}
+ggplot(data = df) +
+  geom_point(mapping = aes(x = lon, y = lat))
+```
+
+Can also be written as:
+
+```{r, eval = F}
+ggplot(df) +
+  geom_point(aes(lon, lat))
+```
+
+The former may be most easily understood, but the latter is easier on the hands.
+
+### If there are both plots assigned to an object and plots that are not, will the function last_plot call the most recent plot or the most recent unassigned plot? (if they are not the same)
+
+I don't know, let's give it a go!
+
+```{r}
+ggplot(df) +
+  geom_path(aes(temp, z, color = Cruise)) +
+  scale_y_reverse()
+
+g <- ggplot(df) +
+  geom_path(aes(sal, z, color = Cruise)) +
+  scale_y_reverse()
+
+last_plot() + theme_bw()
+```
+
+Looks like the salinity plot was deemed the last plot. In general though, there aren't a ton of occasions where you'll use `last_plot()` - it's just a fun tool to know about.
+
+### I am still not sure how to decide what's the best binwidth for a given data
+
+Good question - it's really a trade off between a higher degree of summarizing (larger bin width) and being more specific, but more pointy (smaller bin width)
+
+```{r}
+ggplot(df) +
+  geom_histogram(aes(temp), binwidth = 5)
+```
+
+```{r}
+ggplot(df) +
+  geom_histogram(aes(temp), binwidth = .01)
+```
+
+Both plots show you that there are more values near 0 than elsewhere, but the first gives you a clearly picture of just how many more whereas the second gives you a more detailed picture of how values clump on a fine scale (but you lose some of the statistical comparison)
+
+### I am not too sure what geom_rug means when we read the scatter plot
+
+`geom_rug` is a way to essentially add a summary of your data to your axes. 
+
+```{r}
+ggplot(df) +
+  geom_point(aes(sal,temp)) +
+  geom_rug(aes(sal,temp))
+```
+Each point in the domain is marked as a tick mark along both the x and y axis. In this way you can look at the plot and see their spread in x and y.
+
