@@ -1,0 +1,102 @@
+---
+title: Making a Map
+author: Ben Harden
+date: '2021-10-05'
+slug: []
+categories: []
+tags: []
+draft: no
+weight: 1
+---
+
+<script src="{{< blogdown/postref >}}index_files/header-attrs/header-attrs.js"></script>
+
+
+<p>Not really a dataset per se, but this will be a walk through of how to plot data on a map. We’ll be using the <a href="S225_hourly.csv">S225 hourly</a> location data to plot a cruise track.</p>
+<p>Before we can get going, we need to load our tidyverse library and read in our data like in previous tutorials.</p>
+<pre class="r"><code>library(tidyverse)
+df &lt;- read_csv(&quot;S225_hourly.csv&quot;)</code></pre>
+<div id="mapping" class="section level2">
+<h2>Mapping</h2>
+<p>An initial map of the location data can be achieved by a simple ggplot figure such as the following, where our x and y aesthetics are lon and lat and we plot each location as a point.</p>
+<pre class="r"><code>ggplot(df, aes(lon,lat)) +
+  geom_point()</code></pre>
+<p><img src="{{< blogdown/postref >}}index_files/figure-html/initial-map-1.png" width="672" /></p>
+<p>The next thing we can do is add some land to contextualize the cruise track. We can do this using inbuilt map data in <code>ggplot</code>. The data file we’re going to use is called <code>world</code> (perhaps unsurprisingly). This data contains not only the lon and lat data of coastlines, but also groups them together into islands and nations so you can plot these territories. Each island and nation gets a unique <code>group</code> name. The way we can use this in ggplot is by using <code>geom_polygon()</code> with a group aesthetic. This basically creates a polygon for every individual group.</p>
+<pre class="r"><code>ggplot(df, aes(lon, lat)) +
+  geom_point() +
+  geom_polygon(aes(long, lat, group = group), data = map_data(&quot;world&quot;))</code></pre>
+<p><img src="{{< blogdown/postref >}}index_files/figure-html/unnamed-chunk-1-1.png" width="672" /></p>
+<p>So far so good. We can see our cruise track on a map of the world. We probably don’t need to see the whole world though, but we can solve that whilst also solving another issue - that of aspect ratio. Right now if you resize your figure window, the map will narrow or heighten and create a world with a very odd perspective not see in any textbooks. That’s because when we make a map, we want to make sure that the spatial coordinates of the map match our reality of moving around in that space. i.e. moving some amount in the y-direction will move us the same on-the-ground distance as moving the same amount along the x-axis. <code>ggplot</code> has a coordinate transform that does a good first pass at this and it also allows us (like other <code>coord_*</code> functions) to specify the range of x and y values shown.</p>
+<pre class="r"><code>base_map &lt;- ggplot(df, aes(lon, lat)) +
+  geom_point() +
+  geom_polygon(aes(long, lat, group = group), data = map_data(&quot;world&quot;)) +
+  coord_quickmap(xlim = c(-170, -100), ylim = c(5,40))
+   
+base_map</code></pre>
+<p><img src="{{< blogdown/postref >}}index_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
+<p>We’ve now set the bounds of the plot but also ensured that no shifting of the plotting window size will influence the aspect ratio of the plot.</p>
+<p>And that’s basically that. I’ll give you a few more tips below, but even as it, that’s not a bad map.</p>
+<p>Final things you might want to do is set the theme and remove the lon and lat labels (because its clear that its a map and you don’t need to tell someone what is plotted on the x and y axes:</p>
+<pre class="r"><code>base_map &lt;- base_map + 
+  theme_minimal() +
+  theme(panel.grid.minor = element_blank(),
+        panel.grid.major = element_line(size = .2)) +
+  labs(x = NULL, y = NULL)
+
+base_map</code></pre>
+<p><img src="{{< blogdown/postref >}}index_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
+</div>
+<div id="extenstions" class="section level2">
+<h2>Extenstions</h2>
+<p>The next thing one might want to do is adjust the tick labels. To get nice looking x and y tick labels we probably want to add °N or °W to the numbers. To do this we need to tell ggplot where we want the ticks and what labels we want to give them. We’re going to use a few basic R tools to set this up:</p>
+<ul>
+<li><code>seq()</code> creates a sequence of values, i.e. a vector from 1 to 100 in increments of 10:</li>
+</ul>
+<pre class="r"><code>seq(1,100,10)</code></pre>
+<pre><code>##  [1]  1 11 21 31 41 51 61 71 81 91</code></pre>
+<ul>
+<li><code>paste0()</code> joins character values together with no white space, i.e. adding the word “hello” to the ends of the numbers 1 to 10:</li>
+</ul>
+<pre class="r"><code>paste0(1:10,&quot;hello&quot;)</code></pre>
+<pre><code>##  [1] &quot;1hello&quot;  &quot;2hello&quot;  &quot;3hello&quot;  &quot;4hello&quot;  &quot;5hello&quot;  &quot;6hello&quot;  &quot;7hello&quot; 
+##  [8] &quot;8hello&quot;  &quot;9hello&quot;  &quot;10hello&quot;</code></pre>
+<ul>
+<li><code>abs()</code> returns the absolute magnitude of a number, i.e. makes negative numbers positive</li>
+</ul>
+<pre class="r"><code>abs(-1)</code></pre>
+<pre><code>## [1] 1</code></pre>
+<p>So we can use these tools to create good tick locations and make the labels. In the following code, <code>xbreaks</code> is the location of the ticks, and <code>xlabels</code> are the corresponding labels</p>
+<pre class="r"><code># sequence from -170 to -100 in increments of 10
+xbreaks &lt;- seq(-170,-100,10)
+# combine each of the the absolute values with the °W symbol
+xlabels &lt;- paste0(abs(xbreaks), &quot;°W&quot;)
+
+# sequence from 10 to 50 in increments of 10
+ybreaks &lt;- seq(10, 50, 10)
+# combine each of the the absolute values with the °N symbol
+ylabels &lt;- paste0(abs(ybreaks), &quot;°N&quot;)</code></pre>
+<p>This give us:</p>
+<pre class="r"><code>xbreaks</code></pre>
+<pre><code>## [1] -170 -160 -150 -140 -130 -120 -110 -100</code></pre>
+<pre class="r"><code>xlabels</code></pre>
+<pre><code>## [1] &quot;170°W&quot; &quot;160°W&quot; &quot;150°W&quot; &quot;140°W&quot; &quot;130°W&quot; &quot;120°W&quot; &quot;110°W&quot; &quot;100°W&quot;</code></pre>
+<pre class="r"><code>ybreaks</code></pre>
+<pre><code>## [1] 10 20 30 40 50</code></pre>
+<pre class="r"><code>ylabels</code></pre>
+<pre><code>## [1] &quot;10°N&quot; &quot;20°N&quot; &quot;30°N&quot; &quot;40°N&quot; &quot;50°N&quot;</code></pre>
+<p>We can add that into our plot with the scale functions:</p>
+<pre class="r"><code>base_map &lt;- base_map +
+  scale_y_continuous(breaks = ybreaks, labels = ylabels) +
+  scale_x_continuous(breaks = xbreaks, labels = xlabels)
+
+base_map</code></pre>
+<p><img src="{{< blogdown/postref >}}index_files/figure-html/unnamed-chunk-9-1.png" width="672" /></p>
+<p>Then, as with our previous plotting tools, you can even add extra aesthetics such as coloring the points by temperature.</p>
+<pre class="r"><code>base_map +
+  geom_point(aes(color = temp)) +
+  scale_color_viridis_c() +
+  labs(color = &quot;Temperature (°C)&quot;) +
+  theme(legend.position = c(.2,.7))</code></pre>
+<p><img src="{{< blogdown/postref >}}index_files/figure-html/unnamed-chunk-10-1.png" width="672" /></p>
+</div>

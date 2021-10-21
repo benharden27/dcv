@@ -6,7 +6,7 @@ level: 4
 slug: []
 categories: []
 tags: []
-draft: no
+draft: yes
 ---
 
 Revise and reflect

@@ -1,0 +1,24 @@
+---
+title: Bathymetry
+author: Ben Harden
+date: '2021-10-05'
+slug: []
+categories: []
+tags: []
+draft: no
+weight: 3
+---
+
+## Bathymetry
+
+You might find it neccessary to use bathymetry data in your visualization so I'm including some here.
+
+The data come from the General Bathymetric Chart of the Oceans, produced by the International Hydrographic Organization (IHO) and the United Nations' (UNESCO) Intergovernmental Oceanographic Commission (IOC). I downloaded it at 0.25 deg resolution from the [NASA Earth Observations site](https://neo.sci.gsfc.nasa.gov/view.php?datasetId=GEBCO_BATHY)
+
+You can download a well-formatted version of the data [here](bathy.csv)
+
+The fields are:
+
+* lon: Longitude (°E)
+* lat: Latitude (°N)
+* z: height above surface (m) - note negative values are below the surface.

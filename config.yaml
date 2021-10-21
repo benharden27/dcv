@@ -43,8 +43,8 @@ menu:
     - name: SAQs
       url: /saqs
       weight: 4
-    - name: Syllabus
-      url: /docs/S301_DCV_syllabus.pdf
+    - name: Datasets
+      url: /datasets
       weight: 5
 taxonomies:
   tag: tags

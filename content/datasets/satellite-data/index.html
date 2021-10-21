@@ -1,0 +1,71 @@
+---
+title: Satellite Data
+author: Ben Harden
+date: '2021-10-05'
+slug: []
+categories: []
+tags: []
+draft: no
+weight: 4
+---
+
+<script src="{{< blogdown/postref >}}index_files/header-attrs/header-attrs.js"></script>
+
+
+<div id="satellite-data" class="section level2">
+<h2>Satellite Data</h2>
+<p>There are a number of environmental satellites in orbit around earth gathering a range of information.</p>
+<p>Below I’ve compiled well-formatted data sets for a few examples, but you can find many more online. There are many tools, but the following resources might be most helpful in your search for appropriate data (because they allow you to subset larger data sets by sub-region and then download a csv file):</p>
+<ul>
+<li><a href="https://podaac-tools.jpl.nasa.gov/las/UI.vm">NASA PODAAC Live Access Server (LAS)</a></li>
+<li><a href="https://upwell.pfeg.noaa.gov/erddap/index.html">NOAA ERDDAP server</a></li>
+</ul>
+<p>Tip: You will probably need to use one of the <code>geom_raster()</code> functions combined with the <a href="../maps/">mapping example</a> to make a compelling map.</p>
+<div id="sea-surface-temperature" class="section level3">
+<h3>Sea Surface Temperature</h3>
+<p>Well formatted SST Data from GHRSST Level 4 MUR 0.25deg Global Foundation Sea Surface Temperature Analysis (v4.2) is <a href="data/SST.csv">here</a>. I accessed this data from the <a href="https://podaac-tools.jpl.nasa.gov/las/UI.vm">LAS</a></p>
+<p>The fields are:</p>
+<ul>
+<li>dttm: Date and time</li>
+<li>lon: Longitude (°E)</li>
+<li>lat: Latitude (°N)</li>
+<li>sst: Sea Surface Temperature (°C)</li>
+</ul>
+</div>
+<div id="sea-surface-salinity" class="section level3">
+<h3>Sea Surface Salinity</h3>
+<p>Well-formatted SSS data from Aquarius Official Release Level 3 Sea Surface Salinity Standard Mapped Image Monthly Data V5.0 is available <a href="data/SSS.csv">here</a>. I accessed this data from the <a href="https://podaac-tools.jpl.nasa.gov/las/UI.vm">LAS</a></p>
+<ul>
+<li>dttm: Date and time</li>
+<li>lon: Longitude (°E)</li>
+<li>lat: Latitude (°N)</li>
+<li>sss: Sea Surface Salinity</li>
+</ul>
+</div>
+<div id="ocean-chlorophyll-a" class="section level3">
+<h3>Ocean Chlorophyll-a</h3>
+<p>Chlorophyll-a data for our region from Aqua MODIS, NPP, L3SMI, Global, 4km, Science Quality, 2003-present (8 Day Composite) is available <a href="data/chla.csv">here</a>. I accessed this data from <a href="https://upwell.pfeg.noaa.gov/erddap/index.html">ERDDAP</a>.</p>
+<p>The original data is 4km resolution (~0.04 deg), but these files are big (127 MB) so I’ve subsampled the above data to be on the same resolution as the SST and SSS data (0.25 deg)</p>
+<p>The fields are:</p>
+<ul>
+<li>dttm: Date and time</li>
+<li>lon: Longitude (°E)</li>
+<li>lat: Latitude (°N)</li>
+<li>chla: Chlorophyll-a concentration (mg m-3)</li>
+</ul>
+</div>
+<div id="ocean-currents" class="section level3">
+<h3>Ocean Currents</h3>
+<p>Ocean current data from OSCAR Third Degree Resolution Ocean Surface Currents, 1992-current YEARS OSCAR Third Degree Resolution Ocean Surface Currents is available <a href="data/currents.csv">here</a>. This data is from the <a href="https://upwell.pfeg.noaa.gov/erddap/index.html">ERDDAP site</a>.</p>
+<p>The fields are:</p>
+<ul>
+<li>dttm: Date and time</li>
+<li>lon: Longitude (°E)</li>
+<li>lat: Latitude (°N)</li>
+<li>depth: Depth of modeled currents (m)</li>
+<li>u: east-west component of current (m/s)</li>
+<li>v: north-south component of current (m/s)</li>
+<li>speed: total current speed (m/s)</li>
+</ul>
+</div>
+</div>

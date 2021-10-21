@@ -1,12 +1,12 @@
 ---
-title: 'Figure Production'
+title: 'Final Visualization'
 author: Ben Harden
 date: "`r format(Sys.time(), '%Y-%m-%d')`"
 level: 3
 slug: []
 categories: []
 tags: []
-draft: no
+draft: yes
 ---
 
 Production of a figure and text description of choices made

@@ -1,0 +1,31 @@
+---
+title: ARGO Data
+author: Ben Harden
+date: '2021-10-05'
+slug: []
+categories: []
+tags: []
+draft: no
+weight: 5
+---
+
+<script src="{{< blogdown/postref >}}index_files/header-attrs/header-attrs.js"></script>
+
+
+<div id="argo-data" class="section level2">
+<h2>ARGO Data</h2>
+<p>ARGO are a fleet of autonomous ocean floats that travel through the ocean at around 1000 m. Every week or so, most descend to 2000 m before taking an ocean profiles from that depth to the surface where they beam data back to a data hub by satellite. Most floats record typical CTD measurements (temperature and salinity), but some also have additional sensors.</p>
+<p>A good source of this data is from the <a href="https://fleetmonitoring.euro-argo.eu/">Euro Argo site</a> which has a nice interface to select floats and download their data.</p>
+<p>I’m including some formatted data downloaded from this site for one float <a href="https://fleetmonitoring.euro-argo.eu/float/5905852">5905852</a>. You can download this data <a href="data/argo.csv">here</a></p>
+<p>The fields are:</p>
+<ul>
+<li>platform_code: The unique ID of the ARGO float</li>
+<li>dttm: Date and time</li>
+<li>lon: Longitude (°E)</li>
+<li>lat: Latitude (°N)</li>
+<li>pres: Pressure (dbar)</li>
+<li>psal: Practical Salinity</li>
+<li>temp: Temperature (°C)</li>
+</ul>
+<p>Like the CTD data from <a href="../cruise-data/">previous SEA Cruises</a>, the profiles are stacked on top of each other in the data. Unique values of longitude and latitude indicate a new profile.</p>
+</div>

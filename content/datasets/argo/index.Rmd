@@ -1,0 +1,30 @@
+---
+title: ARGO Data
+author: Ben Harden
+date: '2021-10-05'
+slug: []
+categories: []
+tags: []
+draft: no
+weight: 5
+---
+
+## ARGO Data
+
+ARGO are a fleet of autonomous ocean floats that travel through the ocean at around 1000 m. Every week or so, most descend to 2000 m before taking an ocean profiles from that depth to the surface where they beam data back to a data hub by satellite. Most floats record typical CTD measurements (temperature and salinity), but some also have additional sensors. 
+
+A good source of this data is from the [Euro Argo site](https://fleetmonitoring.euro-argo.eu/) which has a nice interface to select floats and download their data.
+
+I'm including some formatted data downloaded from this site for one float [5905852](https://fleetmonitoring.euro-argo.eu/float/5905852). You can download this data [here](data/argo.csv)
+
+The fields are:
+
+* platform_code: The unique ID of the ARGO float
+* dttm: Date and time
+* lon: Longitude (°E)
+* lat: Latitude (°N)
+* pres: Pressure (dbar)
+* psal: Practical Salinity
+* temp: Temperature (°C)
+
+Like the CTD data from [previous SEA Cruises](../cruise-data/), the profiles are stacked on top of each other in the data. Unique values of longitude and latitude indicate a new profile.

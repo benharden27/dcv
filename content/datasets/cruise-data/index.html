@@ -1,0 +1,178 @@
+---
+title: Previous Cruise Data
+author: Ben Harden
+date: '2021-10-05'
+slug: []
+categories: []
+tags: []
+draft: no
+weight: 2
+---
+
+<script src="{{< blogdown/postref >}}index_files/header-attrs/header-attrs.js"></script>
+
+
+<div id="previous-cruise-data" class="section level2">
+<h2>Previous Cruise data</h2>
+<p>There are three recent cruises along this cruise track:</p>
+<p><img src="{{< blogdown/postref >}}index_files/figure-html/unnamed-chunk-1-1.png" width="672" />
+These were from 2009, 2010 and 2011 respectively.</p>
+<p>I’ve compiled most of the data from these cruises as csv files with descriptions below</p>
+<div id="hourly-data" class="section level3">
+<h3>Hourly Data</h3>
+<p>This is the surface data collected by the ships underway sensors every hour.</p>
+<ul>
+<li><a href="data/hourly_all.csv">All Cruises Hourly</a></li>
+<li><a href="data/hourly_S225.csv">S225 Hourly</a></li>
+<li><a href="data/hourly_S231.csv">S231 Hourly</a></li>
+<li><a href="data/hourly_S237.csv">S237 Hourly</a></li>
+</ul>
+<p>The fields are as follows:</p>
+<ul>
+<li>dttm: Date and time of the measurement</li>
+<li>lon: Longitude in °E (negative values are °W)</li>
+<li>lat: Latitude in °N</li>
+<li>temp: Surface Ocean temperature (°C)</li>
+<li>sal: Surface Ocean Salinity (PSU)</li>
+<li>fluor: Surface Ocean Fluorescence - measure of relative phytoplankton concentration (V)</li>
+<li>cdom_1min: Color-dissolved organic matter (V)</li>
+<li>xmiss_1min: Ocean Surface Transmissivity</li>
+<li>depth: Ocean depth (m)</li>
+<li>wind_sp: Wind speed (m/s)</li>
+<li>wind_dir: Wind Direction (° from N)</li>
+<li>cruise: Cruise Identifier</li>
+</ul>
+</div>
+<div id="surface-samples" class="section level3">
+<h3>Surface Samples</h3>
+<p>Results from chemical analysis of samples collected from the surface ocean.</p>
+<ul>
+<li><a href="data/surf_all.csv">All Cruises Surface</a></li>
+<li><a href="data/surf_S225.csv">S225 Surface</a></li>
+<li><a href="data/surf_S231.csv">S231 Surface</a></li>
+<li><a href="data/surf_S237.csv">S237 Surface</a></li>
+</ul>
+<p>The fields are as follows:</p>
+<ul>
+<li>station: Station Identifier</li>
+<li>dttm: Date and time of the measurement</li>
+<li>lon: Longitude in °E (negative values are °W)</li>
+<li>lat: Latitude in °N</li>
+<li>temp: Surface Ocean temperature (°C)</li>
+<li>sal: Surface Ocean Salinity (PSU)</li>
+<li>fluor: Surface Ocean Fluorescence - measure of relative phytoplankton concentration (V)</li>
+<li>chla: Concentration of Chl-a in the sample (mg/L)</li>
+<li>chla_vol: Volume of water filtered for chla sample (ml)</li>
+<li>po4: Sample phosphate concentration (uMol)</li>
+<li>no3: Sample Nitrate concentration (uMol)</li>
+<li>sio2: Sample Silicate concentration (uMol)</li>
+<li>o2: Oxygen Concentration</li>
+<li>pH: Sample pH</li>
+<li>alk: Sample Alkalinity</li>
+<li>cruise: Cruise Identifier</li>
+</ul>
+</div>
+<div id="ctd" class="section level3">
+<h3>CTD</h3>
+<p>All the CTD data collected from stations where the ship stopped to lower the equipment</p>
+<ul>
+<li><a href="data/ctd_all.csv">All Cruises CTD</a></li>
+<li><a href="data/ctd_S225.csv">S225 CTD</a></li>
+<li><a href="data/ctd_S231.csv">S231 CTD</a></li>
+<li><a href="data/ctd_S237.csv">S237 CTD</a></li>
+</ul>
+<p>The fields are:</p>
+<ul>
+<li>dep: Depth (m)</li>
+<li>pres: Pressure (dbar)</li>
+<li>temp: Temperature (°C)</li>
+<li>theta: Potential Temperature (°C)</li>
+<li>sigtheta: Potential Density (kg/m3)</li>
+<li>sal: Salinity (PSU)</li>
+<li>fluor: Fluorescence (V)</li>
+<li>par: Photosynthetically active radiation (μmol m-2 s-1)</li>
+<li>oxygen: Oxygen conc (mol/kg)</li>
+<li>oxygen2: Oxygen conc (mg/l)</li>
+<li>lon: Longitude in °E (negative values are °W)</li>
+<li>lat: Latitude in °N<br />
+</li>
+<li>station: Unique station ID</li>
+<li>cruise: Cruise ID</li>
+</ul>
+</div>
+<div id="hydrocast-data" class="section level3">
+<h3>Hydrocast data</h3>
+<p>When we lower the CTD we often capture subsurface water samples to bring back to the surface for analysis.</p>
+<ul>
+<li><a href="data/hydro_all.csv">All Cruises Hydro</a></li>
+<li><a href="data/hydro_S225.csv">S225 Hydro</a></li>
+<li><a href="data/hydro_S231.csv">S231 Hydro</a></li>
+<li><a href="data/hydro_S237.csv">S237 Hydro</a></li>
+</ul>
+<p>The fields are:</p>
+<ul>
+<li>station: Station Identifier</li>
+<li>dttm: Date and time of the measurement</li>
+<li>lon: Longitude in °E (negative values are °W)</li>
+<li>lat: Latitude in °N</li>
+<li>log: Distance along cruise track (nm)</li>
+<li>bottle: Which bottle on the carousel the sample came from</li>
+<li>z: Depth of sample (m)</li>
+<li>temp: Temperature (°C)</li>
+<li>sal: Salinity (PSU)</li>
+<li>density: Density (kg/m3)</li>
+<li>chla: Concentration of Chl-a in the sample (mg/L)</li>
+<li>po4: Sample phosphate concentration (uMol)</li>
+<li>no3: Sample Nitrate concentration (uMol)</li>
+<li>sio2: Sample Silicate concentration (uMol)</li>
+<li>o2_sens: Oxygen Concentration from CTD sensor</li>
+<li>o2_wink: Oxygen Concentration from chemical analysis</li>
+<li>pH: Sample pH</li>
+<li>alk: Sample Alkalinity</li>
+<li>cruise: Cruise Identifier</li>
+</ul>
+</div>
+<div id="neuston" class="section level3">
+<h3>Neuston</h3>
+<p>Results from surface net tows. This often ends up being one of the more messy data sets, but I’ve tried to create something consistent across cruises</p>
+<ul>
+<li><a href="data/neuston_all.csv">All Cruises Neuston</a></li>
+<li><a href="data/neuston_S225.csv">S225 Neuston</a></li>
+<li><a href="data/neuston_S231.csv">S231 Neuston</a></li>
+<li><a href="data/neuston_S237.csv">S237 Neuston</a></li>
+</ul>
+<p>The fields are:</p>
+<ul>
+<li>station: Station Identifier</li>
+<li>dttm: Date and time of the measurement</li>
+<li>lon: Longitude in °E (negative values are °W)</li>
+<li>lat: Latitude in °N</li>
+<li>temp: Surface Ocean temperature (°C)</li>
+<li>sal: Surface Ocean Salinity (PSU)</li>
+<li>fluor: Surface Ocean Fluorescence - measure of relative phytoplankton concentration (V)</li>
+<li>moon_phase: Percentage to full</li>
+<li>moon_mode: Is the moon set or risen?</li>
+<li>tow_dist: Tow distance (m)</li>
+<li>biomass: Total Biovolumne of zooplankton (ml)</li>
+<li>biodens: Biomass normalized by tow distance (ml/m2)</li>
+<li>myct_num: Total number of myctophids in tow</li>
+<li>myct_vol: Total volume of myctophids (ml)</li>
+<li>ceph_num: Number of cephlapods</li>
+<li>ceph_vol: Volume of cephlapods (ml)</li>
+<li>nekt_other_num: Number of other nekton</li>
+<li>nekt_other_vol: Volume of other nekton (ml)</li>
+<li>nekt_total_num: Total number of all nekton</li>
+<li>nekt_total_vol: Total Volume of all nekton (ml)</li>
+<li>nekt_info: Any text information about nekton</li>
+<li>halo_num: Total number of halobates</li>
+<li>gelat_num: Total number of gelatinous organisms</li>
+<li>gelat_vol: Total volume of gelatinous (ml)<br />
+</li>
+<li>gelat_info: Any text info on gelatinous organisms</li>
+<li>plas_pieces: Number of plastic pieces</li>
+<li>plas_pellets: Number of plastic pellets</li>
+<li>plas_density: Total number of plastics normalized by tow length (m-2) * tow_desc: Any text info on the tow</li>
+<li>cruise: Cruise Identifier</li>
+</ul>
+</div>
+</div>

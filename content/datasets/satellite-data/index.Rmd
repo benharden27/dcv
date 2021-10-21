@@ -1,0 +1,69 @@
+---
+title: Satellite Data
+author: Ben Harden
+date: '2021-10-05'
+slug: []
+categories: []
+tags: []
+draft: no
+weight: 4
+---
+
+## Satellite Data
+
+There are a number of environmental satellites in orbit around earth gathering a range of information. 
+
+Below I've compiled well-formatted data sets for a few examples, but you can find many more online. There are many tools, but the following resources might be most helpful in your search for appropriate data (because they allow you to subset larger data sets by sub-region and then download a csv file):
+
+* [NASA PODAAC Live Access Server (LAS)](https://podaac-tools.jpl.nasa.gov/las/UI.vm)
+* [NOAA ERDDAP server](https://upwell.pfeg.noaa.gov/erddap/index.html)
+
+Tip: You will probably need to use one of the `geom_raster()` functions combined with the [mapping example](../maps/) to make a compelling map.
+
+### Sea Surface Temperature
+
+Well formatted SST Data from GHRSST Level 4 MUR 0.25deg Global Foundation Sea Surface Temperature Analysis (v4.2) is [here](data/SST.csv). I accessed this data from the [LAS](https://podaac-tools.jpl.nasa.gov/las/UI.vm)
+
+The fields are:
+
+* dttm: Date and time
+* lon: Longitude (°E)
+* lat: Latitude (°N)
+* sst: Sea Surface Temperature (°C)
+
+### Sea Surface Salinity
+
+Well-formatted SSS data from Aquarius Official Release Level 3 Sea Surface Salinity Standard Mapped Image Monthly Data V5.0 is available [here](data/SSS.csv). I accessed this data from the [LAS](https://podaac-tools.jpl.nasa.gov/las/UI.vm)
+
+* dttm: Date and time
+* lon: Longitude (°E)
+* lat: Latitude (°N)
+* sss: Sea Surface Salinity
+
+### Ocean Chlorophyll-a
+
+Chlorophyll-a data for our region from Aqua MODIS, NPP, L3SMI, Global, 4km, Science Quality, 2003-present (8 Day Composite) is available [here](data/chla.csv). I accessed this data from [ERDDAP](https://upwell.pfeg.noaa.gov/erddap/index.html).
+
+The original data is 4km resolution (~0.04 deg), but these files are big (127 MB) so I've subsampled the above data to be on the same resolution as the SST and SSS data (0.25 deg)
+
+The fields are:
+
+* dttm: Date and time
+* lon: Longitude (°E)
+* lat: Latitude (°N)
+* chla: Chlorophyll-a concentration (mg m-3)
+
+### Ocean Currents
+
+Ocean current data from OSCAR Third Degree Resolution Ocean Surface Currents, 1992-current YEARS OSCAR Third Degree Resolution Ocean Surface Currents is available [here](data/currents.csv). This data is from the [ERDDAP site](https://upwell.pfeg.noaa.gov/erddap/index.html). 
+
+The fields are:
+
+* dttm: Date and time
+* lon: Longitude (°E)
+* lat: Latitude (°N)
+* depth: Depth of modeled currents (m)
+* u: east-west component of current (m/s)
+* v: north-south component of current (m/s)
+* speed: total current speed (m/s)
+

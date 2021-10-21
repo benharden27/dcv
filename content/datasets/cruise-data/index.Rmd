@@ -1,0 +1,179 @@
+---
+title: Previous Cruise Data
+author: Ben Harden
+date: '2021-10-05'
+slug: []
+categories: []
+tags: []
+draft: no
+weight: 2
+---
+
+## Previous Cruise data
+
+There are three recent cruises along this cruise track:
+
+```{r, echo = FALSE, message = F, warning = F}
+library(tidyverse)
+df <- read_csv("data/hourly_all.csv")
+ggplot(df, aes(lon,lat)) +
+  geom_path(aes(color = cruise)) +
+  geom_polygon(aes(long, lat, group = group), data = map_data("world")) +
+  coord_quickmap(xlim = range(df$lon)+c(-5,5), ylim = range(df$lat)+c(-5,5)) +
+  theme_void() +
+  labs(color = NULL) +
+  theme(legend.position = c(.1,.9))
+```
+These were from 2009, 2010 and 2011 respectively.
+
+I've compiled most of the data from these cruises as csv files with descriptions below
+
+### Hourly Data
+
+This is the surface data collected by the ships underway sensors every hour.
+
+* [All Cruises Hourly](data/hourly_all.csv)
+* [S225 Hourly](data/hourly_S225.csv)
+* [S231 Hourly](data/hourly_S231.csv)
+* [S237 Hourly](data/hourly_S237.csv)
+
+The fields are as follows:
+
+* dttm: Date and time of the measurement
+* lon: Longitude in °E (negative values are °W)
+* lat: Latitude in °N
+* temp: Surface Ocean temperature (°C)
+* sal: Surface Ocean Salinity (PSU)
+* fluor: Surface Ocean Fluorescence - measure of relative phytoplankton concentration (V)
+* cdom_1min: Color-dissolved organic matter (V)
+* xmiss_1min: Ocean Surface Transmissivity
+* depth: Ocean depth (m)
+* wind_sp: Wind speed (m/s)
+* wind_dir: Wind Direction (° from N)
+* cruise: Cruise Identifier  
+
+### Surface Samples
+
+Results from chemical analysis of samples collected from the surface ocean.
+
+* [All Cruises Surface](data/surf_all.csv)
+* [S225 Surface](data/surf_S225.csv)
+* [S231 Surface](data/surf_S231.csv)
+* [S237 Surface](data/surf_S237.csv)
+
+The fields are as follows:
+
+* station: Station Identifier
+* dttm: Date and time of the measurement
+* lon: Longitude in °E (negative values are °W)
+* lat: Latitude in °N
+* temp: Surface Ocean temperature (°C)
+* sal: Surface Ocean Salinity (PSU)
+* fluor: Surface Ocean Fluorescence - measure of relative phytoplankton concentration (V)
+* chla: Concentration of Chl-a in the sample (mg/L)
+* chla_vol: Volume of water filtered for chla sample (ml)
+* po4: Sample phosphate concentration (uMol)
+* no3: Sample Nitrate concentration (uMol)
+* sio2: Sample Silicate concentration (uMol)
+* o2: Oxygen Concentration
+* pH: Sample pH
+* alk: Sample Alkalinity
+* cruise: Cruise Identifier
+
+### CTD
+
+All the CTD data collected from stations where the ship stopped to lower the equipment
+
+* [All Cruises CTD](data/ctd_all.csv)
+* [S225 CTD](data/ctd_S225.csv)
+* [S231 CTD](data/ctd_S231.csv)
+* [S237 CTD](data/ctd_S237.csv)
+
+The fields are:
+
+* dep: Depth (m)
+* pres: Pressure (dbar)
+* temp: Temperature (°C)
+* theta: Potential Temperature (°C)
+* sigtheta: Potential Density (kg/m3)
+* sal: Salinity (PSU)
+* fluor: Fluorescence (V)
+* par: Photosynthetically active radiation (μmol m-2 s-1)
+* oxygen: Oxygen conc (mol/kg)
+* oxygen2: Oxygen conc (mg/l)
+* lon: Longitude in °E (negative values are °W)
+* lat: Latitude in °N    
+* station: Unique station ID
+* cruise: Cruise ID 
+
+### Hydrocast data
+
+When we lower the CTD we often capture subsurface water samples to bring back to the surface for analysis.
+
+* [All Cruises Hydro](data/hydro_all.csv)
+* [S225 Hydro](data/hydro_S225.csv)
+* [S231 Hydro](data/hydro_S231.csv)
+* [S237 Hydro](data/hydro_S237.csv)
+
+The fields are:
+
+* station: Station Identifier
+* dttm: Date and time of the measurement
+* lon: Longitude in °E (negative values are °W)
+* lat: Latitude in °N
+* log: Distance along cruise track (nm)
+* bottle: Which bottle on the carousel the sample came from
+* z: Depth of sample (m)
+* temp: Temperature (°C)
+* sal: Salinity (PSU)
+* density: Density (kg/m3)
+* chla: Concentration of Chl-a in the sample (mg/L)
+* po4: Sample phosphate concentration (uMol)
+* no3: Sample Nitrate concentration (uMol)
+* sio2: Sample Silicate concentration (uMol)
+* o2_sens: Oxygen Concentration from CTD sensor
+* o2_wink: Oxygen Concentration from chemical analysis
+* pH: Sample pH 
+* alk: Sample Alkalinity
+* cruise: Cruise Identifier
+
+### Neuston
+
+Results from surface net tows. This often ends up being one of the more messy data sets, but I've tried to create something consistent across cruises
+
+* [All Cruises Neuston](data/neuston_all.csv)
+* [S225 Neuston](data/neuston_S225.csv)
+* [S231 Neuston](data/neuston_S231.csv)
+* [S237 Neuston](data/neuston_S237.csv)
+
+The fields are:
+
+* station: Station Identifier
+* dttm: Date and time of the measurement
+* lon: Longitude in °E (negative values are °W)
+* lat: Latitude in °N
+* temp: Surface Ocean temperature (°C)
+* sal: Surface Ocean Salinity (PSU)
+* fluor: Surface Ocean Fluorescence - measure of relative phytoplankton concentration (V)
+* moon_phase: Percentage to full
+* moon_mode: Is the moon set or risen?
+* tow_dist: Tow distance (m)
+* biomass: Total Biovolumne of zooplankton (ml)
+* biodens: Biomass normalized by tow distance (ml/m2)
+* myct_num: Total number of myctophids in tow
+* myct_vol: Total volume of myctophids (ml)
+* ceph_num: Number of cephlapods
+* ceph_vol: Volume of cephlapods (ml)
+* nekt_other_num: Number of other nekton
+* nekt_other_vol: Volume of other nekton (ml)
+* nekt_total_num: Total number of all nekton
+* nekt_total_vol: Total Volume of all nekton (ml)
+* nekt_info: Any text information about nekton
+* halo_num: Total number of halobates
+* gelat_num: Total number of gelatinous organisms
+* gelat_vol: Total volume of gelatinous (ml)   
+* gelat_info: Any text info on gelatinous organisms
+* plas_pieces: Number of plastic pieces
+* plas_pellets: Number of plastic pellets
+* plas_density: Total number of plastics normalized by tow length (m-2) * tow_desc: Any text info on the tow
+* cruise: Cruise Identifier
