@@ -36,6 +36,7 @@ Below are some poster examples.
 * [Poster 3](posters/poster3.pdf)
 * [Poster 4](posters/poster4.jpg)
 * [Poster 5](posters/poster5.pdf)
+* [Poster 6](posters/poster6.pdf)
 
 I will assign you a group and a poster to discuss. You should review your poster together and think about the answers to the following:
     
@@ -44,3 +45,4 @@ I will assign you a group and a poster to discuss. You should review your poster
 * What design elements were effective?
 * What design elements were ineffective?
 
+In class you will present your ideas on these points and we will talk as a group more generally about good design strategies.

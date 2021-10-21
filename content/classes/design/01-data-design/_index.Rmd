@@ -2,5 +2,5 @@
 title: "Data Design"
 subtitle: "How to create effective graphics for communication"
 weight: 1
-draft: true
+draft: false
 ---

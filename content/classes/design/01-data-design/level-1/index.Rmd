@@ -13,7 +13,7 @@ In this module, we're going to explore some ideas behind effective data design. 
 
 ## Reading 
 
-We're going to begin in this level by reading some background theory on effective data design. You should read through the following and fill out an exit ticket to reflect on what you learned and what questions you have.
+We're going to begin in this level by reading some background theory on effective data design. You should read through the following, take notes, and fill out an exit ticket to reflect on what you learned and what questions you have.
 
 * Read through [Chapter One](https://socviz.co/lookatdata.html#lookatdata) of Kieran Healy's Book *Data Visualization: A practical introduction*. This section talks about some basics of good visualization and some common pitfalls. The rest of the book is a practical guide to using R to make compelling graphics so a great resources for the rest of the class.
 
