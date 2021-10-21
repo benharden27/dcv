@@ -1,5 +1,5 @@
 ---
-title: 'Design Sketch'
+title: 'Design it yourself...'
 author: Ben Harden
 date: "`r format(Sys.time(), '%Y-%m-%d')`"
 level: 4
@@ -9,4 +9,12 @@ tags: []
 draft: no
 ---
 
-Design a flier...?
+For this level, you can complete one of the following:
+
+## 1. Poster Annotation
+
+You should synthesize that what you understand about good poster design my making annotations on an example research poster of your choosing (you can use one of the ones from class if you like). This should serve not only as a demonstration of your understanding but as a study tool for someone interested in making a poster themselves. As such the annotations themselves need to be well designed and clear (not scrawled notes) and should include concise descriptions of some of the positives/negatives and possible solutions. As an example, you could bring the poster into Google Slides and use formatted text boxes to annotate the poster, but you can also do it in other creative ways of your choosing. You should make at least 7 annotations.
+
+## 2. Design a flyer
+
+On the ship, there are often impromptu events and occasions - birthdays, cleaning day, pizza night, etc. . Take one of these examples, or come up with your own for shore or sea, and design a small flyer to be posted to advertise the event to your peers. Your flyer should seek to demonstrate good design considerations whist imparting the important details of what, where, and when the event is. It should include text and images and should be designed on half a sheet of letter paper. You can do this computationally, on something like Google Slides, or by hand.
