@@ -6,7 +6,44 @@ level: 3
 slug: []
 categories: []
 tags: []
-draft: yes
+draft: no
+quiz: https://classroom.google.com/c/MzQ0NzAxMjMwNDU0/a/NDEyNzgxMjI5MTc1/details
 ---
 
-Production of a figure and text description of choices made
+This level is all about presenting your final visualization. You will have undergone a round of feedback for Level 2 and be ready to make some changes and complete the customization of the project. You will also need to help contextualize both the visualization and your process with a couple of written components.
+
+## 1. Final Visualization
+
+This is your best effort at creating a compelling visualization that will give context or a useful result for your oceanography research project. 
+
+This visualization should be able to be considered a single figure that you might use in your research proposal or proposal poster. It can be multi-paneled, but it should not be a series of unconnected figures. Please come see me if you have any questions about this.
+
+The visualization should be neat and tidy with attention to all details of the plot including labels, color schemes, and themes. Your design should incorporate best practices from the readings and in-class discussions as well as bringing in your own personal preferences.
+
+You should submit your final figure as a png file. If you worked on the cloud, you should also have a R file in your project that creates your figure alone. If you were not working on the cloud, you should submit the code you used to generate the figure. 
+
+## 2. Text Description
+
+You should provide a plain-language description of the figure that covers the following points:
+
+1. What the data is you are presenting and briefly how it was collected
+1. What broad patterns the figure shows that are relevant to your research project.
+1. How this figure is helpful to your understanding of your research topic or in helping you formulate your plan/questions.
+
+This description should be no longer than 200 words.
+
+## 3. Justification
+
+To help me understand the work you've done, I would like you to justify the design decisions you made in creating your figure. As we've discussed, there are no "right" and "wrong" answers to good design although there are certain best practices and evidence-based reasons why many people make some choices over others.
+
+You should write no more than 1-page (12pt, double-spaced, 12pt) to justify your work on at least three of the follow design choices:
+
+* geoms
+* color palette
+* grid lines
+* labels
+* legends
+* figure background
+* layout
+
+You justification should include statements of the choices you made and why you think they are effective. 

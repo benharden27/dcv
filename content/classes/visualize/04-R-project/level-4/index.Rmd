@@ -1,12 +1,25 @@
 ---
-title: 'Revisions and Reflection'
+title: 'Reflection'
 author: Ben Harden
 date: "`r format(Sys.time(), '%Y-%m-%d')`"
 level: 4
 slug: []
 categories: []
 tags: []
-draft: yes
+draft: no
+quiz: https://classroom.google.com/c/MzQ0NzAxMjMwNDU0/a/NDEyNzgxMjI5MjE3/details
 ---
 
-Revise and reflect
+For this level, I'm going to ask you to reflect on your project work and the visualize module more generally.
+
+In no more than 2 pages (12pt, double-spaced), you should reflect on:
+
+* What you thought of your final visualization - What were you happy with? What were you disappointed with?
+
+* What changes you would make to what you have given more time/understanding.
+
+* What further development you could imagine for this kind of data display (doesn't matter if you don't know if this would be possible).
+
+* The process of creating the visualization: What key takeaways will you have from going through this project work (R, data design, personal workflow, etc.)
+
+* The use of a coded language in generating visualizations.
