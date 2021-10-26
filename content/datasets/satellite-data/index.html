@@ -23,7 +23,11 @@ weight: 4
 <p>Tip: You will probably need to use one of the <code>geom_raster()</code> functions combined with the <a href="../maps/">mapping example</a> to make a compelling map.</p>
 <div id="sea-surface-temperature" class="section level3">
 <h3>Sea Surface Temperature</h3>
-<p>Well formatted SST Data from GHRSST Level 4 MUR 0.25deg Global Foundation Sea Surface Temperature Analysis (v4.2) is <a href="data/SST.csv">here</a>. I accessed this data from the <a href="https://podaac-tools.jpl.nasa.gov/las/UI.vm">LAS</a></p>
+<p>Well formatted SST Data from GHRSST Level 4 MUR 0.25deg Global Foundation Sea Surface Temperature Analysis (v4.2) is here:</p>
+<ul>
+<li><a href="data/SST.csv">SST.csv</a>.</li>
+</ul>
+<p>I accessed this data from the <a href="https://podaac-tools.jpl.nasa.gov/las/UI.vm">LAS</a></p>
 <p>The fields are:</p>
 <ul>
 <li>dttm: Date and time</li>
@@ -34,7 +38,11 @@ weight: 4
 </div>
 <div id="sea-surface-salinity" class="section level3">
 <h3>Sea Surface Salinity</h3>
-<p>Well-formatted SSS data from Aquarius Official Release Level 3 Sea Surface Salinity Standard Mapped Image Monthly Data V5.0 is available <a href="data/SSS.csv">here</a>. I accessed this data from the <a href="https://podaac-tools.jpl.nasa.gov/las/UI.vm">LAS</a></p>
+<p>Well-formatted SSS data from Aquarius Official Release Level 3 Sea Surface Salinity Standard Mapped Image Monthly Data V5.0 is available here:</p>
+<ul>
+<li><a href="data/SSS.csv">SSS.csv</a>.</li>
+</ul>
+<p>I accessed this data from the <a href="https://podaac-tools.jpl.nasa.gov/las/UI.vm">LAS</a></p>
 <ul>
 <li>dttm: Date and time</li>
 <li>lon: Longitude (°E)</li>
@@ -44,7 +52,11 @@ weight: 4
 </div>
 <div id="ocean-chlorophyll-a" class="section level3">
 <h3>Ocean Chlorophyll-a</h3>
-<p>Chlorophyll-a data for our region from Aqua MODIS, NPP, L3SMI, Global, 4km, Science Quality, 2003-present (8 Day Composite) is available <a href="data/chla.csv">here</a>. I accessed this data from <a href="https://upwell.pfeg.noaa.gov/erddap/index.html">ERDDAP</a>.</p>
+<p>Chlorophyll-a data for our region from Aqua MODIS, NPP, L3SMI, Global, 4km, Science Quality, 2003-present (8 Day Composite) is available here:</p>
+<ul>
+<li><a href="data/chla.csv">chla.csv</a></li>
+</ul>
+<p>I accessed this data from <a href="https://upwell.pfeg.noaa.gov/erddap/index.html">ERDDAP</a>.</p>
 <p>The original data is 4km resolution (~0.04 deg), but these files are big (127 MB) so I’ve subsampled the above data to be on the same resolution as the SST and SSS data (0.25 deg)</p>
 <p>The fields are:</p>
 <ul>
@@ -56,7 +68,11 @@ weight: 4
 </div>
 <div id="ocean-currents" class="section level3">
 <h3>Ocean Currents</h3>
-<p>Ocean current data from OSCAR Third Degree Resolution Ocean Surface Currents, 1992-current YEARS OSCAR Third Degree Resolution Ocean Surface Currents is available <a href="data/currents.csv">here</a>. This data is from the <a href="https://upwell.pfeg.noaa.gov/erddap/index.html">ERDDAP site</a>.</p>
+<p>Ocean current data from OSCAR Third Degree Resolution Ocean Surface Currents, 1992-current YEARS OSCAR Third Degree Resolution Ocean Surface Currents is available here:</p>
+<ul>
+<li><a href="data/currents.csv">currents.csv</a></li>
+</ul>
+<p>This data is from the <a href="https://upwell.pfeg.noaa.gov/erddap/index.html">ERDDAP site</a>.</p>
 <p>The fields are:</p>
 <ul>
 <li>dttm: Date and time</li>
@@ -67,5 +83,82 @@ weight: 4
 <li>v: north-south component of current (m/s)</li>
 <li>speed: total current speed (m/s)</li>
 </ul>
+</div>
+<div id="notes-on-data-processing" class="section level3">
+<h3>Notes on data processing</h3>
+<p>The data that comes from the portals I’ve recommended is pretty well formatted, but there are still a couple of steps you might need to make to get the data ready for plotting. Below are some tips for doing that.</p>
+<p>From the <strong>NASA PODAAC Live Access Server</strong>, the data comes with a 9 row header (for SST at least) that includes all the relevant metadata for the fields. The first 13 lines of the file look like this:</p>
+<pre><code> [1] &quot;Total Number of Records          64000.&quot;                                                                      
+ [2] &quot;             DATA SET: https://thredds.jpl.nasa.gov/thredds/dodsC/OceanTemperature/MUR25-JPL-L4-GLOB-v04.2.nc&quot;
+ [3] &quot;             Daily 0.25-degree MUR SST, Final product&quot;                                                        
+ [4] &quot;             X: 0.5 to 64000.5&quot;                                                                               
+ [5] &quot; Column  1: DATETIME is Time String&quot;                                                                          
+ [6] &quot; Column  2: TIME is Time Coordinates (seconds since 01-JAN-1981 00:00:00)   BAD FLAG : -1.E+34&quot;               
+ [7] &quot; Column  3: LON is Longitude (degrees_east)   BAD FLAG : -1.E+34&quot;                                             
+ [8] &quot; Column  4: LAT is Latitude (degrees_north)   BAD FLAG : -1.E+34&quot;                                             
+ [9] &quot; Column  5: ANALYSED_SST is analysed sea surface temperature (kelvin)   BAD FLAG : -1.E+34&quot;                   
+[10] &quot;DATETIME,TIME,LON,LAT,ANALYSED_SST&quot;                                                                           
+[11] &quot;\&quot;12-JUL-2021\&quot;,1.27893E+09,-179.875,0.125,302.045  &quot;                                                         
+[12] &quot;\&quot;12-JUL-2021\&quot;,1.27893E+09,-179.625,0.125,302.057  &quot;                                                         
+[13] &quot;\&quot;12-JUL-2021\&quot;,1.27893E+09,-179.375,0.125,302.015  &quot;                                                         </code></pre>
+<p>To be able to read this data in you need to skip over these 9 rows (or however many are in your file) and get at just the data table.</p>
+<p>Fortunately, <code>read_csv()</code> allows you to do this using it’s skip argument:</p>
+<pre class="r"><code>df &lt;- read_csv(&quot;data/SST_example.csv&quot;, skip = 9)</code></pre>
+<p>Data from the <strong>ERDDAP</strong> has a slightly different issue which is that the first line of the csv are the field names and the second line are the units. The first 10 lines of the file look like this:</p>
+<pre><code>[1] &quot;time,latitude,longitude,chlorophyll&quot;                
+[2] &quot;UTC,degrees_north,degrees_east,mg m-3&quot;              
+[3] &quot;2021-09-10T00:00:00Z,50.020832,-179.97917,1.1645104&quot;
+[4] &quot;2021-09-10T00:00:00Z,50.020832,-179.9375,1.1869293&quot; 
+[5] &quot;2021-09-10T00:00:00Z,50.020832,-179.89583,1.2356361&quot;
+[6] &quot;2021-09-10T00:00:00Z,50.020832,-179.85417,1.2356361&quot;</code></pre>
+<p>We will need to edit out line 2. The problem is that <code>read_csv()</code> guesses the types of each column based on the kinds of data in there so because of all the words in the row under the column headers, it’s read everything is as characters not numbers. However, we can tell R what the format of each column should be using the following codes:</p>
+<ul>
+<li>c = character</li>
+<li>i = integer</li>
+<li>n = number</li>
+<li>d = double</li>
+<li>l = logical</li>
+<li>f = factor</li>
+<li>D = date</li>
+<li>T = date time</li>
+<li>t = time</li>
+<li>? = guess</li>
+<li>_ or - = skip</li>
+</ul>
+<p>So in this data case,</p>
+<pre class="r"><code>df &lt;- read_csv(&quot;data/chla_example.csv&quot;, col_types = &quot;Tddd&quot;)
+df</code></pre>
+<pre><code>## # A tibble: 2,594,161 x 4
+##    time                    latitude longitude chlorophyll
+##    &lt;dttm&gt;                     &lt;dbl&gt;     &lt;dbl&gt;       &lt;dbl&gt;
+##  1 NA                          NA         NA        NA   
+##  2 2021-09-10 00:00:00.000     50.0     -180.        1.16
+##  3 2021-09-10 00:00:00.000     50.0     -180.        1.19
+##  4 2021-09-10 00:00:00.000     50.0     -180.        1.24
+##  5 2021-09-10 00:00:00.000     50.0     -180.        1.24
+##  6 2021-09-10 00:00:00.000     50.0     -180.        1.05
+##  7 2021-09-10 00:00:00.000     50.0     -180.        1.05
+##  8 2021-09-10 00:00:00.000     50.0     -180.        1.09
+##  9 2021-09-10 00:00:00.000     50.0     -180.        1.11
+## 10 2021-09-10 00:00:00.000     50.0     -180.      NaN   
+## # … with 2,594,151 more rows</code></pre>
+<p>The first row of “data” is now all NA because R couldn’t force these units to be the thing we asked them to be. So all we need to do now is remove this row from the data which you can do a number of ways, but here is one example:</p>
+<pre class="r"><code>df &lt;- df[2:nrow(df), ]
+df</code></pre>
+<pre><code>## # A tibble: 2,594,160 x 4
+##    time                    latitude longitude chlorophyll
+##    &lt;dttm&gt;                     &lt;dbl&gt;     &lt;dbl&gt;       &lt;dbl&gt;
+##  1 2021-09-10 00:00:00.000     50.0     -180.       1.16 
+##  2 2021-09-10 00:00:00.000     50.0     -180.       1.19 
+##  3 2021-09-10 00:00:00.000     50.0     -180.       1.24 
+##  4 2021-09-10 00:00:00.000     50.0     -180.       1.24 
+##  5 2021-09-10 00:00:00.000     50.0     -180.       1.05 
+##  6 2021-09-10 00:00:00.000     50.0     -180.       1.05 
+##  7 2021-09-10 00:00:00.000     50.0     -180.       1.09 
+##  8 2021-09-10 00:00:00.000     50.0     -180.       1.11 
+##  9 2021-09-10 00:00:00.000     50.0     -180.     NaN    
+## 10 2021-09-10 00:00:00.000     50.0     -180.       0.998
+## # … with 2,594,150 more rows</code></pre>
+<p>Which means select from df all rows from 2 to the end, and all columns.</p>
 </div>
 </div>

@@ -22,7 +22,11 @@ Tip: You will probably need to use one of the `geom_raster()` functions combined
 
 ### Sea Surface Temperature
 
-Well formatted SST Data from GHRSST Level 4 MUR 0.25deg Global Foundation Sea Surface Temperature Analysis (v4.2) is [here](data/SST.csv). I accessed this data from the [LAS](https://podaac-tools.jpl.nasa.gov/las/UI.vm)
+Well formatted SST Data from GHRSST Level 4 MUR 0.25deg Global Foundation Sea Surface Temperature Analysis (v4.2) is here:
+
+* [SST.csv](data/SST.csv). 
+
+I accessed this data from the [LAS](https://podaac-tools.jpl.nasa.gov/las/UI.vm)
 
 The fields are:
 
@@ -33,7 +37,11 @@ The fields are:
 
 ### Sea Surface Salinity
 
-Well-formatted SSS data from Aquarius Official Release Level 3 Sea Surface Salinity Standard Mapped Image Monthly Data V5.0 is available [here](data/SSS.csv). I accessed this data from the [LAS](https://podaac-tools.jpl.nasa.gov/las/UI.vm)
+Well-formatted SSS data from Aquarius Official Release Level 3 Sea Surface Salinity Standard Mapped Image Monthly Data V5.0 is available here:
+
+* [SSS.csv](data/SSS.csv). 
+
+I accessed this data from the [LAS](https://podaac-tools.jpl.nasa.gov/las/UI.vm)
 
 * dttm: Date and time
 * lon: Longitude (°E)
@@ -42,7 +50,11 @@ Well-formatted SSS data from Aquarius Official Release Level 3 Sea Surface Salin
 
 ### Ocean Chlorophyll-a
 
-Chlorophyll-a data for our region from Aqua MODIS, NPP, L3SMI, Global, 4km, Science Quality, 2003-present (8 Day Composite) is available [here](data/chla.csv). I accessed this data from [ERDDAP](https://upwell.pfeg.noaa.gov/erddap/index.html).
+Chlorophyll-a data for our region from Aqua MODIS, NPP, L3SMI, Global, 4km, Science Quality, 2003-present (8 Day Composite) is available here:
+
+* [chla.csv](data/chla.csv)
+
+I accessed this data from [ERDDAP](https://upwell.pfeg.noaa.gov/erddap/index.html).
 
 The original data is 4km resolution (~0.04 deg), but these files are big (127 MB) so I've subsampled the above data to be on the same resolution as the SST and SSS data (0.25 deg)
 
@@ -55,7 +67,11 @@ The fields are:
 
 ### Ocean Currents
 
-Ocean current data from OSCAR Third Degree Resolution Ocean Surface Currents, 1992-current YEARS OSCAR Third Degree Resolution Ocean Surface Currents is available [here](data/currents.csv). This data is from the [ERDDAP site](https://upwell.pfeg.noaa.gov/erddap/index.html). 
+Ocean current data from OSCAR Third Degree Resolution Ocean Surface Currents, 1992-current YEARS OSCAR Third Degree Resolution Ocean Surface Currents is available here:
+
+* [currents.csv](data/currents.csv)
+
+This data is from the [ERDDAP site](https://upwell.pfeg.noaa.gov/erddap/index.html). 
 
 The fields are:
 
@@ -67,3 +83,58 @@ The fields are:
 * v: north-south component of current (m/s)
 * speed: total current speed (m/s)
 
+
+### Notes on data processing
+
+The data that comes from the portals I've recommended is pretty well formatted, but there are still a couple of steps you might need to make to get the data ready for plotting. Below are some tips for doing that.
+
+From the **NASA PODAAC Live Access Server**, the data comes with a 9 row header (for SST at least) that includes all the relevant metadata for the fields. The first 13 lines of the file look like this:
+
+```{r, echo = F, comment = "", message = F, warning=F}
+library(tidyverse)
+read_lines("data/SST_example.csv",n_max = 13)
+```
+
+To be able to read this data in you need to skip over these 9 rows (or however many are in your file) and get at just the data table.
+
+Fortunately, `read_csv()` allows you to do this using it's skip argument:
+
+```{r, eval = F}
+df <- read_csv("data/SST_example.csv", skip = 9)
+```
+
+Data from the **ERDDAP** has a slightly different issue which is that the first line of the csv are the field names and the second line are the units. The first 10 lines of the file look like this:
+
+```{r, comment = "", echo = F}
+read_lines("data/chla_example.csv", n_max = 6)
+```
+
+We will need to edit out line 2. The problem is that `read_csv()` guesses the types of each column based on the kinds of data in there so because of all the words in the row under the column headers, it's read everything is as characters not numbers. However, we can tell R what the format of each column should be using the following codes:
+
+* c = character
+* i = integer
+* n = number
+* d = double
+* l = logical
+* f = factor
+* D = date
+* T = date time
+* t = time
+* ? = guess
+* _ or - = skip
+
+So in this data case,
+
+```{r, warning = F, message = F}
+df <- read_csv("data/chla_example.csv", col_types = "Tddd")
+df
+```
+
+The first row of "data" is now all NA because R couldn't force these units to be the thing we asked them to be. So all we need to do now is remove this row from the data which you can do a number of ways, but here is one example:
+
+```{r}
+df <- df[2:nrow(df), ]
+df
+```
+
+Which means select from df all rows from 2 to the end, and all columns.
