@@ -1,5 +1,5 @@
 ---
 title: "Communicate"
 weight: 2
-footnote: More content coming soon...
+footnote: ""
 ---

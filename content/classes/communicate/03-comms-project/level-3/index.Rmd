@@ -1,5 +1,5 @@
 ---
-title: 'Draft Story'
+title: 'Final Story'
 author: Ben Harden
 date: "`r format(Sys.time(), '%Y-%m-%d')`"
 level: 3
@@ -7,6 +7,45 @@ slug: []
 categories: []
 tags: []
 draft: no
+quiz: https://classroom.google.com/c/MzQ0NzAxMjMwNDU0/a/NDEyODQyMjQ5NDc2/details
 ---
 
-Draft you story
+Once you've received feedback from your myself and your peers, you should create a final version of you story and record it.
+
+Your final story should be no longer than 3 minutes, but can be any length shorter than this if you feel like you've told the story you want to tell. 3 minutes is about 3 pages of 12pt double-spaced writing, but I'd err on the shorter side of things to make sure you have enough room for your story (and yourself) to breathe when it's recorded. You should also decided up on a title for your story
+
+## Recording
+
+When you are happy with your script, you should practice your story:
+
+* Ideally have a printed copy of your final script
+
+* Practice the story out-loud in front of a partner so someone else can can give feedback about the performance:
+  * Is the emphasis in the right place in sentences?
+  * Do they sound engaging?
+  * Are you speaking clearly or slowly enough (most people talk way to fast their first time round)?
+  * Is the way the script is written easy to read?
+
+If this process leads to any small changes to the script you should make them before you go on to record. When recording you should:
+
+* Grab a shipmate so that you have someone to perform to
+
+* Find a quiet place to record with no echos. The interior of a car (parked in a quiet spot) is actually one of the best on-the-fly recording studios you can find. A big open room with lots of flat surfaces is not so good. Think cozy nook or soft furnishings, not dining hall.
+
+* Record your story narration using a voice app on your phone.
+
+* Perform whilst making intermittent eye contact with your shipmate to remind yourself you are telling a story to someone.
+
+* Take your time. Speak slower than you think you need to. Try and sound natural and engaging.
+
+* Ideally record your story in one take, but I know this can be difficult so if you have to break it up into sections and submit these separately you can. 
+
+* You can repeat as many times as you need to get it right.
+
+* Make sure you save and back-up any audio you record.
+
+## Submission
+
+When you have finished your audio recording you should submit the file(s) along with the final radio script to the assignment link below.
+
+

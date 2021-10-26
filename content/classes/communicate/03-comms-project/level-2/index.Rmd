@@ -1,5 +1,5 @@
 ---
-title: 'Storyboard'
+title: 'Draft Story'
 author: Ben Harden
 date: "`r format(Sys.time(), '%Y-%m-%d')`"
 level: 2
@@ -7,6 +7,21 @@ slug: []
 categories: []
 tags: []
 draft: no
+quiz: https://classroom.google.com/c/MzQ0NzAxMjMwNDU0/a/NDEyODM5ODgzNDk1/details
 ---
 
-Initial storyboard - fill in template?
+Now that you have a story plan, it's time to draft an initial version of the story.
+
+You should plan on writing about 2-3 pages (12pt, double spaced) for your story. Remember when you're writing to think about some of the key elements of [writing for voice](../../01-writing-for-voice/level-1/):
+
+* Short sentences with subject and verb near the start
+* Good descriptions of things unseen
+* Writing like you talk and make it personal
+
+And also think about [elements of effective climate/environment communication](../../01-writing-for-voice/level-2/) and [examples](../../02-storytelling/level-2)  of [good storytelling](../../02-storytelling/level-1/).
+
+You should submit this draft to the assignment link below and also bring four copies to the peer review session on Mon Nov 1.
+
+You will get feedback from your peers and also from me for you to incorporate into a final draft and recording in level 3.
+
+
