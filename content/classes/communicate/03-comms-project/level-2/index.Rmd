@@ -12,6 +12,8 @@ quiz: https://classroom.google.com/c/MzQ0NzAxMjMwNDU0/a/NDEyODM5ODgzNDk1/details
 
 Now that you have a story plan, it's time to draft an initial version of the story.
 
+First, we should be clear about who our audience is. If done well, we can put these stories up on the SEA website and share them with SEA alums, our families, and other supporters. You should think about that group of people as being your audience. Probably people with a vested interest in the ocean (because either they know you or they've done SEA in the past or their followers of our work), but we shouldn't assume any particular knowledge of how the ocean works.
+
 You should plan on writing about 2-3 pages (12pt, double spaced) for your story. Remember when you're writing to think about some of the key elements of [writing for voice](../../01-writing-for-voice/level-1/):
 
 * Short sentences with subject and verb near the start
